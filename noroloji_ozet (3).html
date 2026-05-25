@@ -581,7 +581,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('genetik')" style="cursor:pointer;">
       <div class="subject-icon">🧬</div>
       <div class="subject-title">Genetik</div>
-      <div class="subject-meta" id="genetik-meta">Yapım aşamasında</div>
+      <div class="subject-meta" id="genetik-meta">1 ders · SSS Gelişimi &amp; NTD</div>
       <div class="subject-progress">
         <div class="subject-bar" id="genetik-bar" style="width:0%"></div>
       </div>
@@ -7782,11 +7782,289 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:6px 0 0;">🧬 Genetik</h2>
   </div>
 
-  <div class="card" style="text-align:center;padding:48px 24px;">
-    <div style="font-size:56px;margin-bottom:16px;">🧬</div>
-    <h3 style="font-family:'Syne',sans-serif;font-size:18px;color:var(--accent);margin-bottom:8px;">İçerik Yakında</h3>
-    <p style="color:var(--text2);font-size:14px;line-height:1.6;">Genetik dersi özet, tablo ve çıkmış soruları<br>hazırlanıyor...</p>
+  <div class="tabs-wrap">
+    <div class="tabs" id="genetikTabs" style="display:flex;gap:6px;min-width:max-content;">
+      <button class="tab active" onclick="switchGenetikTab(0); window.scrollTo(0,0);">G1 · SSS Gelişimi &amp; NTD<span class="tab-tick" id="gtick-0">✓</span></button>
+    </div>
   </div>
+
+  <div id="gtab0" class="tab-content active" style="display:block;">
+
+    <!-- ÖZET CARD -->
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>G1 · SSS GELİŞİMİ VE NÖROGENETİK</h2></div>
+
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔬</span>
+        <h2 style="color:#16a085;">NÖRÜLASYON VE EMBRİYOLOJİK TEMELLER</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>Kaynak doku:</strong> SSS embriyolojik olarak <strong>ektoderm</strong> tabakasından gelişir.</p>
+          <p style="margin-top:8px;"><strong>Gelişim sırası (3. hafta):</strong></p>
+          <div style="margin:8px 0 8px 16px;border-left:3px solid #1abc9c;padding-left:12px;">
+            Ektoderm kalınlaşması → <strong>Nöral Plak</strong> → <strong>Nöral Oluk</strong> → <strong>Nöral Tüp</strong>
+          </div>
+          <p><strong>Primer Nörülasyon:</strong> Beyin ve spinal kordun büyük kısmını oluşturur.</p>
+          <p><strong>Sekonder Nörülasyon:</strong> Spinal kordun alt (sakral/koksigeal) kısmını oluşturur.</p>
+          <p style="margin-top:10px;"><strong>Nöropor:</strong> Kapanma 1. ve 3. bölgelerden başlar. Uçlarda açık kalan bölgeler:</p>
+          <ul style="margin:6px 0 0 16px;">
+            <li><strong>Anterior (Rostral) Nöropor</strong> → kapanmazsa → Anensefali</li>
+            <li><strong>Posterior (Kaudal) Nöropor</strong> → kapanmazsa → Spina Bifida</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧩</span>
+        <h2 style="color:#16a085;">NTD SINIFLANDIRMA: AÇIK vs KAPALI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>Temel kural:</strong> Nöral dokunun dış ortamla temas edip etmemesine göre ikiye ayrılır.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+            <div style="background:rgba(231,76,60,0.07);border-left:3px solid #e74c3c;border-radius:8px;padding:12px;">
+              <strong style="color:#c0392b;">🔴 AÇIK NTD'ler (AFP ↑)</strong>
+              <ul style="margin:8px 0 0 14px;line-height:1.9;">
+                <li><strong>Anensefali</strong> — Anterior nöropor kapanmaz, beyin/kafatası gelişmez. Polihidramniyoz yapar, patolojide "kurbağa" görünümü.</li>
+                <li><strong>Kranioraşişizis</strong> — En ağır form: Anensefali + Spina Bifida birlikte.</li>
+                <li><strong>Myelomeningosel</strong> — Açık Spina Bifida.</li>
+              </ul>
+            </div>
+            <div style="background:rgba(39,174,96,0.07);border-left:3px solid #27ae60;border-radius:8px;padding:12px;">
+              <strong style="color:#1e8449;">🟢 KAPALI NTD'ler (AFP Normal)</strong>
+              <ul style="margin:8px 0 0 14px;line-height:1.9;">
+                <li><strong>İniensefali</strong> — Başın aşırı geriye bükülmesi (retrofleksiyon), boyun kısalığı.</li>
+                <li><strong>Ensefalosel</strong> — Oksipital herniasyon, deri örtülü.</li>
+                <li><strong>Spina Bifida Okülta / Meningosel</strong> — Cilt bütünlüğü korunmuştur.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚡</span>
+        <h2 style="color:#16a085;">SİNYAL YOLAKLARI VE KORUNMA</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px;">
+              <strong style="color:#16a085;">✅ Promotor (Geliştirici)</strong>
+              <ul style="margin:6px 0 0 14px;">
+                <li><strong>FGF</strong> — Hücreleri nöral hatlara yönlendirir (indükleyici)</li>
+                <li><strong>IGF</strong> — Hücreleri nöral hatlara yönlendirir (indükleyici)</li>
+              </ul>
+            </div>
+            <div style="background:rgba(231,76,60,0.07);border-left:3px solid #e74c3c;border-radius:8px;padding:12px;">
+              <strong style="color:#c0392b;">❌ İnhibitör (Baskılayıcı)</strong>
+              <ul style="margin:6px 0 0 14px;">
+                <li><strong>BMP</strong> — SSS gelişimini baskılar</li>
+                <li><strong>Wnt</strong> — SSS gelişimini baskılar</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>NTD'de rol oynayan yolaklar:</strong> Folat metabolizması (MTHFR, MTHFD enzimleri), Planar Hücre Polarite (PCP), Sonic Hedgehog (Shh).</p>
+          <p style="margin-top:8px;"><strong>Folik Asit Koruması:</strong> Gebelikten <strong>en az 1 ay önce</strong> başlanıp ilk <strong>2 ay boyunca</strong> devam edilmesi NTD riskini belirgin azaltır. MTHFR gen mutasyonu riski artırır.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLOLAR CARD -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📊</span>
+        <h2 style="color:#16a085;">KRİTİK VERİ TABLOLARI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;">
+
+          <h3 style="margin:0 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 1: Açık ve Kapalı NTD'ler (Klinik Ayrım)</h3>
+          <table>
+            <tr><th>Defekt Tipi</th><th>Hastalık Örnekleri</th><th>Kritik Klinik Özellik</th></tr>
+            <tr>
+              <td><strong style="color:#c0392b;">Açık NTD'ler</strong></td>
+              <td>Anensefali, Kranioraşişizis, Myelomeningosel</td>
+              <td>Nöral doku dışarıdadır. Anensefali polihidramniyoz yapar; patolojide <strong>"kurbağa (frog-like)"</strong> görünümü.</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#1e8449;">Kapalı NTD'ler</strong></td>
+              <td>İniensefali, Ensefalosel, Spina Bifida Okülta, Meningosel</td>
+              <td>Deri ile örtülüdür. İniensefali belirgin retrofleksiyon ve boyun kısalığı yapar.</td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 2: Prenatal Tanı Testleri (AFP ve AChE Kuralı)</h3>
+          <table>
+            <tr><th>Tanı Yöntemi</th><th>Ne Ölçer?</th><th>Hangi NTD'lerde İşe Yarar?</th></tr>
+            <tr>
+              <td><strong>Maternal Serum AFP</strong></td>
+              <td>Alfa-fetoprotein (fetal glikoprotein)</td>
+              <td><strong style="color:#c0392b;">SADECE AÇIK NTD'lerde yükselir.</strong> Kapalı NTD'lerde AFP kana sızamaz.</td>
+            </tr>
+            <tr>
+              <td><strong>Amniyosentez (AChE)</strong></td>
+              <td>Asetilkolin esteraz aktivitesi</td>
+              <td>Açık defektlerde nöral doku sıvıyla temas ettiği için AChE artmış saptanır.</td>
+            </tr>
+            <tr>
+              <td><strong>Ultrasonografi (USG)</strong></td>
+              <td>Anatomik görüntüleme</td>
+              <td><strong style="color:#1e8449;">Hem açık hem kapalı tüm NTD'leri saptayan en duyarlı araçtır.</strong></td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 3: Lizensefali Tipleri ve Genetik Farkları</h3>
+          <table>
+            <tr><th>Özellik</th><th>Tip 1 Lizensefali (Klasik)</th><th>Tip 2 Lizensefali (Cobblestone)</th></tr>
+            <tr><td><strong>Mekanizma</strong></td><td>Nöron migrasyonu <strong>yetersiz / gecikmiş</strong></td><td>Nöron migrasyonu <strong>aşırı ve kontrolsüz</strong></td></tr>
+            <tr><td><strong>Hücresel Defekt</strong></td><td>Mikrotübül organizasyonu bozuk</td><td>Hücre dışı matriks ve bazal membran bütünlüğü bozuk</td></tr>
+            <tr><td><strong>Sorumlu Genler</strong></td><td style="color:#c0392b;font-weight:600;">TUBA1A, LIS1, DCX</td><td style="color:#c0392b;font-weight:600;">POMT1, POMT2, FKTN (Fukutin)</td></tr>
+            <tr><td><strong>İlişkili Sendrom</strong></td><td><strong>Miller-Dieker Sendromu</strong> (17p delesyonu)</td><td>Serebellar hipoplazi, kaba pürüzlü korteks</td></tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 4: Mikrosefali Yapan Genler ve Sentrozom İlişkisi</h3>
+          <table>
+            <tr><th>Sorumlu Gen</th><th>Etki Yeri</th><th>Mekanizma (Sınav Şifresi)</th></tr>
+            <tr><td><strong>MCPH1</strong></td><td>Sentrozom</td><td>Mitoza girişi düzenler</td></tr>
+            <tr><td><strong>ASPM, STIL</strong></td><td>Perisentrozom</td><td>Mitotik iplikçikleri regüle eder</td></tr>
+            <tr><td><strong>CENPJ, CDK5RAP2</strong></td><td>Sentrozom</td><td>Mitozda sentrozomu düzenler</td></tr>
+            <tr><td colspan="3" style="color:#c0392b;font-weight:600;text-align:center;">Ortak Sonuç: Sentrozom bozulur → nöral hücre mitozu aksar → serebral korteks gelişemez → Mikrosefali</td></tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 5: Diğer Kritik SSS Malformasyonları</h3>
+          <table>
+            <tr><th>Hastalık</th><th>Morfoloji</th><th>Genetik / Moleküler Etyoloji</th></tr>
+            <tr>
+              <td><strong>Holoprosensefali</strong></td>
+              <td>Ön beyin iki hemisfere ayrılamaz (en ağırı: Alobar/Siklopi)</td>
+              <td>Trizomi 13 (Patau), Trizomi 18. SHH, BMP, FGF mutasyonları.</td>
+            </tr>
+            <tr>
+              <td><strong>Şizensefali</strong></td>
+              <td>Korteksten lateral ventriküle uzanan derin yarık (cleft)</td>
+              <td>Genetik ve çevresel — multifaktöriyel</td>
+            </tr>
+            <tr>
+              <td><strong>Polimikrogiri</strong></td>
+              <td>Kortekste çok sayıda küçük/anormal girus</td>
+              <td>PI3K-AKT (Fosfatidilinozitol 3-kinaz) yolağı bozuklukları</td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- KRİTİK NOKTALAR -->
+    <div class="card kritik">
+      <div class="card-header"><span class="card-icon">📋</span><h2>KRİTİK NOKTALAR</h2></div>
+      <div class="card-body">
+        <div class="kritik-item"><span class="kritik-num">1</span><span><strong>AFP Altın Kuralı:</strong> AFP SADECE AÇIK NTD'lerde yükselir. Kapalı NTD'lerde (İniensefali, Spina Bifida Okülta) AFP normaldir. AChE de açık defektlerde artar.</span></div>
+        <div class="kritik-item"><span class="kritik-num">2</span><span><strong>Nöropor Eşleştirmesi:</strong> Anterior nöropor kapanmaz → Anensefali (beyin yok). Posterior nöropor kapanmaz → Spina Bifida (omurilik defekti).</span></div>
+        <div class="kritik-item"><span class="kritik-num">3</span><span><strong>Folik Asit Zamanı:</strong> Nöral tüp 3-4. haftada kapanır — gebelik anlaşılınca çok geç! Konsepsiyondan en az 1 ay önce başla, ilk 2 ay devam et. MTHFR mutasyonu riski artırır.</span></div>
+        <div class="kritik-item"><span class="kritik-num">4</span><span><strong>Trizomi 13 + Siklopi:</strong> Holoprosensefali (Alobar) = hemisferler ayrılamaz = yüzde tek göz (siklopi). Trizomi 13 ve SHH mutasyonu ile eşleştirilir.</span></div>
+        <div class="kritik-item"><span class="kritik-num">5</span><span><strong>Miller-Dieker = LIS1 = 17p delesyonu:</strong> Tip 1 Lizensefali — mikrotübül motoru bozulur, nöron göç edemez → düz, kıvrımsız beyin.</span></div>
+        <div class="kritik-item"><span class="kritik-num">6</span><span><strong>Tip 2 Lizensefali = Cobblestone:</strong> Nöronlar aşırı göç eder, bazal membranı aşar → taş döşeli pürüzlü korteks. FKTN (Fukutin), POMT1/2 sorumlu.</span></div>
+        <div class="kritik-item"><span class="kritik-num">7</span><span><strong>USG Farkı:</strong> AFP ve AChE SADECE açık NTD'de artar; ama USG hem açık hem kapalı tüm NTD'leri gösterebilir.</span></div>
+      </div>
+    </div>
+
+    <!-- EZBERLENMESİ GEREKENLER -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#16a085;">EZBERLENMESİ GEREKENLER — G1</h2>
+        <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(26,188,156,0.15);color:#16a085;">Must-Know · Püf Noktaları</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:20px 22px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🎯 AFP Tuzağı:</strong> "Maternal AFP normal olan gebede hangisi görülebilir?" sorusunda Kapalı NTD ara! (İniensefali, Spina Bifida Okülta). AFP'nin kana sızması için defektin dış ortama açık olması şart.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">⏰ Folik Asit Zamanlaması:</strong> Nöral tüp 3-4. haftada kapanır — gebelik anlaşıldığında çok geç! Konsepsiyondan 1 ay önce başla, ilk 2 ay boyunca devam et.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">👁️ Trizomi 13 + Siklopi:</strong> Holoprosensefali (Alobar) = hemisferler ayrılamaz = yüzde tek göz (siklopi). Trizomi 13 ve SHH mutasyonu ile eşleştirilir sınavda.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🧠 Miller-Dieker Şifresi:</strong> 17p delesyonu → LIS1 kaybı → mikrotübül motoru bozulur → nöron GÖÇ EDEMEZ → Tip 1 Lizensefali (düz, kıvrımsız beyin).</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🪨 Cobblestone Şifresi:</strong> Tip 2 Lizensefali'de nöronlar AŞIRI göç eder, bazal membranı geçer → pürüzlü taş döşeli korteks. FKTN (Fukutin), POMT1/2 sorumludur.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🔗 Nöropor Kuralı:</strong> Üst (anterior) kapanmaz → Anensefali. Alt (posterior) kapanmaz → Spina Bifida. AChE açık defektlerde amniyon sıvısında ARTAR.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KAVRAM HARİTASI -->
+    <div class="card" style="border-color:#e07b39;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e07b39,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span><h2 style="color:#a05020;">KAVRAM HARİTASI — G1</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:20px 22px;font-size:13px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c0392b;letter-spacing:1px;margin-bottom:8px;">AÇIK NTD (AFP ↑ / AChE ↑)</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Anensefali → Rostral nöropor kapanmaz</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Kranioraşişizis → En ağır form</li>
+                <li style="padding:3px 0;">Myelomeningosel → Açık Spina Bifida</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#1e8449;letter-spacing:1px;margin-bottom:8px;">KAPALI NTD (AFP Normal)</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">İniensefali → Retrofleksiyon</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Ensefalosel → Oksipital herniasyon</li>
+                <li style="padding:3px 0;">Meningosel / Okülta → Derili</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#8e44ad;letter-spacing:1px;margin-bottom:8px;">MİGRASYON DEFEKTLERİ</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Tip 1 Lizensefali → LIS1, yetersiz göç, Miller-Dieker</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Tip 2 Lizensefali → POMT/FKTN, aşırı göç (cobblestone)</li>
+                <li style="padding:3px 0;">Şizensefali → Ventriküle uzanan derin yarık</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c0392b;letter-spacing:1px;margin-bottom:8px;">DİĞER MALFORMASYONlar</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Holoprosensefali → Trizomi 13, SHH mutasyonu</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Mikrosefali → ASPM, MCPH1, sentrozom defekti</li>
+                <li style="padding:3px 0;">Polimikrogiri → PI3K-AKT yolağı</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÇIKMIŞ SORULAR -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📝</span><h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR — G1</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div id="g1-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+  </div><!-- /gtab0 -->
+
 </div><!-- /genetikPage -->
 
 
@@ -7851,6 +8129,17 @@ function switchRomatoTab(n) {
   var btn = document.querySelectorAll('#romatolojiTabs .tab')[n];
   if (btn) btn.classList.add('active');
   window.currentRomatoTab = n;
+  window.scrollTo(0,0);
+}
+
+function switchGenetikTab(n) {
+  document.querySelectorAll('#genetikPage .tab-content').forEach(function(d) { d.style.display='none'; d.classList.remove('active'); });
+  document.querySelectorAll('#genetikTabs .tab').forEach(function(b) { b.classList.remove('active'); });
+  var tab = document.getElementById('gtab' + n);
+  if (tab) { tab.style.display='block'; tab.classList.add('active'); }
+  var btn = document.querySelectorAll('#genetikTabs .tab')[n];
+  if (btn) btn.classList.add('active');
+  window.currentGenetikTab = n;
   window.scrollTo(0,0);
 }
 
@@ -13655,6 +13944,8 @@ registerQuiz('f15-quiz', [
     ]
   }
 ]);
+
+registerQuiz('g1-quiz', []);
 
 </script>
 
