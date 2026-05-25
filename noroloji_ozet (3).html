@@ -581,7 +581,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('genetik')" style="cursor:pointer;">
       <div class="subject-icon">🧬</div>
       <div class="subject-title">Genetik</div>
-      <div class="subject-meta" id="genetik-meta">1 ders · SSS Gelişimi &amp; NTD</div>
+      <div class="subject-meta" id="genetik-meta">2 ders · SSS Gelişimi, İskelet Genetiği</div>
       <div class="subject-progress">
         <div class="subject-bar" id="genetik-bar" style="width:0%"></div>
       </div>
@@ -7785,6 +7785,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
   <div class="tabs-wrap">
     <div class="tabs" id="genetikTabs" style="display:flex;gap:6px;min-width:max-content;">
       <button class="tab active" onclick="switchGenetikTab(0); window.scrollTo(0,0);">G1 · SSS Gelişimi &amp; NTD<span class="tab-tick" id="gtick-0">✓</span></button>
+      <button class="tab" onclick="switchGenetikTab(1); window.scrollTo(0,0);">G2 · İskelet Genetiği<span class="tab-tick" id="gtick-1">✓</span></button>
     </div>
   </div>
 
@@ -8064,6 +8065,309 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     </div>
 
   </div><!-- /gtab0 -->
+
+  <div id="gtab1" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">🦴</span><h2>G2 · İSKELET GELİŞİMİ VE GENETİK HASTALIKLAR</h2></div>
+
+    <!-- Özet 1: Evreleri ve Kökenleri -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🌱</span>
+        <h2 style="color:#16a085;">İSKELET GELİŞİMİNİN EVRELERİ VE KÖKENLERİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>4 Temel Evre:</strong> Paternin belirlenmesi → Erken farklılaşma → Büyüme → Homeostazi</p>
+          <p style="margin-top:10px;"><strong>3 Embriyolojik Köken:</strong></p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;">
+            <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:10px;">
+              <strong style="color:#16a085;">1. Aksiyel İskelet</strong>
+              <p style="margin:4px 0 0;">Vertebra &amp; kaburga</p>
+              <p style="margin:2px 0 0;font-size:12px;color:var(--text2);">Kaynak: Somitler</p>
+              <p style="margin:2px 0 0;font-size:12px;color:var(--text2);">Sinyal: Notch, Fgf8, SHH</p>
+            </div>
+            <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:10px;">
+              <strong style="color:#16a085;">2. Apendiküler İskelet</strong>
+              <p style="margin:4px 0 0;">Uzuvlar (kol/bacak)</p>
+              <p style="margin:2px 0 0;font-size:12px;color:var(--text2);">Kaynak: Lateral plak mezodermi</p>
+              <p style="margin:2px 0 0;font-size:12px;color:var(--text2);">Sinyal: FGF, SHH/Gli3, Wnt7a/Lmx1b</p>
+            </div>
+            <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:10px;">
+              <strong style="color:#16a085;">3. Kraniyofasiyal</strong>
+              <p style="margin:4px 0 0;">Yüz &amp; kafatası</p>
+              <p style="margin:2px 0 0;font-size:12px;color:var(--text2);">Kaynak: Nöral krest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Özet 2: Kemikleşme Tipleri -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧱</span>
+        <h2 style="color:#16a085;">KEMİKLEŞME TİPLERİ: ENDOKONDRAL vs MEMBRANÖZ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div style="background:rgba(231,76,60,0.07);border-left:3px solid #e74c3c;border-radius:8px;padding:12px;">
+              <strong style="color:#c0392b;">Endokondral Kemikleşme</strong>
+              <ul style="margin:8px 0 0 14px;">
+                <li>Kıkırdak (kondrosit) taslağı üzerinden gerçekleşir</li>
+                <li>Uzun kemikler bu yolla oluşur</li>
+                <li style="margin-top:6px;"><strong>En kritik gen: SOX9</strong></li>
+              </ul>
+            </div>
+            <div style="background:rgba(39,174,96,0.07);border-left:3px solid #27ae60;border-radius:8px;padding:12px;">
+              <strong style="color:#1e8449;">Membranöz Kemikleşme</strong>
+              <ul style="margin:8px 0 0 14px;">
+                <li>Doğrudan osteoblast farklılaşmasıyla (kıkırdaksız) gerçekleşir</li>
+                <li>Kafa kemikleri ve klavikula bu yolla oluşur</li>
+                <li style="margin-top:6px;"><strong>En kritik gen: RUNX2 (CBFA1)</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Özet 3: Homeostaz -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚖️</span>
+        <h2 style="color:#16a085;">İSKELET HOMEOSTAZİSİ: RANKL / RANK / OPG</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <div style="margin:8px 0 8px 0;border-left:3px solid #1abc9c;padding-left:12px;">
+            <strong>Osteoblast → RANKL salgılar</strong> → Osteoklasttaki RANK reseptörüne bağlanır → Kemik YIKIM başlar<br>
+            <strong>Aktif Osteoklast → Cathepsin K + TGF-β salgılar</strong> → Osteoblastı uyarır → OPG salgılanır<br>
+            <strong>OPG → RANKL'ı bloke eder</strong> → Yıkım durur (negatif feedback)
+          </div>
+          <p style="margin-top:8px;"><strong>FGFR3 (Fibroblast Growth Factor Reseptör 3):</strong> Tirozin kinaz reseptörüdür. Mutasyonları kıkırdak çoğalmasını bozarak <strong>Akondroplazi</strong> veya ölümcül <strong>Tanatoforik displazi</strong>'ye yol açar. Sınavların en çok sorulan iskelet genidir.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tablolar -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📊</span>
+        <h2 style="color:#16a085;">KRİTİK VERİ TABLOLARI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;">
+
+          <h3 style="margin:0 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 1: Ekstremite Paternleşmesinde Sorumlu Genler</h3>
+          <table>
+            <tr><th>Embriyolojik Eksen</th><th>Sorumlu Sinyal / Gen</th><th>Klinik (Sorun Olursa)</th></tr>
+            <tr>
+              <td><strong>Proksimo-distal</strong> (Omuzdan parmak ucuna)</td>
+              <td>Apikal ektodermal ring — <strong>FGF'ler</strong></td>
+              <td>Uzuv boyunda kısalık veya yokluk</td>
+            </tr>
+            <tr>
+              <td><strong>Antero-posterior</strong> (Başparmaktan serçeye)</td>
+              <td>ZPA bölgesi — <strong>SHH ve GLİ3</strong></td>
+              <td><strong style="color:#c0392b;">Polidaktili (Fazla parmak)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Dorso-ventral</strong> (El sırtından avuç içine)</td>
+              <td>Ektoderm — <strong>Wnt7a, Lmx1b</strong></td>
+              <td>El sırtı/avuç içi asimetrisinin bozulması</td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 2: Spesifik İskelet Anomalileri ve Gen Eşleştirmeleri <span style="font-weight:400;color:#c0392b;">(Hocanın "Bunları Hatırlayın" listesi)</span></h3>
+          <table>
+            <tr><th>Hastalık / Anomali</th><th>Sorumlu Gen</th><th>Sınav Şifresi</th></tr>
+            <tr>
+              <td><strong>Fanconi Anemisi</strong></td>
+              <td>FA yolağı (DNA tamir defekti)</td>
+              <td><strong style="color:#c0392b;">Radial aks anomalisi (Radius yokluğu)</strong> + Kemik iliği yetmezliği</td>
+            </tr>
+            <tr>
+              <td><strong>Cleidocranial Displazi</strong></td>
+              <td><strong style="color:#c0392b;">RUNX2 (CBFA1)</strong> veya CBFB</td>
+              <td>Klavikula yokluğu — omuzları önde birleştirebilme; süt dişleri dökülemiyor</td>
+            </tr>
+            <tr>
+              <td><strong>EEC Sendromu</strong></td>
+              <td><strong style="color:#c0392b;">TP63 (p63)</strong></td>
+              <td>Yengeç kıskacı el (Ektrodaktili) + ektodermal displazi + yarık damak/dudak</td>
+            </tr>
+            <tr>
+              <td><strong>Brakidaktili / Robinow Sendromu</strong></td>
+              <td><strong style="color:#c0392b;">ROR2</strong></td>
+              <td>Heterozigot → izole kısa parmak; Homozigot → Robinow Sendromu (organ anomalileri)</td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 3: FGFR3 Mutasyonları — Kondrodisplazi Skalası</h3>
+          <table>
+            <tr><th>Hastalık</th><th>Kalıtım</th><th>Klinik Ağırlık</th></tr>
+            <tr>
+              <td><strong>Hipokondroplazi</strong></td>
+              <td>OD</td>
+              <td><strong style="color:#1e8449;">En hafif</strong> form</td>
+            </tr>
+            <tr>
+              <td><strong>Akondroplazi</strong></td>
+              <td>OD</td>
+              <td><strong>En sık iskelet displazisi.</strong> %80 de novo mutasyon. Gly380Arg — <strong style="color:#c0392b;">Fonksiyon KAZANIM</strong> mutasyonu (reseptör sürekli aktif → büyüme baskılanır). Tedavi: <strong>Vosoritide</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Tanatoforik Displazi</strong></td>
+              <td>OD</td>
+              <td><strong style="color:#c0392b;">En ağır — erken infantil ölüm.</strong> Çok dar toraks → solunum yetmezliği</td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 4: Osteogenezis İmperfekta — Mutasyon Tipi ve Ağırlık</h3>
+          <table>
+            <tr><th>Mutasyon Mekanizması</th><th>Genetik Değişim</th><th>Klinik Ağırlık</th></tr>
+            <tr>
+              <td><strong>Fonksiyon Kaybı</strong> (Azalmış üretim)</td>
+              <td>Erken terminasyon kodonu oluşumu</td>
+              <td><strong style="color:#1e8449;">HAFİF</strong> — Klasik non-deforming tip. Sadece az kollajen üretilir.</td>
+            </tr>
+            <tr>
+              <td><strong>Dominant Negatif</strong> (Fonksiyon Kazanımı)</td>
+              <td><strong style="color:#c0392b;">Glisin (Glycine) aminoasit değişimi</strong></td>
+              <td><strong style="color:#c0392b;">ÇOK AĞIR — Perinatal letal.</strong> Yapısı bozuk kollajen sağlam olanları da bozar (dominant negatif etki).</td>
+            </tr>
+          </table>
+
+          <h3 style="margin:20px 0 10px;font-size:13px;font-family:'Syne',sans-serif;color:#16a085;">Tablo 5: Kemikleşme Arızaları — Kollajen ve Mineralizasyon</h3>
+          <table>
+            <tr><th>Hastalık</th><th>Sorumlu Gen</th><th>Defektin Temeli</th></tr>
+            <tr>
+              <td><strong>Osteogenezis İmperfekta</strong></td>
+              <td>COL1A1, COL1A2 (%90)</td>
+              <td>Tip 1 Kollajen bozukluğu — kırılgan kemikler</td>
+            </tr>
+            <tr>
+              <td><strong>Akondrogenezis Tip 2</strong></td>
+              <td>COL2A1</td>
+              <td>Tip 2 Kollajen (kıkırdak matriksi) bozukluğu — Otozomal dominant</td>
+            </tr>
+            <tr>
+              <td><strong>Hipofosfatazya</strong></td>
+              <td><strong style="color:#c0392b;">ALPL</strong></td>
+              <td>Defektif mineralizasyon — kalsiyum kemiğe çökülemez. İdrarda kalsiyum artar. <strong>Süt dişleri köküyle beraber erken dökülür.</strong></td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- KRİTİK NOKTALAR -->
+    <div class="card kritik">
+      <div class="card-header"><span class="card-icon">📋</span><h2>KRİTİK NOKTALAR</h2></div>
+      <div class="card-body">
+        <div class="kritik-item"><span class="kritik-num">1</span><span><strong>Akondroplazi = Fonksiyon KAZANIM:</strong> FGFR3 Gly380Arg mutasyonu reseptörü sürekli aktif bırakır → büyümeyi BASKILAR. Fonksiyon kaybı değil, kazanım. %80 de novo.</span></div>
+        <div class="kritik-item"><span class="kritik-num">2</span><span><strong>Glisin = Ölümcül OI:</strong> Cam kemik hastalığında glisin aminoasit değişimi → dominant negatif → tüm sağlam kollajenler bozulur → perinatal letal. Delesyon ise hafif form.</span></div>
+        <div class="kritik-item"><span class="kritik-num">3</span><span><strong>RUNX2 = Klavikula Yok:</strong> Membranöz kemikleşmenin baş aktörü RUNX2 bozulursa Cleidocranial displazi. Omuzlar önde birleşir, süt dişleri dökülemiyor.</span></div>
+        <div class="kritik-item"><span class="kritik-num">4</span><span><strong>ROR2 = Aynı Gen, Farklı Şiddet:</strong> Tek alelde bozuk → izole brakidaktili. İki alelde de bozuk → Robinow Sendromu (organ anomalileriyle).</span></div>
+        <div class="kritik-item"><span class="kritik-num">5</span><span><strong>Radius Yoksa = Fanconi:</strong> Yenidoğanda radial aks anomalisi (radius yokluğu, baş parmak hipoplazisi) → Fanconi Anemisi düşün (DNA tamir kusuru + kemik iliği yetmezliği).</span></div>
+        <div class="kritik-item"><span class="kritik-num">6</span><span><strong>Hipofosfatazya = Süt Dişi:</strong> ALPL mutasyonu → mineralizasyon bozulur → süt dişleri köküyle beraber erken düşer. İdrarda kalsiyum artar.</span></div>
+        <div class="kritik-item"><span class="kritik-num">7</span><span><strong>Polidaktili = SHH/Gli3:</strong> Antero-posterior eksen bozulunca fazla parmak oluşur. ZPA bölgesinin SHH/Gli3 sinyali sorumludur.</span></div>
+      </div>
+    </div>
+
+    <!-- EZBERLENMESİ GEREKENLER -->
+    <div class="card" style="border-color:#1abc9c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1abc9c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#16a085;">EZBERLENMESİ GEREKENLER — G2</h2>
+        <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(26,188,156,0.15);color:#16a085;">Must-Know · Püf Noktaları</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:20px 22px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">💉 Vosoritide:</strong> Akondroplazinin yeni spesifik ilacı. NPR-B reseptörüne bağlanarak FGFR3'ün downstream yolağını aşar ve büyümeyi teşvik eder.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🦴 OI Glisin Tuzağı:</strong> "Cam kemik"te delesyon → hafif, glisin değişimi → ölümcül. Çünkü glisin değişimi dominant negatif yaparak sağlam kollajenleri de bozar.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">👶 Klavikula Yok = RUNX2:</strong> Hasta omuzlarını önde birleştirebiliyor → klavikula yokluğu → Cleidocranial displazi → RUNX2 (membranöz kemikleşme geni) mutasyonu.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🦀 EEC = p63:</strong> Yengeç kıskacı el (ektrodaktili) + ektodermal displazi + yarık dudak/damak → TP63 (p63) geni. Ekto-E-C = baş harfleri EEC.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">🦷 Diş Kökü Düşüyor = ALPL:</strong> Hipofosfatazya'da mineralizasyon bozulur. Süt dişleri normal süresinden önce, üstelik KÖKLERİYLE birlikte düşer — sınavda ayırt ettirici klinik bulgu.</div>
+          <div style="background:rgba(26,188,156,0.07);border-left:3px solid #1abc9c;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;"><strong style="color:#16a085;">📍 ROR2 İki Yüzlü Gen:</strong> HeterozigoT → Brakidaktili (tek başına kısa parmak). HomozigoT → Robinow Sendromu (organ anomalileri + kısa parmak). Aynı gen, doz farkıyla iki farklı hastalık!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KAVRAM HARİTASI -->
+    <div class="card" style="border-color:#e07b39;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e07b39,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span><h2 style="color:#a05020;">KAVRAM HARİTASI — G2</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:20px 22px;font-size:13px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#16a085;letter-spacing:1px;margin-bottom:8px;">İSKELET KÖKENLERİ</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Aksiyel → Somit (SHH/Notch)</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Apendiküler → Lateral mezodermi (FGF/Gli3)</li>
+                <li style="padding:3px 0;">Kraniyofasiyal → Nöral krest</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c0392b;letter-spacing:1px;margin-bottom:8px;">FGFR3 SPEKTRUMU</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Hipokondroplazi → En hafif</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">Akondroplazi → Gly380Arg, kazanım mutasyonu</li>
+                <li style="padding:3px 0;">Tanatoforik displazi → Letal, dar toraks</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#8e44ad;letter-spacing:1px;margin-bottom:8px;">SPESİFİK GEN EŞLEŞMELERİ</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">RUNX2 → Cleidocranial displazi</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">TP63 → EEC sendromu</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">ROR2 → Brakidaktili / Robinow</li>
+                <li style="padding:3px 0;">FA yolağı → Radius yokluğu</li>
+              </ul>
+            </div>
+            <div style="background:var(--surface2);border-radius:12px;padding:14px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c0392b;letter-spacing:1px;margin-bottom:8px;">MATRİKS &amp; MİNERALİZASYON</div>
+              <ul style="list-style:none;padding:0;">
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">COL1A1/2 → OI (Tip 1 kollajen)</li>
+                <li style="padding:3px 0;border-bottom:1px solid var(--border);">COL2A1 → Akondrogenezis Tip 2</li>
+                <li style="padding:3px 0;">ALPL → Hipofosfatazya (diş kökü)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÇIKMIŞ SORULAR -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📝</span><h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR — G2</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div id="g2-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+  </div><!-- /gtab1 -->
 
 </div><!-- /genetikPage -->
 
@@ -13946,6 +14250,7 @@ registerQuiz('f15-quiz', [
 ]);
 
 registerQuiz('g1-quiz', []);
+registerQuiz('g2-quiz', []);
 
 </script>
 
