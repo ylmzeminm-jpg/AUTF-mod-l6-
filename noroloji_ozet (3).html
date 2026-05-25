@@ -8066,6 +8066,12 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       </div>
     </div>
 
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+  <button class="nav-prev" style="opacity:0.3;pointer-events:none;">← Başlangıç</button>
+  <button class="nav-studied" id="ns-genetik_0" onclick="navMarkStudied('genetik_0','genetik',0)">✓ Çalıştım</button>
+  <button class="nav-next" onclick="switchGenetikTab(1); window.scrollTo(0,0);">G2 · İskelet Genetiği →</button>
+</div>
+
   </div><!-- /gtab0 -->
 
   <div id="gtab1" class="tab-content" style="display:none;">
@@ -8369,6 +8375,12 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       </div>
     </div>
 
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+  <button class="nav-prev" onclick="switchGenetikTab(0); window.scrollTo(0,0);">← G1 · SSS Gelişimi</button>
+  <button class="nav-studied" id="ns-genetik_1" onclick="navMarkStudied('genetik_1','genetik',1)">✓ Çalıştım</button>
+  <button class="nav-next" onclick="switchGenetikTab(2); window.scrollTo(0,0);">G3 · Kas Genetiği →</button>
+</div>
+
   </div><!-- /gtab1 -->
 
   <!-- ── G3 KAS GENETİĞİ ───────────────────────────────────────────── -->
@@ -8595,6 +8607,12 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 
     <!-- G3 QUIZ -->
     <div id="g3-quiz"></div>
+
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+  <button class="nav-prev" onclick="switchGenetikTab(1); window.scrollTo(0,0);">← G2 · İskelet Genetiği</button>
+  <button class="nav-studied" id="ns-genetik_2" onclick="navMarkStudied('genetik_2','genetik',2)">✓ Çalıştım</button>
+  <button class="nav-next" onclick="switchGenetikTab(3); window.scrollTo(0,0);">G4 · Bağ Dokusu →</button>
+</div>
 
   </div><!-- /gtab2 -->
 
@@ -8840,6 +8858,12 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 
     <!-- G4 QUIZ -->
     <div id="g4-quiz"></div>
+
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+  <button class="nav-prev" onclick="switchGenetikTab(2); window.scrollTo(0,0);">← G3 · Kas Genetiği</button>
+  <button class="nav-studied" id="ns-genetik_3" onclick="navMarkStudied('genetik_3','genetik',3)">✓ Çalıştım</button>
+  <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+</div>
 
   </div><!-- /gtab3 -->
 
@@ -14878,6 +14902,9 @@ function _getNavInfo() {
   if (window.currentPage === 'farma') {
     var btns = document.querySelectorAll('#farmaTabs .tab');
     return { total: btns.length, current: window.currentFarmaTab || 0, type: 'farma' };
+  } else if (window.currentPage === 'genetik') {
+    var btns = document.querySelectorAll('#genetikTabs .tab');
+    return { total: btns.length, current: window.currentGenetikTab || 0, type: 'genetik' };
   } else {
     var btns = document.querySelectorAll('#norolojiTabs .tab');
     return { total: btns.length, current: window.currentTab || 0, type: 'noro' };
@@ -14887,14 +14914,18 @@ function _getNavInfo() {
 function navPrev() {
   var info = _getNavInfo();
   if (info.current > 0) {
-    info.type === 'farma' ? switchFarmaTab(info.current - 1) : switchTab(info.current - 1);
+    if (info.type === 'farma') switchFarmaTab(info.current - 1);
+    else if (info.type === 'genetik') switchGenetikTab(info.current - 1);
+    else switchTab(info.current - 1);
   }
 }
 
 function navNext() {
   var info = _getNavInfo();
   if (info.current < info.total - 1) {
-    info.type === 'farma' ? switchFarmaTab(info.current + 1) : switchTab(info.current + 1);
+    if (info.type === 'farma') switchFarmaTab(info.current + 1);
+    else if (info.type === 'genetik') switchGenetikTab(info.current + 1);
+    else switchTab(info.current + 1);
   }
 }
 
@@ -14918,6 +14949,15 @@ function navMarkStudied(key, page, n) {
     if (tick2) tick2.classList.toggle('done', !!window._studiedPsiko[n]);
     var btn2 = document.getElementById('ns-psiko_' + n);
     if (btn2) { btn2.textContent = window._studiedPsiko[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btn2.className = 'nav-studied' + (window._studiedPsiko[n] ? ' done' : ''); }
+    return;
+  } else if (page === 'genetik') {
+    if (!window._studiedGenetik) window._studiedGenetik = {};
+    window._studiedGenetik[n] = !window._studiedGenetik[n];
+    try { localStorage.setItem('genetik_studied', JSON.stringify(window._studiedGenetik)); } catch(e){}
+    var tickG = document.getElementById('gtick-' + n);
+    if (tickG) tickG.classList.toggle('done', !!window._studiedGenetik[n]);
+    var btnG = document.getElementById('ns-genetik_' + n);
+    if (btnG) { btnG.textContent = window._studiedGenetik[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btnG.className = 'nav-studied' + (window._studiedGenetik[n] ? ' done' : ''); }
     return;
   } else if (page === 'farma') {
     if (!window._studiedFarma) window._studiedFarma = {};
@@ -14951,8 +14991,10 @@ function _updateNavBar() {
   bar.querySelector('.nav-next').style.opacity = info.current === info.total - 1 ? '0.3' : '1';
   // Çalıştım butonu durumu
   var btn = document.getElementById('navStudiedBtn');
-  var studied = info.type === 'farma' 
+  var studied = info.type === 'farma'
     ? (window._studiedFarma && window._studiedFarma[info.current])
+    : info.type === 'genetik'
+    ? (window._studiedGenetik && window._studiedGenetik[info.current])
     : (window._studied && window._studied[info.current]);
   if (btn) {
     btn.textContent = studied ? '✓ Çalışıldı' : '✓ Çalıştım';
@@ -14989,9 +15031,16 @@ window.switchFarmaTab = function(n) {
   setTimeout(_updateNavBar, 100);
 };
 
-// _studied ve _studiedFarma'yı global expose et
+var _origSwitchGenetikTabNav = window.switchGenetikTab;
+window.switchGenetikTab = function(n) {
+  _origSwitchGenetikTabNav(n);
+  setTimeout(_updateNavBar, 100);
+};
+
+// _studied, _studiedFarma, _studiedGenetik'i global expose et
 window._studied = window._studied || {};
 window._studiedFarma = window._studiedFarma || {};
+window._studiedGenetik = window._studiedGenetik || {};
 </script>
 
 <script>
