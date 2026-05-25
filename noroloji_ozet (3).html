@@ -433,16 +433,16 @@ body.pen-draw { cursor: crosshair; }
 
 /* ── Radyoloji/Ortopedi/Patoloji sekmeleri accordion içerik boyutu ve taşma ── */
 #etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body,
-#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body {
+#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body, #patolojiTab2 .accordion-body {
   font-size: 0.88em;
   padding: 14px 20px;
 }
 #etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"],
-#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"] {
+#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"], #patolojiTab2 .accordion-body[style*="padding:0"] {
   padding: 0;
 }
 #etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table,
-#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table {
+#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table, #patolojiTab2 .accordion-body table {
   font-size: 1em;
   word-break: break-word;
   display: block;
@@ -627,7 +627,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('patoloji')" style="cursor:pointer;">
       <div class="subject-icon">🔬</div>
       <div class="subject-title">Patoloji</div>
-      <div class="subject-meta" id="patoloji-meta">2 ders · SSS Nöropatolojisi</div>
+      <div class="subject-meta" id="patoloji-meta">3 ders · SSS Nöropatolojisi</div>
       <div class="subject-progress">
         <div class="subject-bar" id="patoloji-bar" style="width:0%"></div>
       </div>
@@ -10051,6 +10051,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="tabs" id="patolojiTabs" style="display:flex;gap:6px;min-width:max-content;">
       <button class="tab active" onclick="switchPatolojiTab(0); window.scrollTo(0,0);">P1 · SSS Nöropatolojisi<span class="tab-tick" id="patok-0">✓</span></button>
       <button class="tab" onclick="switchPatolojiTab(1); window.scrollTo(0,0);">P2 · Serebrovasküler Hastalıklar<span class="tab-tick" id="patok-1">✓</span></button>
+      <button class="tab" onclick="switchPatolojiTab(2); window.scrollTo(0,0);">P3 · SSS Tümörleri<span class="tab-tick" id="patok-2">✓</span></button>
     </div>
   </div>
 
@@ -10658,10 +10659,320 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
       <button class="nav-prev" onclick="switchPatolojiTab(0); window.scrollTo(0,0);">← P1 · SSS Nöropatolojisi</button>
       <button class="nav-studied" id="ns-patoloji_1" onclick="navMarkStudied('patoloji_1','patoloji',1)">✓ Çalıştım</button>
-      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+      <button class="nav-next" onclick="switchPatolojiTab(2); window.scrollTo(0,0);">P3 · SSS Tümörleri →</button>
     </div>
 
   </div><!-- /patolojiTab1 -->
+
+  <!-- ── P3 SSS TÜMÖRLERİ (DSÖ 2021) ── -->
+  <div id="patolojiTab2" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>P3 · SSS TÜMÖRLERİ (DSÖ 2021 SINIFLAMASI)</h2></div>
+
+    <!-- CARD 1: Genel Özet -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📋</span>
+        <h2 style="color:#d35400;">GENEL ÖZET</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>Epidemiyoloji:</strong> Çocuklarda lösemi/lenfomadan sonra <strong>2. en sık</strong> kanser; %70 posterior fossa yerleşimli. Erişkinlerde 6. sıklıkta; %70 supratentoriyal.</p>
+          <p style="margin-top:8px;"><strong>Biyolojik Özellikler:</strong> "Histolojik benign" bir tümör kritik bölgede bası yapıp ölüme yol açabilir. Primer SSS tümörleri nadiren SSS dışına metastaz yapar (istisna: anaplastik meningiom); yayılım genellikle <strong>BOS ekilimi</strong> şeklindedir.</p>
+          <p style="margin-top:8px;"><strong>Erişkin Diffüz Gliomlar — Temel Kural:</strong></p>
+          <ul style="margin:4px 0 8px 20px;font-size:13px;line-height:1.8;">
+            <li><strong>Astrositom:</strong> IDH-mutant, ATRX/TP53 mutasyonlu, 1p/19q yok. Derece 2–4.</li>
+            <li><strong>Oligodendrogliom:</strong> IDH-mutant + <strong>1p/19q kodelesyonu (ikisi birden zorunlu)</strong>. Derece 2–3.</li>
+            <li><strong>Glioblastom (GBM):</strong> IDH-wildtype. En agresif. Daima <strong>Derece 4</strong>.</li>
+          </ul>
+          <p style="margin-top:8px;"><strong>Pediatrik Tümörler:</strong> Serebellumda en sık iki: iyi huylu <strong>Pilositik Astrositom (D1)</strong> ve kötü huylu <strong>Medulloblastom (D4)</strong>. Bebeklerde ayrıca <strong>AT/RT (D4)</strong> düşünülmeli — INI1 kaybıyla ayrılır.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Tablo 1 — Erişkin Diffüz Gliomlar -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧬</span>
+        <h2 style="color:#d35400;">TABLO 1 — ERİŞKİN TİP DIFFÜZ GLİOMLARIN AYRIMI (DSÖ 2021)</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Tümör Adı</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">IDH Mutasyonu</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">1p/19q Kodelesyon</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">TP53 / ATRX</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Astrositom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>VAR</strong> (Sürücü)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">YOK</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Sıklıkla <strong>VAR</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Oligodendrogliom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>VAR</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Kesinlikle <strong>VAR</strong> (ikisi birden)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Sıklıkla YOKTUR</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Glioblastom (GBM)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>YOK</strong> (Wild-type)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">YOK</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Sıklıkla YOKTUR</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Tablo 2 — GBM ve Oligodendrogliom Mikroskobik Şifreleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔬</span>
+        <h2 style="color:#d35400;">TABLO 2 — GBM VE OLİGODENDROGLİOM MİKROSKOBİK ŞİFRELERİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Tümör</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Karakteristik Mikroskobik Özellikler</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Moleküler Zorunluluk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Oligodendrogliom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Perinükleer şeffaf halo (<strong>"Sahanda yumurta"</strong>), ince kapiller ağ (<strong>"Kümes teli paterni"</strong>), psammomatöz kalsifikasyonlar</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">1p/19q kodelesyonu (IDH ile birlikte)</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Glioblastom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Psödo-palizatlı nekroz</strong> + <strong>mikrovasküler (endotelyal) proliferasyon</strong>. Makroskobik: kanamalı/nekrotik, <strong>kelebek tarzı</strong> orta hattı geçer</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Histoloji yoksa bile: <strong>TERT mut.</strong>, <strong>EGFR amp.</strong> veya <strong>+7/–10</strong> → direkt Derece 4 GBM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Tablo 3 — Pediatrik SSS Tümörleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">👶</span>
+        <h2 style="color:#d35400;">TABLO 3 — PEDİATRİK SSS TÜMÖRLERİNİN KARŞILAŞTIRMASI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Özellik</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Pilositik Astrositom (PA)</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Medulloblastom</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">AT/RT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Derece / Prognoz</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Derece 1</strong>. Gross rezeksiyonla kür</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Derece 4</strong>. Agresif, BOS yayılımı sık</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Derece 4</strong>. Medulloblastomdan bile kötü; bebeklerde sık</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Genetik / Sendrom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>KIAA1549-BRAF gen füzyonu</strong>; NF1'de sık</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">WNT, SHH, Grup 3, Grup 4 yolakları</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>SMARCB1 (INI1)</strong> veya SMARCA4 (BRG1) kaybı</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Mikroskobik Şifre</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Bifazik patern, <strong>Rosenthal lifleri</strong>, eozinofilik granüler cisimler</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Primitif küçük yuvarlak mavi hücreler, <strong>Homer-Wright rozetleri</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Rabdoid hücreler</strong>, epitelyal/mezenşimal farklılaşma</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Tablo 4 — Ependimom ve Meningiom -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧩</span>
+        <h2 style="color:#d35400;">TABLO 4 — EPENDİMAL TÜMÖRLER VE MENİNGİOM</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Tümör</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Yer ve Karakteristik Morfoloji</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Sınavlık Genetik / Prognoz</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Ependimom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Ventrikül yüzeyleri (özellikle 4. ventrikül) ve spinal kord. <strong>Gerçek rozetler</strong> + <strong>perivasküler psödorozetler</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Posterior fossa Grup A (PFA) çocuklarda çok agresif. Spinal NMYC-amplifiye → kötü seyir</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Meningiom</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">En sık SSS tümörü. Duraya yapışık (<strong>"Dural kuyruk"</strong>). <strong>Girdap (whorl) paterni</strong> + psammom cisimcikleri</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>NF2 mutasyonu</strong> (Kr. 22). Kanıtlanmış neden: <strong>Radyasyon</strong>. Agresif formda SSS dışına metastaz yapabilir</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Tablo 5 — Medulloblastom Moleküler Alt Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📊</span>
+        <h2 style="color:#d35400;">TABLO 5 — MEDULLOBLASTOM MOLEKÜLER ALT TİPLERİ VE PROGNOZ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Moleküler Alt Tip</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Prognoz / Sağkalım</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Sınavlık Ekstra Özellik</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#27ae60;">WNT-aktive</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Çok iyi prognoz</strong> (&gt;%90 sağkalım)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Düşük riskli grup. Bebeklerde görülmez</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#e67e22;">SHH-aktive</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Değişken. <strong>TP53 mutasyonu varsa yüksek riskli</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Bebeklerde (infant) çok sık görülür</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#c0392b;">Grup 3</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>En kötü prognoz</strong> (%50 sağkalım; %50 metastaz)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Erişkinlerde HİÇ GÖRÜLMEZ</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#8e44ad;">Grup 4</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Standart / orta riskli</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Tüm yaş gruplarında görülür</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span>
+        <h2 style="color:#d35400;">ZİHİN HARİTASI — SSS TÜMÖR PATOLOJİSİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.9;">
+          <p><strong style="color:#d35400;">MERKEZ: SSS Tümörleri Patolojisi</strong></p>
+          <div style="margin:10px 0 0 12px;border-left:3px solid #e67e22;padding-left:14px;">
+            <p><strong>🔷 Erişkin Diffüz Gliomlar (IDH Kuralı)</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>IDH-mut + 1p/19q: <strong>Oligodendrogliom</strong> (D2–3) — sahanda yumurta, kümes teli</li>
+              <li>IDH-mut + 1p/19q yok: <strong>Astrositom</strong> (D2–4)</li>
+              <li>IDH-wildtype: <strong>Glioblastom</strong> (D4) — nekroz, TERT, EGFR, kelebek</li>
+            </ul>
+            <p><strong>🔷 Pediatrik Tümörler (Serebellum)</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Pilositik Astrositom: D1 · BRAF füzyonu · Rosenthal lifi</li>
+              <li>Medulloblastom: D4 · Homer-Wright · En iyi WNT · En kötü Grup 3</li>
+              <li>AT/RT: D4 · INI1 kaybı · Rabdoid hücreler · Bebeklerde</li>
+            </ul>
+            <p><strong>🔷 Ependimom ve Meningiom</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Ependimom: 4. ventrikül · Perivasküler psödorozet</li>
+              <li>Meningiom: En sık tümör · Dural kuyruk · NF2 mut. · Girdap paterni</li>
+            </ul>
+            <p><strong>🔷 SSS Metastazları</strong></p>
+            <ul style="margin:4px 0 4px 16px;">
+              <li>Gri–beyaz cevher sınırı, multipl kitleler, çevresinde ödem (karsinomlar, melanom sık)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Must-Know -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#d35400;">EZBERLENMESİ GEREKENLER — Must-Know</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🌸 Pilositik Astrositom Paradoksu:</strong> Tüm gliomlarda nekroz + mikrovasküler proliferasyon → Derece 4 kuralı geçerlidir. Ancak PA bu kuralın <strong>istisnasıdır</strong>: nekroz ve vasküler proliferasyon görülse bile <strong>Derece 1, iyi prognozlu</strong>dur.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">⚡ GBM Moleküler Tanısı:</strong> Histolojik nekroz/proliferasyon yoksa bile <strong>CDKN2A/B delesyonu, TERT mut., EGFR amp. veya +7/–10</strong> saptanırsa → doğrudan <strong>Derece 4 GBM</strong>.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🔵 Oligodendrogliom Üçlüsü:</strong> Sınavda "sahanda yumurta + kümes teli + 1p/19q kodelesyonu" → <strong>Oligodendrogliom</strong>. Çocuklarda beklenmez.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">👶 AT/RT İmmünhistokimyası:</strong> Küçük çocukta agresif serebellar kitle + İHK'da <strong>INI1 (SMARCB1) veya BRG1 protein kaybı</strong> → Medulloblastom değil, çok daha ölümcül <strong>AT/RT</strong>.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">📻 Meningiom İstisnası:</strong> Primer SSS tümörleri SSS dışına metastaz yapmaz kuralının istisnası — anaplastik meningiom (D3) <strong>SSS dışına metastaz yapabilir</strong>. NF2 mutasyonu + radyasyon öyküsü → meningiom.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">📉 Medulloblastom Prognoz Kısaltması:</strong> WNT (%90+) &gt; SHH TP53-wt &gt; Grup 4 &gt; SHH TP53-mut &gt; <strong>Grup 3 (en kötü, %50 sağkalım)</strong>. Grup 3 erişkinde HİÇ görülmez.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchPatolojiTab(1); window.scrollTo(0,0);">← P2 · Serebrovasküler</button>
+      <button class="nav-studied" id="ns-patoloji_2" onclick="navMarkStudied('patoloji_2','patoloji',2)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /patolojiTab2 -->
 
 </div><!-- /patolojiPage -->
 
