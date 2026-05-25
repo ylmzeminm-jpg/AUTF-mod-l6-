@@ -578,6 +578,20 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       </div>
     </div>
 
+    <div class="subject-card" onclick="openSubject('genetik')" style="cursor:pointer;">
+      <div class="subject-icon">🧬</div>
+      <div class="subject-title">Genetik</div>
+      <div class="subject-meta" id="genetik-meta">Yapım aşamasında</div>
+      <div class="subject-progress">
+        <div class="subject-bar" id="genetik-bar" style="width:0%"></div>
+      </div>
+      <div class="subject-tags">
+        <span class="stag">Özet</span>
+        <span class="stag">Çıkmışlar</span>
+        <span class="stag">Quiz</span>
+      </div>
+    </div>
+
     <div class="subject-card" onclick="openMixedQuiz()" style="cursor:pointer;">
       <div class="subject-icon">🎲</div>
       <div class="subject-title">Karışık Quiz</div>
@@ -7758,6 +7772,22 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 </div><!-- /rtab5 -->
 
 </div><!-- /romatolojiPage -->
+
+
+
+<!-- ═══ GENETİK SAYFASI ══════════════════════════ -->
+<div id="genetikPage" style="display:none;">
+  <div style="margin-bottom:24px;">
+    <button onclick="goHome()" style="background:none;border:none;cursor:pointer;font-size:13px;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;padding:0;">← Ana Sayfa</button>
+    <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:6px 0 0;">🧬 Genetik</h2>
+  </div>
+
+  <div class="card" style="text-align:center;padding:48px 24px;">
+    <div style="font-size:56px;margin-bottom:16px;">🧬</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:18px;color:var(--accent);margin-bottom:8px;">İçerik Yakında</h3>
+    <p style="color:var(--text2);font-size:14px;line-height:1.6;">Genetik dersi özet, tablo ve çıkmış soruları<br>hazırlanıyor...</p>
+  </div>
+</div><!-- /genetikPage -->
 
 
 
