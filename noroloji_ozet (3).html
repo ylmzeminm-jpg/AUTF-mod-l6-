@@ -595,7 +595,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('enfeksiyon')" style="cursor:pointer;">
       <div class="subject-icon">🦠</div>
       <div class="subject-title">Enfeksiyon ve Diğer Dersler</div>
-      <div class="subject-meta" id="enfeksiyon-meta">1 ders · Menenjit Yaklaşımı</div>
+      <div class="subject-meta" id="enfeksiyon-meta">2 ders · Menenjit, Nöroradyoloji</div>
       <div class="subject-progress">
         <div class="subject-bar" id="enfeksiyon-bar" style="width:0%"></div>
       </div>
@@ -8901,6 +8901,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
   <div class="tabs-wrap">
     <div class="tabs" id="enfeksiyonTabs" style="display:flex;gap:6px;min-width:max-content;">
       <button class="tab active" onclick="switchEnfeksiyonTab(0); window.scrollTo(0,0);">E1 · Menenjit Yaklaşımı<span class="tab-tick" id="etick-0">✓</span></button>
+      <button class="tab" onclick="switchEnfeksiyonTab(1); window.scrollTo(0,0);">R1 · Nöroradyoloji<span class="tab-tick" id="etick-1">✓</span></button>
     </div>
   </div>
 
@@ -9145,10 +9146,239 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
   <button class="nav-prev" style="opacity:0.3;pointer-events:none;">← Başlangıç</button>
   <button class="nav-studied" id="ns-enfeksiyon_0" onclick="navMarkStudied('enfeksiyon_0','enfeksiyon',0)">✓ Çalıştım</button>
-  <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+  <button class="nav-next" onclick="switchEnfeksiyonTab(1); window.scrollTo(0,0);">R1 · Nöroradyoloji →</button>
 </div>
 
   </div><!-- /etab0 -->
+
+  <!-- ── R1 NÖRORADYOLOJİ ─────────────────────────────────────── -->
+  <div id="etab1" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">🔬</span><h2>R1 · NÖRORADYOLOJİK GÖRÜNTÜLEME VE ALGORİTMA</h2></div>
+    <div style="color:#7f8c8d;font-size:0.85em;margin-bottom:18px;margin-top:4px;">Dr. Elif Peker · Radyoloji Stajı Giriş Dersi</div>
+
+    <!-- KART 1: Tetkik Seçimi -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🖥️ Görüntüleme Yöntemlerinin Seçimi
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <p>Nöroradyolojide esas olarak <strong>BT (Bilgisayarlı Tomografi)</strong> ve <strong>MR (Manyetik Rezonans)</strong> kullanılır.</p>
+        <ul>
+          <li><strong>USG:</strong> Ses dalgaları kemiği geçemediği için beyin parankiminde kullanılmaz. Boyun damarlarında (karotid) kan akım hızı ölçümü için <strong>Doppler USG</strong> kullanılır.</li>
+          <li><strong>BT tercih edilir:</strong> Akut kanama, kemik çatlağı/kırığı, kalsifik lezyon şüphesinde → hızlıdır, acilde hayat kurtarır.</li>
+          <li><strong>MR tercih edilir:</strong> Parankim, spinal kord, kranyal sinirler, tümör/kitle değerlendirmesinde → yumuşak doku çözünürlüğü çok üstündür.</li>
+        </ul>
+        <div style="background:#fdf2f8;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>⚠️ Terminoloji Tuzağı:</strong> "Dens" BT'nin, "İntens" MR'ın dilidir. "BT'de hiperintens" diyorsa direkt yanlış — BT'de <em>hiperdens</em> olur.
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 2: Tablo — BT vs MR -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        📊 Tablo 1 · BT vs MR Temel Karşılaştırması
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:8px;text-align:left;">Özellik</th>
+            <th style="padding:8px;text-align:left;">BT (Tomografi)</th>
+            <th style="padding:8px;text-align:left;">MR (Manyetik Rezonans)</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Çalışma prensibi</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">X ışını (İyonize radyasyon VAR)</td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Hidrojen protonları + Manyetik alan (Radyasyon YOK)</td></tr>
+            <tr><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Çekim süresi</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Çok kısa → Acilde hayat kurtarır</td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Uzun</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>En iyi gösterdikleri</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Kemik yapılar</strong>, kalsifikasyonlar, <strong>akut kanama</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Yumuşak doku</strong> (parankim, kord, kranyal sinir, kemik iliği)</td></tr>
+            <tr><td style="padding:7px;"><strong>Terminoloji</strong></td><td style="padding:7px;"><strong>Hipodens</strong> (koyu) / <strong>Hiperdens</strong> (açık)</td><td style="padding:7px;"><strong>Hipointens</strong> (koyu) / <strong>Hiperintens</strong> (açık)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 3: Anjiyografi -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🩸 Tablo 2 · Anjiyografi ve Kontrast Kuralları
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:8px;text-align:left;">Yöntem</th>
+            <th style="padding:8px;text-align:left;">Kontrast</th>
+            <th style="padding:8px;text-align:left;">Kontrendikasyonlar</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>BT Anjiyografi</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">ZORUNLUDUR (ilaçsız damar görülemez)</td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Böbrek yetmezliği, gebelik, kontrast alerjisi, tirotoksikoz (kontrast iyot içerir)</td></tr>
+            <tr><td style="padding:7px;"><strong>MR Anjiyografi</strong></td><td style="padding:7px;">ZORUNLU DEĞİLDİR (ilaçsız çekilebilir)</td><td style="padding:7px;">Kontrast kontrendikasyonu olan hastalarda (<strong>böbrek hastası, gebe</strong>) damar görüntülemede altın kurtarıcı</td></tr>
+          </tbody>
+        </table>
+        <div style="background:#fdf2f8;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:12px;">
+          <strong>💡 Pratik Kural:</strong> Kontrast verilemiyorsa → <strong>MRA (MR Anjiyografi)</strong> ile ilaçsız vasküler görüntüleme yapılır.
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 4: Özel MR Teknikleri -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🧠 Özel MR Teknikleri
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+          <thead><tr style="background:#c0392b;color:#fff;">
+            <th style="padding:8px;text-align:left;">Teknik</th>
+            <th style="padding:8px;text-align:left;">Ne Gösterir?</th>
+            <th style="padding:8px;text-align:left;">Kullanım Alanı</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Diffüzyon-Tensor MR</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Beyaz cevher traktlarını renkli kodlayarak gösterir</td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Tümörün sinir yollarını itip itmediğini değerlendirme</td></tr>
+            <tr><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Fonksiyonel MR (fMRI)</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Göreve (task) bağlı artan kan akımını haritalandırır</td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Motor korteks ve dominant hemisfer belirleme (epilepsi cerrahisi öncesi)</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;"><strong>Dinamik MR</strong></td><td style="padding:7px;">Kontrast maddenin dağılımını dinamik izler</td><td style="padding:7px;">Hipofiz mikroadenomu tespiti ve takibi</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 5: Fizyolojik vs Patolojik -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        ✅ Tablo 3 · Fizyolojik vs Patolojik Görüntüler
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:8px;text-align:left;">Anatomik Yapı</th>
+            <th style="padding:8px;text-align:left;">Radyolojik Yorum</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Koroid Pleksus &amp; Pineal Bez</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Kalsifikasyonlar → <strong>FİZYOLOJİK (Normal)</strong></td></tr>
+            <tr><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Falks Serebri &amp; Bazal Gangliyon</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Yaşlılarda kalsifikasyon → Fizyolojik</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Dura Mater</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Normalde az çok görünür → Fizyolojik</td></tr>
+            <tr><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Araknoid + Pia Mater</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Normalde görünmez. Görülüyorsa → <strong>KESİNLİKLE PATOLOJİK</strong> (leptomeningeal metastaz veya menenjit)</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;"><strong>Kemik İliği (MR)</strong></td><td style="padding:7px;">Normalde yağdan zengin → Hiperintens (beyaz) parlar. Parlaklık kaybolursa → Metastaz şüphesi (örn. Prostat CA)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 6: Beyin Lobları Sınırları -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🗺️ Tablo 4 · Anatomik Sınırlar ve Beyin Lobları
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:8px;text-align:left;">Sınır (Sulkus/Fissür)</th>
+            <th style="padding:8px;text-align:left;">Hangi Lobları Ayırır?</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Santral Sulkus</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Frontal lob ↔ Parietal lob</td></tr>
+            <tr><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Sylvian Fissür</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Temporal lob ↔ Frontal lob</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:7px;border-bottom:1px solid #f5c6cb;"><strong>Preoksipital Çentik</strong></td><td style="padding:7px;border-bottom:1px solid #f5c6cb;">Temporal lob ↔ Oksipital lob</td></tr>
+            <tr><td style="padding:7px;"><strong>Paryeto-oksipital Sulkus</strong></td><td style="padding:7px;">Parietal lob ↔ Oksipital lob</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 7: Spinal Kord -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🦴 Spinal Kord ve Lezyon Lokalizasyonu
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <ul>
+          <li>Spinal kord <strong>C1 (Atlas) üstünden başlar</strong>, yetişkinlerde <strong>L1-L2 seviyesinde konus medullaris</strong> olarak sonlanır.</li>
+          <li>Konus medullaris'in altında <strong>filum terminale</strong> lifleri uzanır.</li>
+          <li>Kord <strong>L1-L2'nin altına uzanıyorsa → Tethered Kord (Gergin Omurilik)</strong> tanısını düşün.</li>
+          <li>Lomber ponksiyon (BOS alımı) <strong>L3-L4 veya L4-L5</strong> aralığından yapılır — kordu zedelememek için.</li>
+          <li>Kord ve diskler en iyi <strong>MR</strong> ile görüntülenir.</li>
+        </ul>
+        <div style="background:#fdf2f8;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>Lezyon lokalizasyonu:</strong><br>
+          • <strong>İntramedüller:</strong> Kordun içi (örn. MS plağı, ependimom)<br>
+          • <strong>İntradural ekstramedüller:</strong> Duranın içi, kordun dışı (örn. meningiom, schwannom)<br>
+          • <strong>Ekstradural:</strong> Duranın dışı (örn. metastaz, disk hernisi)
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 8: Zihin Haritası -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🗂️ Zihin Haritası · Nöroradyoloji Algoritması
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <div style="font-family:monospace;font-size:0.88em;line-height:1.8;background:#fff9f9;padding:14px;border-radius:6px;">
+          <strong>NÖRORADYOLOJİK YAKLAŞIM</strong><br>
+          ├─ <strong>Tetkik Seçimi</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ BT → Acil kanama · Kemik travması · X-ışını<br>
+          │&nbsp;&nbsp;&nbsp;├─ MR → Kitle · Yumuşak doku · Spinal kord · Mıknatıs<br>
+          │&nbsp;&nbsp;&nbsp;└─ USG → Yalnızca damar kan akımı (Doppler)<br>
+          ├─ <strong>Vasküler Görüntüleme (Anjiyo)</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ BT Anjiyo → Kontrast ŞART · Böbrek hastasına yasak<br>
+          │&nbsp;&nbsp;&nbsp;└─ MR Anjiyo → Kontrast ŞART DEĞİL · Böbrek/gebe hastasında kullan<br>
+          ├─ <strong>İleri MR Teknikleri</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ fMRI → Motor korteks · Task (görev) verme<br>
+          │&nbsp;&nbsp;&nbsp;├─ Diffüzyon-Tensor → Beyaz cevher yolları (renkli lifler)<br>
+          │&nbsp;&nbsp;&nbsp;└─ Dinamik MR → Hipofiz mikroadenomu takibi<br>
+          └─ <strong>Spinal Sistem</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Kord sonu: L1-L2 (Konus medullaris)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ Diskler: En iyi MR'da görülür
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 9: Ezberlenmesi Gerekenler -->
+    <div class="card" style="border-color:#c0392b;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c0392b,#922b21);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        ⭐ Ezberlenmesi Gereken Must-Know Bilgiler
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <ol style="line-height:2;">
+          <li>Kemik değerlendirmede → <strong>BT</strong> tercih edilir.</li>
+          <li>Parankim, spinal kord, kranyal sinirler için → <strong>MR</strong> tercih edilir.</li>
+          <li>Akut kanama tanısında → <strong>BT</strong> kullanılır.</li>
+          <li>Kontrast verilemiyorsa (gebelik, böbrek yetmezliği) damar görüntülemesi → <strong>MR Anjiyografi</strong> ile ilaçsız yapılır.</li>
+          <li>"Dens" = BT'nin dili | "İntens" = MR'ın dili. "BT'de hiperintens" diyorsa → <strong>YANLIŞ ifade</strong>.</li>
+          <li>Araknoid ve Pia mater normalde görüntülenemez → Görülüyorsa <strong>leptomeningeal yayılım (metastaz/menenjit)</strong>.</li>
+          <li>Pineal bez, koroid pleksus, falks serebri kalsifikasyonu → <strong>FİZYOLOJİK</strong>.</li>
+          <li>Kemik iliği MR'da normalde hiperintens → Parlaklık kaybolursa <strong>metastaz</strong>.</li>
+          <li>Spinal kord yetişkinde <strong>L1-L2'de biter</strong>; daha aşağı uzanırsa → <strong>Tethered Kord</strong>.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c8a96e,#a07840);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');var body=this.nextElementSibling;body.style.display=this.classList.contains('open')?'block':'none';if(this.classList.contains('open'))buildQuiz('r1-quiz');" style="color:#8a6120;">
+        📝 ÇIKMIŞ SORULAR — R1 · Nöroradyoloji
+      </button>
+      <div class="accordion-body" style="display:none;padding:0;">
+        <div id="r1-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchEnfeksiyonTab(0); window.scrollTo(0,0);">← E1 · Menenjit Yaklaşımı</button>
+      <button class="nav-studied" id="ns-enfeksiyon_1" onclick="navMarkStudied('enfeksiyon_1','enfeksiyon',1)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /etab1 -->
 
 </div><!-- /enfeksiyonPage -->
 
@@ -15723,6 +15953,8 @@ registerQuiz('g4-quiz', [
     ]
   }
 ]);
+
+registerQuiz('r1-quiz', []);
 
 registerQuiz('e1-quiz', [
   {
