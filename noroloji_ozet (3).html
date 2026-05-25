@@ -433,16 +433,16 @@ body.pen-draw { cursor: crosshair; }
 
 /* ── Radyoloji/Ortopedi/Patoloji sekmeleri accordion içerik boyutu ve taşma ── */
 #etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body,
-#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body, #patolojiTab2 .accordion-body, #patolojiTab3 .accordion-body {
+#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body, #patolojiTab2 .accordion-body, #patolojiTab3 .accordion-body, #patolojiTab4 .accordion-body {
   font-size: 0.88em;
   padding: 14px 20px;
 }
 #etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"],
-#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"], #patolojiTab2 .accordion-body[style*="padding:0"], #patolojiTab3 .accordion-body[style*="padding:0"] {
+#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"], #patolojiTab2 .accordion-body[style*="padding:0"], #patolojiTab3 .accordion-body[style*="padding:0"], #patolojiTab4 .accordion-body[style*="padding:0"] {
   padding: 0;
 }
 #etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table,
-#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table, #patolojiTab2 .accordion-body table, #patolojiTab3 .accordion-body table {
+#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table, #patolojiTab2 .accordion-body table, #patolojiTab3 .accordion-body table, #patolojiTab4 .accordion-body table {
   font-size: 1em;
   word-break: break-word;
   display: block;
@@ -627,7 +627,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('patoloji')" style="cursor:pointer;">
       <div class="subject-icon">🔬</div>
       <div class="subject-title">Patoloji</div>
-      <div class="subject-meta" id="patoloji-meta">4 ders · SSS Nöropatolojisi</div>
+      <div class="subject-meta" id="patoloji-meta">5 ders · SSS Nöropatolojisi</div>
       <div class="subject-progress">
         <div class="subject-bar" id="patoloji-bar" style="width:0%"></div>
       </div>
@@ -10053,6 +10053,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       <button class="tab" onclick="switchPatolojiTab(1); window.scrollTo(0,0);">P2 · Serebrovasküler Hastalıklar<span class="tab-tick" id="patok-1">✓</span></button>
       <button class="tab" onclick="switchPatolojiTab(2); window.scrollTo(0,0);">P3 · SSS Tümörleri<span class="tab-tick" id="patok-2">✓</span></button>
       <button class="tab" onclick="switchPatolojiTab(3); window.scrollTo(0,0);">P4 · Motor Ünite Hastalıkları<span class="tab-tick" id="patok-3">✓</span></button>
+      <button class="tab" onclick="switchPatolojiTab(4); window.scrollTo(0,0);">P5 · Kemik Metabolik Hastalıkları<span class="tab-tick" id="patok-4">✓</span></button>
     </div>
   </div>
 
@@ -11282,10 +11283,333 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
       <button class="nav-prev" onclick="switchPatolojiTab(2); window.scrollTo(0,0);">← P3 · SSS Tümörleri</button>
       <button class="nav-studied" id="ns-patoloji_3" onclick="navMarkStudied('patoloji_3','patoloji',3)">✓ Çalıştım</button>
-      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+      <button class="nav-next" onclick="switchPatolojiTab(4); window.scrollTo(0,0);">P5 · Kemik Metabolik →</button>
     </div>
 
   </div><!-- /patolojiTab3 -->
+
+  <!-- ── P5 KEMİK METABOLİK HASTALIKLARI ── -->
+  <div id="patolojiTab4" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>P5 · KEMİK METABOLİK HASTALIKLARI</h2></div>
+
+    <!-- CARD 1: Genel Özet -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📋</span>
+        <h2 style="color:#d35400;">GENEL ÖZET</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>Kemik Hücreleri:</strong> Osteoblast (mezanşimal, matriks yapar, osteoklastı yönetir) · Osteoklast (hematopoetik, çok çekirdekli dev hücre, kemiği asitle yıkar) · Osteosit (laküna içinde, Ca²⁺/fosfat kontrolü).</p>
+          <p style="margin-top:8px;"><strong>Kemik Tipleri:</strong> <strong>Woven kemik</strong> = rastgele dizilimli, zayıf, hızlı yapılan patolojik kemik. <strong>Lameller kemik</strong> = paralel dizilimli, güçlü, normal/yavaş kemik.</p>
+          <p style="margin-top:8px;"><strong>Homeostazi Yolakları:</strong></p>
+          <ul style="margin:4px 0 8px 20px;">
+            <li><strong>RANKL / RANK:</strong> Osteoblasttan salgılanan RANKL → osteoklast öncüle bağlanır → NF-κB → kemik <strong>yıkımı</strong> başlar.</li>
+            <li><strong>M-CSF / M-CSF-R:</strong> Tirozin kinaz aktivasyonu → osteoklast matürasyonu → <strong>yıkım artar</strong>.</li>
+            <li><strong>OPG (Osteoprotegerin):</strong> WNT–β-katenin ürünü → RANKL'ı bloke eder → osteoklastı durdurur → <strong>yapım korunur</strong>.</li>
+          </ul>
+          <p style="margin-top:4px;"><strong>Hastalık Kategorileri:</strong> Transkripsiyon faktörü defektleri (malformasyonlar) · Reseptör mutasyonları (cücelikler) · Kollajen mutasyonları (kırılganlık) · Mineral dengesizlikleri (hiperparatiriodizm vb.).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Tablo 1 — Kemik Hücrelerinin Görev Dağılımı -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🦴</span>
+        <h2 style="color:#d35400;">TABLO 1 — KEMİK HÜCRELERİNİN GÖREV DAĞILIMI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hücre</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Kökü ve Yerleşimi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Temel Görevi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Osteoblast</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Pluripotent mezanşimal · Kemik yüzeyi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Matriks protein sentezi, mineralizasyon başlatma, <strong>osteoklastları yönetmek</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Osteoklast</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Hematopoetik öncüller · Kemik yüzeyi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Çok çekirdekli dev hücre. Rezorbsiyon çukuruna yerleşip <strong>kemiği asitle eritir</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Osteosit</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Kemiğe gömülü · Laküna içinde</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Kalsiyum/fosfat mikrodengesini</strong> ve mekanik kuvvetleri algılar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Tablo 2 — Transkripsiyon Genleri ve Malformasyonlar -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧬</span>
+        <h2 style="color:#d35400;">TABLO 2 — TRANSKRİPSİYON GENLERİ VE MALFORMASYONLAR (ÇIKMIŞ SORU)</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hastalık</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Sorumlu Gen</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Sınav Şifresi / Klinik Bulgu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Nail-Patella Sendromu</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>LMX1B</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Hipoplastik tırnak + patella, radius başı çıkığı, böbrek hastalığı</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Waardenburg Sendromu</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>PAX3</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">İşitme kaybı + anormal pigmentasyon</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Cleidocranial Displazi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>CBFA1 (RUNX2)</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Klavikula yok/hipoplazik + süpernümerer dişler</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Campomelic Displazi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>SOX9</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Cinsiyet dönüşümü (sex reversal) + iskelet anomalileri</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Synpolydactyly</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>HOXD13</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Ekstra parmak + parmaklar birleşik</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Tablo 3 — Kollajen ve Reseptör Mutasyonları -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔬</span>
+        <h2 style="color:#d35400;">TABLO 3 — KOLLAJEN VE RESEPTÖR MUTASYONLARI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Mutasyon</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hastalık</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Karakteristik Bulgu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">FGFR3 (Reseptör)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Akondroplazi</strong> (ve Thanatophoric Dwarfism)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Cüceliğin <strong>en sık nedeni</strong>. Kısa ekstremite, büyük kafa</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Tip 1 Kollajen (COL1A1/2)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Osteogenezis İmperfekta</strong> (Cam Kemik)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Mavi sklera</strong> + çoklu postnatal kırıklar + işitme kaybı. Tip 2 perinatal letal.</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Tip 2 Kollajen</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Akondrogenezis 2</strong>, Stickler Sendromu</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Kısa gövde, yassı yüz</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Tablo 4 — Osteopetrozis vs Paget -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚖️</span>
+        <h2 style="color:#d35400;">TABLO 4 — OSTEOPETROZİS vs PAGET HASTALIĞI KARŞILAŞTIRMASI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Özellik</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Osteopetrozis (Mermer Kemik)</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Paget Hastalığı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Temel Patoloji</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Osteoklast işlev bozukluğu → kemik yıkılamaz. <em>CA2, CLCN7</em> mutasyonu.</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Düzensiz, abartılı yapım + yıkım. <em>SQSTM1</em> mutasyonu.</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Mikroskobik Şifre</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Yeni kemik her yeri doldurur → <strong>medüller kavite YOK</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Lameller kemikte düzensiz sement çizgileri → <strong>Mozaik (Puzzle) Patern</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Radyolojik Şifre</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Uzun kemik uçlarında bulböz <strong>Erlenmeyer flask deformitesi</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Kalın trabekül + <strong>Chalkstick (tebeşir) kırıkları</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Klinik Komplikasyon</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">İlik baskılanması → <strong>ağır anemi / pansitopeni</strong>, sinir basıları</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Sağırlaşma, kifoz, sekonder OA ve <strong>Osteosarkom riski (%2–9)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Tablo 5 — Metabolik ve Mineral Denge Anomalileri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚗️</span>
+        <h2 style="color:#d35400;">TABLO 5 — METABOLİK VE MİNERAL DENGE ANOMALİLERİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hastalık</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Mekanizma</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Patolojik Görünüm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Osteoporoz</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Postmenopozal (↓östrojen → ↑IL-1/IL-6) veya senil</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">En sık <strong>vertebra cisimciği</strong> etkilenir. Trabeküller incelir, mikrofraktürler.</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Hiperparatiroidizm</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">↑PTH → osteoklast aktivasyonu → kemik delinir</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Osteitis fibroza sistika:</strong> Kemik içi kanamalı kistler = <strong>Brown Tümör</strong> + diseke eden osteitis</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Renal Osteodistrofi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">KBY → ↑fosfat / ↓Ca²⁺ → sekonder hiperparatiroidizm</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Osteoklastik yıkım + osteomalazi + osteoskleroz + büyüme geriliği</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span>
+        <h2 style="color:#d35400;">ZİHİN HARİTASI — KEMİK METABOLİK PATOLOJİSİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.9;">
+          <p><strong style="color:#d35400;">MERKEZ: Kemik Metabolizması ve Hastalıkları</strong></p>
+          <div style="margin:10px 0 0 12px;border-left:3px solid #e67e22;padding-left:14px;">
+            <p><strong>🔷 Yapım / Yıkım Dengesi</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Yıkım: Osteoklast ← RANKL + M-CSF</li>
+              <li>Koruma: OPG → RANKL'ı bloke eder</li>
+            </ul>
+            <p><strong>🔷 Genetik Mutasyonlar</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Transkripsiyon: LMX1B (Nail-Patella) · CBFA1 (Cleidocranial) · HOXD13 (Synpolydactyly)</li>
+              <li>Reseptör: FGFR3 → Akondroplazi (cücelik)</li>
+              <li>Kollajen: COL1A1/2 → Osteogenezis İmperfekta (mavi sklera)</li>
+            </ul>
+            <p><strong>🔷 Kalitatif Yapısal Bozukluklar</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Osteopetrozis: Medülla yok → anemi · Erlenmeyer flask</li>
+              <li>Paget: Mozaik patern · Chalkstick kırığı · yaşlıda osteosarkom</li>
+            </ul>
+            <p><strong>🔷 Endokrin / Mineral Bozukluklar</strong></p>
+            <ul style="margin:4px 0 4px 16px;">
+              <li>Osteoporoz: Vertebra kompresyonu</li>
+              <li>Hiperparatiroidizm: Brown Tümör (kanamalı kist)</li>
+              <li>Renal Osteodistrofi: KBY → sekonder HPT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Must-Know -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#d35400;">EZBERLENMESİ GEREKENLER — Must-Know</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🟤 Brown Tümör Gerçek Tümör Değildir:</strong> Hiperparatiroidizmde hızlı kemik yıkımı → kanama + granülasyon + fibröz kitle. Onkolojik süreç değil, "osteitis fibroza sistika"nın parçasıdır.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🧩 Mozaik Patern = Paget:</strong> Lameller kemikte puzzle parçaları gibi düzensiz sement çizgileri → doğrudan <strong>Paget Hastalığı</strong>.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">👴 Yaşlıda Osteosarkom = Paget Zemininde:</strong> Osteosarkom normalde büyüme çağı tümörüdür. 60 yaş üstünde görülüyorsa zemin büyük ihtimalle <strong>Paget Hastalığıdır</strong> (%2–9 risk).
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🪨 Osteopetrozis Paradoksu:</strong> Kemikler kocaman ve kalın → ama içi yeni kemikle dolmuş → medüller kavite yok → kan hücresi üretilemez → <strong>ağır anemi + pansitopeni</strong>.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">💅 LMX1B = Nail-Patella:</strong> Tırnak patolojisi + patella yokluğu/hipoplazisi + radius başı çıkığı + renal disfonksiyon → <strong>LMX1B mutasyonu</strong>. TUS klasiği.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">👁️ Mavi Sklera = Osteogenezis İmperfekta:</strong> Sık kırık + gözlerin beyaz kısmı mavi → Tip 1 kollajen defekti → <strong>COL1A1/2 mutasyonu</strong>. Tip 2'si perinatal letal.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchPatolojiTab(3); window.scrollTo(0,0);">← P4 · Motor Ünite</button>
+      <button class="nav-studied" id="ns-patoloji_4" onclick="navMarkStudied('patoloji_4','patoloji',4)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /patolojiTab4 -->
 
 </div><!-- /patolojiPage -->
 
