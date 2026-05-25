@@ -431,15 +431,18 @@ body.pen-draw { cursor: crosshair; }
 }
 .nav-studied.done { background: #27ae60; }
 
-/* ── Radyoloji/Ortopedi sekmeleri accordion içerik boyutu ve taşma ── */
-#etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body {
+/* ── Radyoloji/Ortopedi/Patoloji sekmeleri accordion içerik boyutu ve taşma ── */
+#etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body,
+#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body {
   font-size: 0.88em;
   padding: 14px 20px;
 }
-#etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"] {
+#etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"],
+#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"] {
   padding: 0;
 }
-#etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table {
+#etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table,
+#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table {
   font-size: 1em;
   word-break: break-word;
   display: block;
@@ -621,13 +624,16 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       </div>
     </div>
 
-    <div class="subject-card locked" style="--accent:#e67e22;--accent2:#d35400;">
+    <div class="subject-card" onclick="openSubject('patoloji')" style="cursor:pointer;">
       <div class="subject-icon">🔬</div>
       <div class="subject-title">Patoloji</div>
-      <div class="subject-meta">İçerik hazırlanıyor…</div>
-      <div class="subject-progress"></div>
+      <div class="subject-meta" id="patoloji-meta">2 ders · SSS Nöropatolojisi</div>
+      <div class="subject-progress">
+        <div class="subject-bar" id="patoloji-bar" style="width:0%"></div>
+      </div>
       <div class="subject-tags">
-        <span class="stag" style="background:rgba(230,126,34,0.12);color:#c0572a;">Yakında</span>
+        <span class="stag">Özet</span>
+        <span class="stag">Tablolar</span>
       </div>
     </div>
 
@@ -10034,6 +10040,631 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 </div><!-- /enfeksiyonPage -->
 
 
+<!-- ═══ PATOLOJİ SAYFASI ══════════════════════════════════════════ -->
+<div id="patolojiPage" style="display:none;">
+  <div style="margin-bottom:24px;">
+    <button onclick="goHome()" style="background:none;border:none;cursor:pointer;font-size:13px;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;padding:0;">← Ana Sayfa</button>
+    <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:6px 0 0;">🔬 Patoloji</h2>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs" id="patolojiTabs" style="display:flex;gap:6px;min-width:max-content;">
+      <button class="tab active" onclick="switchPatolojiTab(0); window.scrollTo(0,0);">P1 · SSS Nöropatolojisi<span class="tab-tick" id="patok-0">✓</span></button>
+      <button class="tab" onclick="switchPatolojiTab(1); window.scrollTo(0,0);">P2 · Serebrovasküler Hastalıklar<span class="tab-tick" id="patok-1">✓</span></button>
+    </div>
+  </div>
+
+  <!-- ── P1 SSS DEMYELİNİZAN VE NÖRODEJENERATİF HASTALIKLAR ── -->
+  <div id="patolojiTab0" class="tab-content active" style="display:block;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>P1 · SSS DEMYELİNİZAN VE NÖRODEJENERATİF HASTALIKLAR</h2></div>
+
+    <!-- CARD 1: Özet -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📋</span>
+        <h2 style="color:#d35400;">GENEL ÖZET</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>SSS Hücrelerinin Rolü:</strong> Nöronlar fonksiyonel birim; astrositler destek + skar; oligodendrositler miyelin üretimi; mikroglialar fagositoz (SSS'nin makrofajı).</p>
+          <p style="margin-top:8px;"><strong>Demyelinizan Hastalıklar (MS):</strong> Miyelin kılıf hasar görür, <strong>akson başlangıçta korunur</strong>. Otoimmün mekanizma ile beyaz cevherde odaksal plaklar oluşur. Aktif plak → makrofaj infiltrasyonu; gölge plak → kısmi remyelinizasyon.</p>
+          <p style="margin-top:8px;"><strong>Nörodejeneratif Hastalıklar (Proteinopatiler):</strong> Katlanamayan / yıkılamayan proteinler hücre içinde birikir → nöron ölümü. Biriken proteine göre hastalık adı değişir: β-Amiloid + Tau → Alzheimer; α-sinüklein → Parkinson/Lewy; PrP → Prion/CJD; Huntingtin → Huntington; TDP-43 → ALS/FTLD.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Tablo 1 — Hücre Yanıtları -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧫</span>
+        <h2 style="color:#d35400;">TABLO 1 — SSS HÜCRELERİNİN HASARA YANITI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hücre Tipi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Patolojik Yanıt ve Özelliği</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Nöronlar</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Akut hasarda <strong>"Kırmızı Nöron"</strong>; akson kesildiğinde <strong>Santral Kromatolizis (Aksonal reaksiyon)</strong> — gövdede protein sentezi artar.</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Astrositler</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Tamir → proliferasyon = <strong>Gliyozis</strong>. Hiperamonyemide → <strong>Gemisitositik (Alzheimer Tip II) astrosit</strong>. Kronik hasarda <strong>Rosental lifleri</strong> ve <strong>Korpora amylacea</strong>.</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Mikroglialar</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Viral enfeksiyonda → <strong>Mikroglial Nodüller</strong>. Dejenere nöronları yer → <strong>Nöronofaji</strong>.</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Ependimal Hücreler</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Dökülür → reaktif çoğalma → <strong>Ependimal granülasyonlar</strong> (örn. hidrosefalide).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Tablo 2 — Proteinopatiler -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧬</span>
+        <h2 style="color:#d35400;">TABLO 2 — PROTEİNOPATİLER ⭐ SINAV FAVORISI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hastalık</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Biriken Protein</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">İnklüzyon Adı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Alzheimer</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>β-Amiloid (Aβ)</strong> + <strong>Tau</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Nöritik/Senil Plak (Aβ) + Nörofibriler Yumak (Tau)</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Parkinson</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>α-sinüklein</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Lewy Cisimciği</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Prion (CJD)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>PrP</strong> (hatalı katlı)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Spongioform vakuoller</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Huntington</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Huntingtin (Poliglutamin)</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Nükleer + sitoplazmik inklüzyon</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">ALS</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>TDP-43, SOD1, FUS</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Motor nöron inklüzyonları</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Tablo 3 — Demans Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧠</span>
+        <h2 style="color:#d35400;">TABLO 3 — DEMANS TİPLERİ KARŞILAŞTIRMASI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Demans Tipi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Klinik Özellik</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Patoloji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Alzheimer</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">En sık form. Önce <strong>hafıza + oryantasyon + dil</strong> bozulur. İleri evrede hareketsiz.</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Frontal/temporal/parietal <strong>kortikal atrofi</strong>, ventrikül genişlemesi</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Lewy Cisimli</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">İleri evre Parkinson'la birlikte. Dalgalı seyir. <strong>Görsel halüsinasyon atakları</strong> tipiktir.</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">α-sinüklein Lewy cisimleri</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">FTLD</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Önce kişilik + davranış + konuşma</strong> bozulur; hafıza kaybı sonradan eklenir.</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Frontal/temporal fokal atrofi (Tau veya TDP-43)</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">CJD (Prion)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Çok hızlı progresif</strong> — aylar içinde ölüm.</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Spongioform vakuolizasyon; <strong>İNFLAMASYON YOK</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Tablo 4 — MS Plak Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔵</span>
+        <h2 style="color:#d35400;">TABLO 4 — MS PLAK TİPLERİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Plak Evresi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Patolojik Bulgular</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Aksonların Durumu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Aktif Plak</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Miyelin parçalanması, makrofaj + lenfosit infiltrasyonu</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Göreceli olarak korunmuş</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">İnaktif Plak</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">İnflamasyon durmuş, reaktif gliyozis</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Oligodendrositler azalmış</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Gölge Plak</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Beyaz cevherde soluk alan</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Kısmi remyelinizasyon (anormal ince miyelin)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Tablo 5 — Viral Enfeksiyonlar -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🦠</span>
+        <h2 style="color:#d35400;">TABLO 5 — VİRAL SSS ENFEKSİYONLARINDA SPESİFİK BULGULAR</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Ajan / Hastalık</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Tip</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Altın Standart Bulgu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Kuduz (Rabies)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Ensefalit</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Purkinje hücrelerinde <strong>Negri Cisimciği</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">JC Virüs (PML)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Progresif Multifokal Lökoensefalopati</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Oligodendrosit</strong> invazyonu → demyelinizasyon (HIV/immünbaskılanmışlarda)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">HIV Ensefaliti</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Ensefalit</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Multinükleer dev hücreler</strong> + mikroglial nodüller</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span>
+        <h2 style="color:#d35400;">ZİHİN HARİTASI — SSS NÖROPATOLOJİSİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.9;">
+          <p><strong style="color:#d35400;">MERKEZ: SSS Patolojik Değişiklikleri</strong></p>
+          <div style="margin:10px 0 0 12px;border-left:3px solid #e67e22;padding-left:14px;">
+            <p><strong>🔷 Hasar Yanıtları</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li><em>Nöron:</em> Akut → Kırmızı nöron | Subakut → Santral kromatolizis</li>
+              <li><em>Astrosit:</em> Skar → Gliyozis | Hiperamonyemi → Gemisitositik astrosit | Kronik → Korpora amylacea, Rosental lif</li>
+              <li><em>Mikroglia:</em> Viral → Mikroglial nodül | Nöronofaji</li>
+            </ul>
+            <p><strong>🔷 Demyelinizasyon (MS)</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Otoimmün, miyelin yıkılır, akson başlangıçta sağlam</li>
+              <li>Plaklar: Aktif (makrofaj) → İnaktif (gliyozis) → Gölge (remyelinizasyon)</li>
+            </ul>
+            <p><strong>🔷 Proteinopatiler (Nörodejenerasyon)</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>Alzheimer: β-Amiloid plak + Tau yumak</li>
+              <li>Parkinson/Lewy: α-sinüklein</li>
+              <li>Prion (CJD): Hatalı PrP → Spongioform vakuol, inflamasyon YOK</li>
+              <li>FTLD: Tau veya TDP-43 → Önce kişilik değişir</li>
+            </ul>
+            <p><strong>🔷 Enfeksiyon Bulguları</strong></p>
+            <ul style="margin:4px 0 4px 16px;">
+              <li>Abse: BT'de halka tarzı kontrastlanma (ring enhancement)</li>
+              <li>Kuduz: Negri cisimciği (Purkinje hücresi)</li>
+              <li>PML: JC virüs → oligodendrosit hasarı</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Must-Know -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#d35400;">EZBERLENMESİ GEREKENLER — Must-Know</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">⚠️ Alzheimer Tip II Astrosit Tuzağı:</strong> Adında "Alzheimer" geçse de <strong>Alzheimer hastalığıyla ilgisi yoktur</strong>. Uzun süreli <strong>hiperamonyemi</strong> (karaciğer yetmezliği, üremi) tablolarında görülen reaktif astrosit formudur.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🧊 İnflamasyonsuz Enfeksiyon (Prion/CJD):</strong> Spongioform vakuolizasyon ve nöronal kayıp vardır ancak <strong>inflamasyon/iltihap hücresi KESİNLİKLE OLMAZ</strong> — klasik enfeksiyonlardan bu özelliğiyle ayrılır.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🔵 MS'te Aksonal Korunma:</strong> Erken evre aktif plakta miyelin tamamen parçalanmış olsa da <strong>aksonlar göreceli korunmuştur</strong> (İlerleyen süreçte sekonder akson hasarı gelişir).
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🔵 Serebral Abse BT Görüntüsü:</strong> BT'de ortası siyah, etrafı parlayan <strong>"Halka şeklinde (Ring) kontrastlanma"</strong> → çevredeki vaskülarize granülasyon dokusu → serebral abse için tipiktir (bazı tümörlerde de görülür).
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🧠 Alzheimer vs FTLD Başlangıcı:</strong> Alzheimer → <strong>hafıza/oryantasyon kaybı</strong> ile başlar | FTLD → <strong>kişilik ve davranış bozukluğu</strong> ile başlar, hafıza sonradan bozulur.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🦠 PML (Progresif Multifokal Lökoensefalopati):</strong> HIV hastasında ilerleyici nörolojik bozulma → <strong>JC virüsü</strong>. JC virüs doğrudan miyelin üreten <strong>oligodendrositleri</strong> enfekte eder → nükleer inklüzyonlar → öldürücü demyelinizasyon.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" style="opacity:0.3;pointer-events:none;">← Başlangıç</button>
+      <button class="nav-studied" id="ns-patoloji_0" onclick="navMarkStudied('patoloji_0','patoloji',0)">✓ Çalıştım</button>
+      <button class="nav-next" onclick="switchPatolojiTab(1); window.scrollTo(0,0);">P2 · Serebrovasküler →</button>
+    </div>
+
+  </div><!-- /patolojiTab0 -->
+
+  <!-- ── P2 SEREBROVASKÜler HASTALIKLAR (İNME/STROKE) ── -->
+  <div id="patolojiTab1" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>P2 · SEREBROVASKÜler HASTALIKLAR (İNME/STROKE)</h2></div>
+
+    <!-- CARD 1: Genel Özet -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📋</span>
+        <h2 style="color:#d35400;">GENEL ÖZET</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <p><strong>SSS ve Hipoksi:</strong> SSS vücudun toplam oksijeninin <strong>%20'sini</strong> kullanır ve hipoksiye son derece duyarlıdır. Kan akımı kesilince ATP düşer, hücre içine Ca²⁺ girer, glutamat (eksitatör) salınır → nekroz başlar.</p>
+          <p style="margin-top:8px;"><strong>Penumbra:</strong> İskemik nekrotik odak ile normal doku arasındaki geçiş bölgesi. Başlangıçta canlı; ancak sonradan <strong>apopitoz</strong> ile ölüp hasarı büyütebilir — tedavi penceresinin amacı bu bölgeyi kurtarmaktır.</p>
+          <p style="margin-top:8px;"><strong>Global Serebral İskemi:</strong> Kardiyak arrest, şiddetli hipotansiyon veya CO zehirlenmesi → beynin tamamına giden kan/oksijen azalır. Beyin ödemlidir (giruslar genişler, sulkuslar daralır). Tipik lezyon: <strong>Watershed (Sınır Bölgesi) Enfarktüsü</strong> — ACA–MCA sulama alanlarının uç noktasında bilateral kama şeklinde nekroz.</p>
+          <p style="margin-top:8px;"><strong>Fokal Serebral İskemi:</strong> Tromboz veya emboli ile tek bir damar tıkanır. En sık <strong>Orta Serebral Arter (MCA)</strong> etkilenir. Kardiyak mural trombüs, ateromatöz plak, yağ embolisi (büyük kemik kırığı) başlıca nedenlerdir.</p>
+          <p style="margin-top:8px;"><strong>Hipertansif Hastalıklar:</strong> Kronik HT küçük penetran damar duvarını bozar → <strong>Laküner enfarktüs</strong> (kanamasız küçük kavite) veya <strong>Slit/Yarık hemoraji</strong> (mikro kanama). Malign HT'de akut ensefalopati + damar duvarında <strong>fibrinoid nekroz</strong> görülür.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Tablo 1 — Hipoksiye En Duyarlı Bölgeler -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚠️</span>
+        <h2 style="color:#d35400;">TABLO 1 — HİPOKSİYE EN DUYARLI ("İLK ÖLEN") BÖLGELER</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Anatomik Bölge</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hipoksiye En Hassas Hücre / Tabaka</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Serebral Neokorteks</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Lamina 3 ve 5 nöronları</strong></td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Hipokampus</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Sommer bölgesi (CA1)</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Serebellum</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Purkinje hücreleri</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Tablo 2 — İskemik Beyin Hasarının Zaman Evreleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⏱️</span>
+        <h2 style="color:#d35400;">TABLO 2 — İSKEMİK BEYİN HASARININ ZAMAN EVRELERİ (ALTIN SORU)</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Geçen Süre</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Evre</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">En Karakteristik Mikroskobik Bulgu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">İlk 6–12 Saat</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Erken değişiklikler</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Kırmızı Nöronlar</strong> + <strong>Nötrofil lökosit</strong> infiltrasyonu</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">24 Saat – 2 Hafta</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Subakut değişiklikler</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Nekroz belirginleşir; temizlik için <strong>Makrofaj</strong> infiltrasyonu; vasküler proliferasyon</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">2 Haftadan Sonra</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Tamir / İyileşme</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Tam gelişmiş <strong>Gliyozis</strong>; büyük alanlarda <strong>Kavitasyon</strong> (kist dolulu boşluk)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Tablo 3 — Global vs Fokal İskemi -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🌐</span>
+        <h2 style="color:#d35400;">TABLO 3 — GLOBAL İSKEMİ vs FOKAL İSKEMİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Patolojik Görünüm</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">İskemi Tipi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Etyoloji ve Lokalizasyon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Watershed (Sınır Bölgesi) Enfarktüsü</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Global</strong> serebral iskemi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Şok/hipotansiyon sonrası. <strong>ACA–MCA</strong> birleşim uçlarında bilateral kama şeklinde</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Shower (Duş) Embolizasyon</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Fokal</strong> (çoklu) iskemi</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Büyük kemik kırığı → yağ embolisi → beyin sapı/parankimde yaygın çoklu <strong>kanamalı odaklar</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Tablo 4 — Hipertansif Serebrovasküler Hastalıklar -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🩸</span>
+        <h2 style="color:#d35400;">TABLO 4 — HİPERTANSİF SEREBROVASKÜler HASTALIKLARIN AYRIMI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Hastalık Adı</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Mekanizma ve Görünüm</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Mikroskobik Şifresi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Laküner Enfarktüs</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Derin penetran arterlerde sklerozis → &lt;15 mm <strong>kaviter enfarktüs</strong></td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Kanama YOKTUR.</strong> Bazal ganglion ve derin beyaz cevherde</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Slit (Yarık) Hemoraji</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Küçük damar yırtılması → mikro kanama odağı</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Hemosiderin yüklü makrofajlar</strong> → periferik kahverengi renk</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Akut HT Ensefalopati</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Malign HT → akut KİBAS (baş ağrısı, koma)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;">Gri–beyaz cevherde <strong>arteriolar fibrinoid nekroz</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Tablo 5 — İntrakraniyal Kanama Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">💢</span>
+        <h2 style="color:#d35400;">TABLO 5 — İNTRAKRANİYAL KANAMA TİPLERİ VE ETYOLOJİLERİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.8;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:rgba(230,126,34,0.12);">
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">Kanama Tipi</th>
+                <th style="padding:8px 12px;text-align:left;border:1px solid #f0c89a;font-family:'Syne',sans-serif;font-size:12px;">En Sık Altta Yatan Nedenler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">İntraparankimal Kanama</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Hipertansiyon</strong>, Serebral Amiloid Anjiyopati (CAA), CADASIL sendromu</td>
+              </tr>
+              <tr style="background:rgba(230,126,34,0.04);">
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Subaraknoid Kanama (SAK)</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Sakküler (Berry) anevrizma rüptürü</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;font-weight:700;color:#d35400;">Epidural / Subdural Kanama</td>
+                <td style="padding:8px 12px;border:1px solid #f0c89a;"><strong>Travma</strong> (çoğunlukla)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span>
+        <h2 style="color:#d35400;">ZİHİN HARİTASI — SEREBROVASKÜler PATOLOJİ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;font-size:13px;line-height:1.9;">
+          <p><strong style="color:#d35400;">MERKEZ: İnme (Stroke) ve SSS Hasarı</strong></p>
+          <div style="margin:10px 0 0 12px;border-left:3px solid #e67e22;padding-left:14px;">
+            <p><strong>🔷 İskemi Tipleri</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li><em>Global:</em> Kardiyak arrest, CO zehirlenmesi → Watershed (sınır bölgesi) enfarktüsü</li>
+              <li><em>Fokal:</em> Trombüs, emboli → MCA sık. Kemik kırığı → yağ embolisi → Shower embolizasyon</li>
+            </ul>
+            <p><strong>🔷 Hücresel İskemi Süreci (Zaman Tüneli)</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>1–12 Saat: <strong>Kırmızı nöron</strong> + <strong>Nötrofil</strong></li>
+              <li>24 Sa–2 Hf: Nekroz + <strong>Makrofaj</strong></li>
+              <li>&gt;2 Hafta: <strong>Gliyozis</strong> + <strong>Kavitasyon</strong></li>
+            </ul>
+            <p><strong>🔷 Riskli Bölgeler</strong></p>
+            <ul style="margin:4px 0 8px 16px;">
+              <li>CA1 (Hipokampus), Lamina 3–5 (Korteks), Purkinje (Serebellum)</li>
+              <li>Penumbra: iskemik gölge alan → apopitoz riski</li>
+            </ul>
+            <p><strong>🔷 Hipertansiyonun Etkileri</strong></p>
+            <ul style="margin:4px 0 4px 16px;">
+              <li>Kronik HT: Laküner enfarkt (kavite) | Slit hemoraji (hemosiderin)</li>
+              <li>Malign HT: Akut ensefalopati → fibrinoid nekroz</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Must-Know -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <h2 style="color:#d35400;">EZBERLENMESİ GEREKENLER — Must-Know</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:14px 20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">⏱️ Zaman–Hücre Kuralı (Kesin Soru):</strong> Akut iskemide ilk gelen hücre <strong>Nötrofil (ilk 12 saat)</strong>. 2–3 gün sonra artıkları temizleyen <strong>Makrofajlar</strong>. İyileşme nörolojide fibrozisle değil, <strong>Gliyozisle</strong> olur.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🔴 Kırmızı Nöron Şifresi:</strong> "Akut serebral iskeminin en erken nöronal bulgusu nedir?" → <strong>Kırmızı Nöron</strong>. Sitoplazması koyu eozinofilik, hücre küçülmüş, çekirdek pkniotik.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">⚠️ Watershed İstisnası:</strong> Watershed enfarktüsü "fokal" değil <strong>Global Serebral İskemi</strong> bulgusudur. Kan basıncı düşünce sulama alanlarının uç noktaları (ACA–MCA arası tepeler) kurur → bilateral kama şeklinde nekroz.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🦴 Kemik Kırığı → İnme Bağlantısı:</strong> Büyük kemik kırığı (örn. femur) → kemik iliğinden yağ embolisi → beyinde yaygın peteşial kanamalar → <strong>Shower (Duş) Embolizasyon</strong>. Ortopedi sorusuna patoloji cevabı!
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🔵 Lakünar vs Slit Ayrımı:</strong> İkisi de kronik HT'nin küçük damar lezyonu. Lakünar = <strong>kanamasız kavite</strong>. Slit = <strong>mikro kanama</strong> → hemosiderin yüklü makrofajlar (kahverengi periferik halka). Fibrinoid nekroz ise <em>malign</em> HT'ye aittir.
+          </div>
+          <div style="background:rgba(230,126,34,0.07);border-left:3px solid #e67e22;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;">
+            <strong style="color:#d35400;">🫧 SAK Klasik Nedeni:</strong> Ani şiddetli baş ağrısı ("hayatımın en kötü baş ağrısı") + ense sertliği → Subaraknoid kanama → <strong>Sakküler (Berry) anevrizma rüptürü</strong>. Willis poligonu bifürkasyon noktalarında sık.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchPatolojiTab(0); window.scrollTo(0,0);">← P1 · SSS Nöropatolojisi</button>
+      <button class="nav-studied" id="ns-patoloji_1" onclick="navMarkStudied('patoloji_1','patoloji',1)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /patolojiTab1 -->
+
+</div><!-- /patolojiPage -->
+
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- YANLIŞLARIM SAYFASI -->
@@ -10117,6 +10748,17 @@ function switchEnfeksiyonTab(n) {
   var btn = document.querySelectorAll('#enfeksiyonTabs .tab')[n];
   if (btn) btn.classList.add('active');
   window.currentEnfeksiyonTab = n;
+  window.scrollTo(0,0);
+}
+
+function switchPatolojiTab(n) {
+  document.querySelectorAll('#patolojiPage .tab-content').forEach(function(d) { d.style.display='none'; d.classList.remove('active'); });
+  document.querySelectorAll('#patolojiTabs .tab').forEach(function(b) { b.classList.remove('active'); });
+  var tab = document.getElementById('patolojiTab' + n);
+  if (tab) { tab.style.display='block'; tab.classList.add('active'); }
+  var btn = document.querySelectorAll('#patolojiTabs .tab')[n];
+  if (btn) btn.classList.add('active');
+  window.currentPatolojiTab = n;
   window.scrollTo(0,0);
 }
 
@@ -17256,6 +17898,15 @@ function navMarkStudied(key, page, n) {
     if (tickE) tickE.classList.toggle('done', !!window._studiedEnfeksiyon[n]);
     var btnE = document.getElementById('ns-enfeksiyon_' + n);
     if (btnE) { btnE.textContent = window._studiedEnfeksiyon[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btnE.className = 'nav-studied' + (window._studiedEnfeksiyon[n] ? ' done' : ''); }
+    return;
+  } else if (page === 'patoloji') {
+    if (!window._studiedPatoloji) window._studiedPatoloji = {};
+    window._studiedPatoloji[n] = !window._studiedPatoloji[n];
+    try { localStorage.setItem('patoloji_studied', JSON.stringify(window._studiedPatoloji)); } catch(e){}
+    var tickP = document.getElementById('patok-' + n);
+    if (tickP) tickP.classList.toggle('done', !!window._studiedPatoloji[n]);
+    var btnP = document.getElementById('ns-patoloji_' + n);
+    if (btnP) { btnP.textContent = window._studiedPatoloji[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btnP.className = 'nav-studied' + (window._studiedPatoloji[n] ? ' done' : ''); }
     return;
   } else if (page === 'farma') {
     if (!window._studiedFarma) window._studiedFarma = {};
