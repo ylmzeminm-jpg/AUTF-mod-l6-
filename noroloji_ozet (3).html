@@ -595,7 +595,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('enfeksiyon')" style="cursor:pointer;">
       <div class="subject-icon">🦠</div>
       <div class="subject-title">Enfeksiyon ve Diğer Dersler</div>
-      <div class="subject-meta" id="enfeksiyon-meta">0 ders · Yakında eklenecek</div>
+      <div class="subject-meta" id="enfeksiyon-meta">1 ders · Menenjit Yaklaşımı</div>
       <div class="subject-progress">
         <div class="subject-bar" id="enfeksiyon-bar" style="width:0%"></div>
       </div>
@@ -8900,20 +8900,255 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 
   <div class="tabs-wrap">
     <div class="tabs" id="enfeksiyonTabs" style="display:flex;gap:6px;min-width:max-content;">
-      <!-- Dersler buraya eklenecek -->
+      <button class="tab active" onclick="switchEnfeksiyonTab(0); window.scrollTo(0,0);">E1 · Menenjit Yaklaşımı<span class="tab-tick" id="etick-0">✓</span></button>
     </div>
   </div>
 
+  <!-- ── E1 MENENJİT YAKLAŞIMI ─────────────────────────────────────── -->
   <div id="etab0" class="tab-content active" style="display:block;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>E1 · MENENKS İRRİTASYON BULGULARI OLAN HASTAYA YAKLAŞIM</h2></div>
+
+    <!-- CARD 1: Anatomi ve Patogenez -->
     <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
       <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e74c3c,transparent);border-radius:16px 16px 0 0;"></div>
-      <div style="padding:32px;text-align:center;color:#888;">
-        <div style="font-size:48px;margin-bottom:12px;">🦠</div>
-        <p style="font-size:15px;font-weight:600;color:#e74c3c;">Dersler yakında eklenecek</p>
-        <p style="font-size:13px;margin-top:6px;">Bu bölüme enfeksiyon ve diğer ders içerikleri eklenecek.</p>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔬</span>
+        <h2 style="color:#c0392b;">ANATOMİ VE PATOGENEZ</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p>Meninksler dıştan içe: <strong>Dura mater → Araknoid mater → Pia mater</strong>. Enfeksiyonlar genellikle hematojen yolla subaraknoid alana ulaşır ve araknoid + pia materi etkiler → anatomik olarak <strong>piaaraknoidit</strong>.</p>
+          <p style="margin-top:8px;">Subaraknoid alanda nötrofil ve makrofaj yoktur; bakteriler <strong>her 30 dakikada iki katına çıkar</strong>. Oluşan aşırı inflamasyon <strong>kan-beyin bariyerini (KBB)</strong> bozar → beyin ödemi → <strong>KİBAS</strong> → serebral kan akımı durur → koma/ölüm.</p>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- CARD 2: Menenks İrritasyon Bulguları -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e74c3c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🩺</span>
+        <h2 style="color:#c0392b;">MENENKS İRRİTASYON BULGULARI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p>İnflamasyon omurilikten çıkan motor sinir köklerini irrite eder → kas rijiditesi. Meninksi germek ağrıyı artırır; bu direnç 3 testle değerlendirilir:</p>
+          <ul style="margin:10px 0 0 16px;">
+            <li><strong>Ense sertliği:</strong> Supin hastanın çenesi göğsüne değdirilmeye çalışılır → boyun fleksiyonunda sertlik/direnç.</li>
+            <li><strong>Brudzinski belirtisi (Baş):</strong> Ense sertliği muayenesi sırasında hasta başı öne eğilince refleks olarak <strong>diz ve kalçasını büker</strong>.</li>
+            <li><strong>Kernig belirtisi (Ayak):</strong> Kalça + diz fleksiyona alınır, ardından diz ekstansiyona zorlanır → <strong>ağrı veya direnç</strong> = pozitif.</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>Dışlama kuralı:</strong> Ateş + Ense sertliği + Bilinç değişikliği üçlüsünün HİÇBİRİ yoksa → akut bakteriyel menenjit ekarte edilebilir.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Klinik Formlar ve BOS -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e74c3c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧪</span>
+        <h2 style="color:#c0392b;">KLİNİK FORMLAR VE ACİLİYET</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <p>Menenjit seyir süresi ve BOS hücre tipine göre 4 forma ayrılır:</p>
+          <ul style="margin:8px 0 0 16px;">
+            <li><strong>Akut pürülan (Bakteriyel):</strong> Saatler içinde gelişir → en acil form.</li>
+            <li><strong>Akut pürülan olmayan (Viral):</strong> Daha hafif; kendiliğinden düzelir.</li>
+            <li><strong>Kronik pürülan (Mantar/Fungal):</strong> Haftalar içinde gelişir; immünsüprese hastalarda.</li>
+            <li><strong>Kronik pürülan olmayan (TBC):</strong> Haftalar-aylar; glukoz belirgin düşer.</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>1 saat kuralı:</strong> Akut bakteriyel menenjit şüphesinde ilk 1 saat içinde tedavi başlanmalıdır. Her saat gecikme → mortalite ve sekel riski artar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Acil Yönetim Algoritması -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e74c3c,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⚡</span>
+        <h2 style="color:#c0392b;">ACİL YÖNETİM ALGORİTMASI</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div style="padding:16px 20px;font-size:13px;line-height:1.8;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;">
+            <div style="background:rgba(39,174,96,0.07);border-left:3px solid #27ae60;border-radius:8px;padding:12px;">
+              <strong style="color:#27ae60;">BT ENDİKASYONU YOKSA</strong>
+              <ol style="margin:8px 0 0 14px;line-height:1.9;">
+                <li>Kan kültürü al</li>
+                <li>Lomber Ponksiyon (LP) yap</li>
+                <li>BOS sonucuna göre tedavi başla</li>
+              </ol>
+            </div>
+            <div style="background:rgba(231,76,60,0.07);border-left:3px solid #e74c3c;border-radius:8px;padding:12px;">
+              <strong style="color:#c0392b;">BT ENDİKASYONU VARSA</strong>
+              <ol style="margin:8px 0 0 14px;line-height:1.9;">
+                <li>Kan kültürü al</li>
+                <li><strong>Deksametazon + Ampirik Abx BAŞLA</strong> (BT'yi bekleme!)</li>
+                <li>Kranial BT çek</li>
+                <li>Şift yoksa gecikmeli LP yap</li>
+              </ol>
+            </div>
+          </div>
+          <p style="margin-top:12px;"><strong>BT endikasyonları:</strong> Yeni nöbet · Papil ödem / fokal nörolojik bulgu · İmmünsüpresyon · Orta/ileri bilinç bozukluğu · Geçirilmiş SSS hastalığı (kitle, abse)</p>
+          <p style="margin-top:8px;"><strong>Deksametazon neden?</strong> Ampirik antibiyotik bakterileri patlatır → toksin salınımı → inflamasyon artar. Steroid bu inflamasyonu baskılar, KİBAS'ı azaltır, sekel riskini düşürür.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLOLAR -->
+    <div class="card" style="border-color:#e74c3c;">
+      <div style="padding:20px;">
+        <h3 style="color:#c0392b;margin:0 0 16px;">Önemli Tablolar</h3>
+
+        <p><strong>Tablo 1 · Menenks İrritasyon Muayeneleri</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Test</th><th>Nasıl Yapılır?</th><th>Pozitiflik</th></tr></thead>
+            <tbody>
+              <tr><td>Ense sertliği</td><td>Supin hastanın çenesi göğsüne değdirilmeye çalışılır</td><td>Boyun fleksiyonunda direnç/sertlik</td></tr>
+              <tr><td>Brudzinski belirtisi</td><td>Ense sertliği muayenesi (Baş tarafından gerilim)</td><td>Baş öne eğilince refleks diz+kalça fleksiyonu</td></tr>
+              <tr><td>Kernig belirtisi</td><td>Kalça+diz fleksiyon → diz ekstansiyona zorlanır</td><td>Dizin düzleştirilmesinde ağrı veya direnç</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:16px;"><strong>Tablo 2 · Yaşa/Duruma Göre Bakteriyel Menenjit Etkenleri</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Yaş / Durum</th><th>Başlıca Etkenler</th></tr></thead>
+            <tbody>
+              <tr><td>0–4 hafta (Yenidoğan)</td><td><em>S. agalactiae, E. coli, L. monocytogenes</em></td></tr>
+              <tr><td>18–50 yaş</td><td><em>S. pneumoniae, N. meningitidis</em></td></tr>
+              <tr><td>&gt;50 yaş</td><td><em>S. pneumoniae, N. meningitidis</em>, <strong>L. monocytogenes</strong>, Aerobik Gram(-) basil</td></tr>
+              <tr><td>Baziler kemik kırığı</td><td><em>S. pneumoniae, H. influenzae</em>, Grup A beta-hemolitik streptokok</td></tr>
+              <tr><td>BOS şantı / beyin cerrahisi</td><td><em>S. aureus, S. epidermidis</em>, Aerobik Gram(-) basil</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:16px;"><strong>Tablo 3 · BOS Laboratuvar Bulguları</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parametre</th><th>Bakteriyel (Pürülan)</th><th>Viral (İrinsiz)</th><th>TBC (Kronik)</th></tr></thead>
+            <tbody>
+              <tr><td>Görünüm</td><td><strong>Bulanık</strong></td><td>Berrak</td><td>Opalasan (hafif bulanık)</td></tr>
+              <tr><td>Hücre tipi / sayısı</td><td><strong>Nötrofil</strong> (1000–5000)</td><td><strong>Lenfosit</strong> (100–1000)</td><td><strong>Lenfosit</strong> (&lt;1000)</td></tr>
+              <tr><td>Protein</td><td>Çok artar (100–500)</td><td>Hafif artar (10–70)</td><td>Çok artar (100–500)</td></tr>
+              <tr><td>Glukoz</td><td><strong>Azalır</strong> (bakteriler tüketir)</td><td><strong>Normal</strong></td><td><strong>Azalır</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:16px;"><strong>Tablo 4 · LP Öncesi BT Endikasyonları (Herniasyon Riski)</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>BT Gerektiren Durum</th><th>Gerekçe</th></tr></thead>
+            <tbody>
+              <tr><td>Yeni nöbet (konvülsiyon)</td><td>Kitle / basınç artışı işareti olabilir</td></tr>
+              <tr><td>Papil ödem veya fokal nörolojik bulgu</td><td>KİBAS göstergesi; LP ani herniasyona yol açabilir</td></tr>
+              <tr><td>İmmünsüpresyon</td><td>Atipik kitle lezyonu (toksoplazmoz vb.) olabilir</td></tr>
+              <tr><td>Orta/ileri bilinç bozukluğu</td><td>Herniasyon riski yüksek</td></tr>
+              <tr><td>Geçirilmiş SSS hastalığı (kitle, abse)</td><td>Şift riski</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:16px;"><strong>Tablo 5 · Menenjit Ayırıcı Tanısı ve Karışan Durumlar</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Durum / İlaç</th><th>Neden Karışır?</th><th>Ayırt Edici Not</th></tr></thead>
+            <tbody>
+              <tr><td>Subaraknoid kanama (SAK)</td><td>Ani baş ağrısı + ense sertliği yapabilir</td><td>SAK dakikalar içinde; menenjit saatler içinde gelişir. Kesin ayrım: BT</td></tr>
+              <tr><td>Mollaret menenjiti</td><td>Tekrarlayan (3-4 haftada bir) irritasyon bulguları</td><td>LP yapılır, spesifik ajan bulunamaz; TUS'ta sorulur</td></tr>
+              <tr><td>İlaca bağlı menenjit</td><td>TMP-SMZ, NSAİİ, Azatioprin → aşırı duyarlılık</td><td>Şüpheli ilacı kes; bol sıvı</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- KRİTİK NOKTALAR -->
+    <div class="card" style="border-color:#e74c3c;">
+      <div style="padding:20px;">
+        <h3 style="color:#c0392b;margin:0 0 12px;">Kritik Noktalar</h3>
+        <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;">
+          <li><strong>Dışlama kuralı:</strong> Ateş + Ense sertliği + Bilinç değişikliği üçlüsünün HİÇBİRİ yoksa → bakteriyel menenjit ekarte</li>
+          <li><strong>LP öncesi BT tuzağı:</strong> Her menenjitte BT zorunlu DEĞİL; endikasyon yoksa BT 4-6 saat geciktirir</li>
+          <li><strong>BT endikasyonu varsa:</strong> BT'yi beklemeden Deksametazon + Ampirik Abx başla, sonra BT</li>
+          <li><strong>Papil ödem mekanizması:</strong> KİBAS → optik ven basısı → venöz konjesyon → optik diskte kabarma → kesin BT endikasyonu</li>
+          <li><strong>Cheyne-Stokes solunumu:</strong> Giderek derinleşen nefes + apne dönemi → solunum merkezi baskılanması → herniasyon başlamak üzere → Acil beyin cerrahisi!</li>
+          <li><strong>L. monocytogenes:</strong> &gt;50 yaş, immünsüprese, yenidoğan → ampirik tedaviye ampisilin ekle</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EZBERLENMESİ GEREKENLER -->
+    <div class="card" style="border-color:#f39c12;">
+      <div style="padding:20px;">
+        <h3 style="color:#e67e22;margin:0 0 12px;">Ezberlenmesi Gerekenler</h3>
+        <ol style="margin:0;padding-left:20px;font-size:13px;line-height:1.8;">
+          <li>Menenjit = piaaraknoidit; subaraknoid alanda nötrofil yok → bakteriler 30 dk'da ikiyle katlanır</li>
+          <li>BOS bulanık + nötrofil + glukoz ↓ → Bakteriyel | Berrak + lenfosit + glukoz normal → Viral</li>
+          <li>Brudzinski = Baş (diz+kalça büküm), Kernig = Ayak (ekstansiyonda ağrı)</li>
+          <li>BT endikasyonu: Nöbet / Papil ödem+fokal bulgu / İmmünsüpresyon / Bilinç bozukluğu / SSS kitlesi</li>
+          <li>BT endikasyonu varsa → BT bekleme, önce Deks+Abx başla</li>
+          <li>SAK vs Menenjit: SAK dakikalar, Menenjit saatler; kesin ayrım BT</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- KAVRAM HARİTASI -->
+    <div class="card" style="border-color:#e74c3c;">
+      <div style="padding:20px;">
+        <h3 style="color:#c0392b;margin:0 0 14px;">Kavram Haritası</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:#fdf2f2;border-radius:8px;padding:14px;border-top:3px solid #e74c3c;">
+            <strong style="color:#c0392b;">Patogenez</strong>
+            <p style="margin:6px 0 0;font-size:.9em;line-height:1.6;">Hematojen → Subaraknoid<br>Nötrofil yok → Hızlı çoğalma<br>KBB bozulur → KİBAS → Koma</p>
+          </div>
+          <div style="background:#fdf2f2;border-radius:8px;padding:14px;border-top:3px solid #e74c3c;">
+            <strong style="color:#c0392b;">Klinik Bulgular</strong>
+            <p style="margin:6px 0 0;font-size:.9em;line-height:1.6;">Ateş + Ense sertliği + Baş ağrısı<br>Brudzinski / Kernig pozitif<br>Papil ödem, fışkırır kusma</p>
+          </div>
+          <div style="background:#fdf2f2;border-radius:8px;padding:14px;border-top:3px solid #e74c3c;">
+            <strong style="color:#c0392b;">BOS Analizi</strong>
+            <p style="margin:6px 0 0;font-size:.9em;line-height:1.6;">Bakteriyel: Bulanık, nötrofil, glukoz ↓<br>Viral: Berrak, lenfosit, glukoz N<br>TBC: Opalasan, lenfosit, glukoz ↓</p>
+          </div>
+          <div style="background:#fdf2f2;border-radius:8px;padding:14px;border-top:3px solid #e74c3c;">
+            <strong style="color:#c0392b;">Acil Algoritma</strong>
+            <p style="margin:6px 0 0;font-size:.9em;line-height:1.6;">BT endikasyonu yok → Kültür→LP→Abx<br>BT endikasyonu var → Kültür→Deks+Abx→BT→LP<br>1 saat kuralı!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E1 QUIZ -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📝</span><h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR — E1</h2>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body">
+        <div id="e1-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+  <button class="nav-prev" style="opacity:0.3;pointer-events:none;">← Başlangıç</button>
+  <button class="nav-studied" id="ns-enfeksiyon_0" onclick="navMarkStudied('enfeksiyon_0','enfeksiyon',0)">✓ Çalıştım</button>
+  <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+</div>
+
+  </div><!-- /etab0 -->
 
 </div><!-- /enfeksiyonPage -->
 
@@ -15489,6 +15724,8 @@ registerQuiz('g4-quiz', [
   }
 ]);
 
+registerQuiz('e1-quiz', []);
+
 </script>
 
 <script>
@@ -15642,6 +15879,9 @@ function _getNavInfo() {
   } else if (window.currentPage === 'genetik') {
     var btns = document.querySelectorAll('#genetikTabs .tab');
     return { total: btns.length, current: window.currentGenetikTab || 0, type: 'genetik' };
+  } else if (window.currentPage === 'enfeksiyon') {
+    var btns = document.querySelectorAll('#enfeksiyonTabs .tab');
+    return { total: btns.length, current: window.currentEnfeksiyonTab || 0, type: 'enfeksiyon' };
   } else {
     var btns = document.querySelectorAll('#norolojiTabs .tab');
     return { total: btns.length, current: window.currentTab || 0, type: 'noro' };
@@ -15653,6 +15893,7 @@ function navPrev() {
   if (info.current > 0) {
     if (info.type === 'farma') switchFarmaTab(info.current - 1);
     else if (info.type === 'genetik') switchGenetikTab(info.current - 1);
+    else if (info.type === 'enfeksiyon') switchEnfeksiyonTab(info.current - 1);
     else switchTab(info.current - 1);
   }
 }
@@ -15662,6 +15903,7 @@ function navNext() {
   if (info.current < info.total - 1) {
     if (info.type === 'farma') switchFarmaTab(info.current + 1);
     else if (info.type === 'genetik') switchGenetikTab(info.current + 1);
+    else if (info.type === 'enfeksiyon') switchEnfeksiyonTab(info.current + 1);
     else switchTab(info.current + 1);
   }
 }
@@ -15695,6 +15937,15 @@ function navMarkStudied(key, page, n) {
     if (tickG) tickG.classList.toggle('done', !!window._studiedGenetik[n]);
     var btnG = document.getElementById('ns-genetik_' + n);
     if (btnG) { btnG.textContent = window._studiedGenetik[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btnG.className = 'nav-studied' + (window._studiedGenetik[n] ? ' done' : ''); }
+    return;
+  } else if (page === 'enfeksiyon') {
+    if (!window._studiedEnfeksiyon) window._studiedEnfeksiyon = {};
+    window._studiedEnfeksiyon[n] = !window._studiedEnfeksiyon[n];
+    try { localStorage.setItem('enfeksiyon_studied', JSON.stringify(window._studiedEnfeksiyon)); } catch(e){}
+    var tickE = document.getElementById('etick-' + n);
+    if (tickE) tickE.classList.toggle('done', !!window._studiedEnfeksiyon[n]);
+    var btnE = document.getElementById('ns-enfeksiyon_' + n);
+    if (btnE) { btnE.textContent = window._studiedEnfeksiyon[n] ? '✓ Çalışıldı' : '✓ Çalıştım'; btnE.className = 'nav-studied' + (window._studiedEnfeksiyon[n] ? ' done' : ''); }
     return;
   } else if (page === 'farma') {
     if (!window._studiedFarma) window._studiedFarma = {};
@@ -15732,6 +15983,8 @@ function _updateNavBar() {
     ? (window._studiedFarma && window._studiedFarma[info.current])
     : info.type === 'genetik'
     ? (window._studiedGenetik && window._studiedGenetik[info.current])
+    : info.type === 'enfeksiyon'
+    ? (window._studiedEnfeksiyon && window._studiedEnfeksiyon[info.current])
     : (window._studied && window._studied[info.current]);
   if (btn) {
     btn.textContent = studied ? '✓ Çalışıldı' : '✓ Çalıştım';
@@ -15774,10 +16027,17 @@ window.switchGenetikTab = function(n) {
   setTimeout(_updateNavBar, 100);
 };
 
-// _studied, _studiedFarma, _studiedGenetik'i global expose et
+var _origSwitchEnfeksiyonTabNav = window.switchEnfeksiyonTab;
+window.switchEnfeksiyonTab = function(n) {
+  _origSwitchEnfeksiyonTabNav(n);
+  setTimeout(_updateNavBar, 100);
+};
+
+// _studied, _studiedFarma, _studiedGenetik, _studiedEnfeksiyon'ı global expose et
 window._studied = window._studied || {};
 window._studiedFarma = window._studiedFarma || {};
 window._studiedGenetik = window._studiedGenetik || {};
+window._studiedEnfeksiyon = window._studiedEnfeksiyon || {};
 </script>
 
 <script>
