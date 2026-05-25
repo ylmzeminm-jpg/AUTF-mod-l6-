@@ -581,7 +581,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('genetik')" style="cursor:pointer;">
       <div class="subject-icon">🧬</div>
       <div class="subject-title">Genetik</div>
-      <div class="subject-meta" id="genetik-meta">2 ders · SSS Gelişimi, İskelet Genetiği</div>
+      <div class="subject-meta" id="genetik-meta">3 ders · SSS, İskelet, Kas Genetiği</div>
       <div class="subject-progress">
         <div class="subject-bar" id="genetik-bar" style="width:0%"></div>
       </div>
@@ -7786,6 +7786,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="tabs" id="genetikTabs" style="display:flex;gap:6px;min-width:max-content;">
       <button class="tab active" onclick="switchGenetikTab(0); window.scrollTo(0,0);">G1 · SSS Gelişimi &amp; NTD<span class="tab-tick" id="gtick-0">✓</span></button>
       <button class="tab" onclick="switchGenetikTab(1); window.scrollTo(0,0);">G2 · İskelet Genetiği<span class="tab-tick" id="gtick-1">✓</span></button>
+      <button class="tab" onclick="switchGenetikTab(2); window.scrollTo(0,0);">G3 · Kas Genetiği<span class="tab-tick" id="gtick-2">✓</span></button>
     </div>
   </div>
 
@@ -8368,6 +8369,208 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     </div>
 
   </div><!-- /gtab1 -->
+
+  <!-- ── G3 KAS GENETİĞİ ───────────────────────────────────────────── -->
+  <div id="gtab2" class="tab-content" style="display:none;">
+
+    <h2 style="color:#1abc9c;border-bottom:2px solid #1abc9c;padding-bottom:8px;">
+      G3 · Lökomotor Sistem (Kas) Gelişim ve Bozukluklarında Genetik Mekanizmalar
+    </h2>
+
+    <!-- ACCORDION 1: Kas Embriyolojisi -->
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span>Kas Embriyolojisi ve Miyogenez Genetiği</span><span class="acc-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p><strong>Somit → Dermomiyotom → Miyotom</strong> zinciri kas gelişiminin temelidir. PAX3 ve PAX7 transkripsiyon faktörleri miyojenik öncül hücreleri belirler; bu hücreler miyojenik belirleme faktörlerini (MRF) aktive eder.</p>
+        <ul>
+          <li><strong>MyoD ve Myf5</strong> → miyoblast kaderini belirler (commitment)</li>
+          <li><strong>Myogenin</strong> → terminal diferansiyasyon; miyoblastlar füzyona girer</li>
+          <li><strong>MRF4</strong> → olgun kas liflerinin sürdürülmesi</li>
+          <li>PAX3/PAX7 mutasyonları: <em>Waardenburg sendromu</em> (PAX3) veya satellit hücre yokluğuna bağlı miyopati (PAX7)</li>
+        </ul>
+        <p><strong>Satellit hücreler</strong> yetişkin kasındaki miyojenik kök hücrelerdir; hasardan sonra PAX7 reaktivasyonuyla rejenerasyonu sağlar.</p>
+        <p><strong>Konjenital müsküler distrofiler (CMD)</strong> fetal dönemde başlar; çoğu α-distroglikana glikozilasyon enzim kusurlarından kaynaklanır (Fukutin/FKTN, POMGNT1, POMT1).</p>
+      </div>
+    </div>
+
+    <!-- ACCORDION 2: SMA -->
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span>SMA — Spinal Müsküler Atrofi Genetiği</span><span class="acc-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p><strong>SMN1 geni</strong> (5q13.2) tam fonksiyonlu SMN proteini üretir; SMN1'in homozigot delesyonu/mutasyonu SMA'ya yol açar. Tüm SMA olgularının ~%95'i <em>SMN1 ekzon 7–8 homozigot delesyonu</em>.</p>
+        <p><strong>SMN2 geni</strong> SMN1'in neredeyse kopyasıdır; tek farkı ekzon 7'deki c.840 C>T değişimidir. Bu sinonim mutasyon ESE bağlanma bölgesini bozar → ekzon 7 atlanır → kısa, hızlı yıkılan SMNΔ7 proteini (%90). Yalnızca %10 tam uzunlukta SMN2 proteini üretilir.</p>
+        <ul>
+          <li><strong>SMN2 kopya sayısı</strong> hastalık şiddetini belirler: 2 kopya → Tip I, 3 kopya → Tip II, 4+ kopya → Tip III/IV</li>
+          <li>Taşıyıcıların %2'si "2+0 cis" düzenindedir (her iki kopya tek kromozomda); standart MLPA bu kişileri taşıyıcı olarak saptayamaz — tuzak!</li>
+        </ul>
+        <p><strong>Klinik spektrum:</strong> Tip I (Werdnig–Hoffmann) < 6 ay, oturma yok, en ağır; Tip IV > 30 yaş, hafif proksimal zayıflık.</p>
+      </div>
+    </div>
+
+    <!-- ACCORDION 3: Distrofinopatiler -->
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span>Distrofinopatiler — DMD ve BMD</span><span class="acc-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p><strong>Distrofin geni</strong> (Xp21.2) insan genomundaki en büyük gendir (2,4 Mb, 79 ekzon). X'e bağlı resesif kalıtım; erkeklerde belirti verir.</p>
+        <p><strong>Okuma çerçevesi kuralı (Monaco kuralı):</strong></p>
+        <ul>
+          <li><em>Çerçeve dışı (out-of-frame) delesyon</em>: prematür stop kodon → fonksiyonlu distrofin yok → <strong>DMD</strong> (ağır, ~10 yaş tekerlekli sandalye, kardiyomiyopati)</li>
+          <li><em>Çerçeve içi (in-frame) delesyon</em>: kısaltılmış ama kısmen fonksiyonlu distrofin → <strong>BMD</strong> (hafif, >16 yaş yürüyüş kaybı)</li>
+          <li>DMD olgularının ~%65'i büyük delesyon, ~%7 duplikasyon, ~%26 nokta mutasyon/küçük mutasyon</li>
+          <li><em>Gowers belirtisi</em>: proksimal kas zayıflığının klasik bulgusu; çocuk yerden kalkarken bacaklarını "tırmanarak" kullanır</li>
+        </ul>
+        <p><strong>Taşıyıcı anneler</strong>: ~%10 semptomatik taşıyıcı (X-inaktivasyon mozaikliği). Yeni mutasyon oranı yüksek (~%30).</p>
+      </div>
+    </div>
+
+    <!-- ACCORDION 4: Taşıyıcılık Tuzağı ve Genetik Danışmanlık -->
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span>Taşıyıcılık Tuzağı ve Genetik Danışmanlık Noktaları</span><span class="acc-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <ul>
+          <li><strong>SMA — 2+0 cis tuzağı</strong>: Her iki SMN1 kopyası aynı kromozomda → standart MLPA 2 kopya görür, taşıyıcı değil sayar. Ancak diğer kromozomda 0 kopya vardır. Aile öyküsü varsa veya etnik riskli popülasyonda MLPA sonucu daha dikkatli yorumlanmalı; SNP analizi ile faz belirlenir.</li>
+          <li><strong>DMD — de novo mutasyon</strong>: Tüm DMD olgularının ~%30'u de novo; anne taşıyıcı olmayabilir. Germline mozaiklik nedeniyle anne negatif dahi olsa tekrarlama riski sıfır değil (~%5–7).</li>
+          <li><strong>Evlilik öncesi tarama</strong>: SMA taşıyıcılığı için popülasyon taraması önerilmektedir (taşıyıcı sıklığı 1/40–1/60).</li>
+          <li><strong>CMD glikozilasyon hastalıkları</strong>: Her iki ebeveynin de taşıyıcı olması gerekir (OZR); ağırlıklı olarak Fukuyama (FKTN), Walker–Warburg (POMT1/POMT2), MEB (POMGNT1) sendromları.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TABLOLAR -->
+    <h3 style="color:#16a085;margin-top:28px;">Önemli Tablolar</h3>
+
+    <!-- Tablo 1 -->
+    <p><strong>Tablo 1 · Okuma Çerçevesi Kuralı (DMD vs BMD)</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Özellik</th><th>DMD</th><th>BMD</th></tr></thead>
+        <tbody>
+          <tr><td>Mutasyon tipi</td><td>Out-of-frame delesyon/duplikasyon</td><td>In-frame delesyon/duplikasyon</td></tr>
+          <tr><td>Distrofin</td><td>Yok / eser miktarda</td><td>Kısalmış, kısmen fonksiyonlu</td></tr>
+          <tr><td>Yürüyüş kaybı</td><td>~10 yaş</td><td>> 16 yaş (çoğu &gt;30 yaş)</td></tr>
+          <tr><td>Kalp tutulumu</td><td>Erken ve ağır dilate KMP</td><td>Geç, daha hafif</td></tr>
+          <tr><td>Zeka</td><td>~%30 öğrenme güçlüğü</td><td>Normal</td></tr>
+          <tr><td>CK</td><td>Çok yüksek (10 000–100 000 U/L)</td><td>Yüksek ama DMD'den az</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tablo 2 -->
+    <p><strong>Tablo 2 · SMN1 vs SMN2 Splicing Farkı</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Özellik</th><th>SMN1</th><th>SMN2</th></tr></thead>
+        <tbody>
+          <tr><td>Ekzon 7 kodon 280</td><td>C (ESE aktif → ekzon dahil edilir)</td><td>T (ESE bozuk → ekzon atlanır)</td></tr>
+          <tr><td>Üretilen protein</td><td>%100 tam uzunlukta SMN</td><td>%10 tam + %90 SMNΔ7 (hızlı yıkılır)</td></tr>
+          <tr><td>SMA'da işlev</td><td>Mutant/yok</td><td>Hastalık şiddetini yumuşatır</td></tr>
+          <tr><td>Tedavi hedefi?</td><td>Gen tedavisi ile yerine koyma</td><td>Splicing modifikasyonu ile ekzon 7 dahil etme</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tablo 3 -->
+    <p><strong>Tablo 3 · Genetik Tedaviler (SMA ve DMD)</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>İlaç</th><th>Hastalık</th><th>Mekanizma</th><th>Sınıf</th></tr></thead>
+        <tbody>
+          <tr><td>Nusinersen (Spinraza)</td><td>SMA</td><td>Antisens oligonükleotid; SMN2 ekzon 7 dallanma noktasını bloke eder → ekzon dahil edilir</td><td>ASO</td></tr>
+          <tr><td>Onasemnogen abeparvovec (Zolgensma)</td><td>SMA Tip I (&lt; 2 yaş)</td><td>AAV9 ile SMN1 gen transferi (tek doz)</td><td>Gen tedavisi</td></tr>
+          <tr><td>Risdiplam (Evrysdi)</td><td>SMA</td><td>Küçük molekül splicing modifikatörü; SMN2 ekzon 7 eklenmesini artırır; oral</td><td>Küçük molekül</td></tr>
+          <tr><td>Eteplirsen (Exondys 51)</td><td>DMD ekzon 51 atlanabilir</td><td>Antisens PMO; ekzon 51 atlamasıyla okuma çerçevesini restore eder</td><td>Ekzon atlama ASO</td></tr>
+          <tr><td>Ataluren (Translarna)</td><td>DMD nonsense (&lt;18 yaş, yürüme korunmuş)</td><td>Erken stop kodonu okuma geçişi (read-through)</td><td>Küçük molekül</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tablo 4 -->
+    <p><strong>Tablo 4 · SMA Taşıyıcılığında MLPA Tuzağı (2+0 Cis Düzenlenme)</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Durum</th><th>MLPA sonucu</th><th>Gerçek durum</th><th>Risk</th></tr></thead>
+        <tbody>
+          <tr><td>Normal birey</td><td>2 kopya</td><td>1+1 (trans)</td><td>Yok</td></tr>
+          <tr><td>2+0 cis taşıyıcı</td><td>2 kopya</td><td>2+0 (cis) → diğer kr. 0 kopya</td><td>Taşıyıcı! Karşı taşıyıcıyla birleşirse %25 risk</td></tr>
+          <tr><td>Standart taşıyıcı</td><td>1 kopya</td><td>1+0 (trans)</td><td>%50 iletim</td></tr>
+          <tr><td>Etkilenmiş birey</td><td>0 kopya</td><td>0+0</td><td>SMA</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tablo 5 -->
+    <p><strong>Tablo 5 · CMD Glikozilasyon Hastalıkları</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hastalık</th><th>Gen</th><th>Ek bulgu</th></tr></thead>
+        <tbody>
+          <tr><td>Fukuyama CMD</td><td>FKTN (fukutin)</td><td>Beyin malformasyonu, ZY, epilepsi; Japonya'da sık</td></tr>
+          <tr><td>Walker–Warburg sendromu</td><td>POMT1/POMT2</td><td>Lissensefali tip II, hidrosefali; en ağır fenotip</td></tr>
+          <tr><td>Kas–göz–beyin (MEB)</td><td>POMGNT1</td><td>Retinal distrofi, glokom, beyin malformasyonu; Fin toplumunda sık</td></tr>
+          <tr><td>LGMD2I / LGMD-R9</td><td>FKRP (fukutin-related protein)</td><td>Hafif fenotip, kardiyomiyopati, Kuzey Avrupa'da sık</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KRİTİK NOKTALAR -->
+    <div style="background:linear-gradient(135deg,#e8f8f5,#d5f0eb);border-left:4px solid #1abc9c;border-radius:8px;padding:16px 20px;margin:24px 0;">
+      <h3 style="color:#16a085;margin:0 0 10px;">Kritik Noktalar</h3>
+      <ul style="margin:0;padding-left:18px;">
+        <li><strong>Gowers belirtisi</strong> proksimal kas güçsüzlüğünü düşündürür; DMD'de 3–5 yaşta ortaya çıkar</li>
+        <li><strong>Monaco (okuma çerçevesi) kuralı</strong>: out-of-frame → DMD, in-frame → BMD</li>
+        <li><strong>Mikro-distrofin</strong> gen tedavisi stratejisi: kısa ama fonksiyonlu distrofin kodlayan AAV vektörü DMD için klinik denemelerde</li>
+        <li><strong>SMN2 c.840 C>T</strong> değişimi sinonim (Pro→Pro) olmasına karşın ekzon 7 ESE'sini bozar → patolojik splising; sinonim ≠ sessiz!</li>
+        <li><strong>2+0 cis tuzağı</strong>: SMA taşıyıcılığında MLPA 2 kopya gösterirse aile öyküsü varsa SNP analizi ile faz belirlenmeli</li>
+        <li>Evlilik öncesi SMA taşıyıcı taraması genel popülasyonda önerilmektedir (1/40–1/60 sıklık)</li>
+      </ul>
+    </div>
+
+    <!-- EZBERLENMESİ GEREKENLER -->
+    <div style="background:#fef9e7;border:2px dashed #f39c12;border-radius:8px;padding:16px 20px;margin:20px 0;">
+      <h3 style="color:#e67e22;margin:0 0 10px;">Ezberlenmesi Gerekenler</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li>SMA → <strong>SMN1 ekzon 7–8 homozigot delesyonu</strong>; SMN2 kopya sayısı şiddeti belirler</li>
+        <li>DMD → <strong>Xp21.2</strong>, en büyük gen (2,4 Mb), out-of-frame → ağır</li>
+        <li>BMD → <strong>in-frame</strong> delesyon, daha hafif ve geç başlangıçlı</li>
+        <li>Nusinersen = ASO; Zolgensma = AAV9 gen transferi; Risdiplam = oral splicing modifikatör</li>
+        <li>Eteplirsen ekzon 51 atlaması → DMD okuma çerçevesi restore; Ataluren nonsense read-through</li>
+        <li>CMD → α-distroglikana glikozilasyon bozukluğu (FKTN, POMT1, POMGNT1)</li>
+      </ol>
+    </div>
+
+    <!-- KAVRAM HARİTASI -->
+    <h3 style="color:#16a085;">Kavram Haritası</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+      <div style="background:#e8f8f5;border-radius:8px;padding:14px;border-top:3px solid #1abc9c;">
+        <strong style="color:#16a085;">Kas Embriyolojisi</strong>
+        <p style="margin:6px 0 0;font-size:.9em;">Somit → Dermomiyotom → Miyotom<br>PAX3/PAX7 → MyoD/Myf5 → Myogenin → Olgun Lif<br>Satellit hücre: rejenerasyon kapasitesi</p>
+      </div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:14px;border-top:3px solid #1abc9c;">
+        <strong style="color:#16a085;">SMA Genetiği</strong>
+        <p style="margin:6px 0 0;font-size:.9em;">SMN1 delesyonu → motor nöron kaybı<br>SMN2 c.840 C>T → ekzon 7 atlama<br>SMN2 kopya sayısı ∝ hafiflik</p>
+      </div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:14px;border-top:3px solid #1abc9c;">
+        <strong style="color:#16a085;">Distrofinopatiler</strong>
+        <p style="margin:6px 0 0;font-size:.9em;">Xp21.2, 2,4 Mb, 79 ekzon<br>Out-of-frame → DMD | In-frame → BMD<br>CK ↑↑↑, Gowers belirtisi</p>
+      </div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:14px;border-top:3px solid #1abc9c;">
+        <strong style="color:#16a085;">Tedavi Stratejileri</strong>
+        <p style="margin:6px 0 0;font-size:.9em;">ASO: Nusinersen, Eteplirsen<br>Gen transferi: Zolgensma (AAV9)<br>Küçük molekül: Risdiplam, Ataluren</p>
+      </div>
+    </div>
+
+    <!-- G3 QUIZ -->
+    <div id="g3-quiz"></div>
+
+  </div><!-- /gtab2 -->
 
 </div><!-- /genetikPage -->
 
@@ -14251,6 +14454,7 @@ registerQuiz('f15-quiz', [
 
 registerQuiz('g1-quiz', []);
 registerQuiz('g2-quiz', []);
+registerQuiz('g3-quiz', []);
 
 </script>
 
