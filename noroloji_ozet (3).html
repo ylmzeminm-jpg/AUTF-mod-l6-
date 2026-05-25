@@ -10616,6 +10616,22 @@ document.addEventListener('DOMContentLoaded', () => {
   Object.keys(QUIZZES).forEach(id => buildQuiz(id));
 });
 
+// Enfeksiyon sekmeleri: tüm accordion'lar varsayılan açık
+document.addEventListener('DOMContentLoaded', function() {
+  ['etab0','etab1','etab2','etab3','etab4'].forEach(function(tabId) {
+    var tab = document.getElementById(tabId);
+    if (!tab) return;
+    tab.querySelectorAll('.accordion-btn').forEach(function(btn) {
+      btn.classList.add('open');
+      var body = btn.nextElementSibling;
+      if (body && body.classList.contains('accordion-body')) {
+        body.style.display = '';
+        body.classList.add('open');
+      }
+    });
+  });
+});
+
 
 // S4 Quiz
 registerQuiz('s4-quiz', [
