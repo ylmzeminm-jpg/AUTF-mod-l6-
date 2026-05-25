@@ -431,6 +431,20 @@ body.pen-draw { cursor: crosshair; }
 }
 .nav-studied.done { background: #27ae60; }
 
+/* ── Radyoloji sekmeleri (R1/R2) accordion içerik boyutu ve taşma ── */
+#etab1 .accordion-body, #etab2 .accordion-body {
+  font-size: 0.88em;
+}
+#etab1 .accordion-body table, #etab2 .accordion-body table {
+  font-size: 1em;
+  word-break: break-word;
+}
+#etab1 .accordion-body > table, #etab2 .accordion-body > table,
+#etab1 .accordion-body > div > table, #etab2 .accordion-body > div > table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
 
 /* ── Gece Modu ── */
 body.dark {
