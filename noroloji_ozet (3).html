@@ -432,14 +432,14 @@ body.pen-draw { cursor: crosshair; }
 .nav-studied.done { background: #27ae60; }
 
 /* ── Radyoloji/Ortopedi sekmeleri accordion içerik boyutu ve taşma ── */
-#etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body {
+#etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body {
   font-size: 0.88em;
   padding: 14px 20px;
 }
-#etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"] {
+#etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"] {
   padding: 0;
 }
-#etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table {
+#etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table {
   font-size: 1em;
   word-break: break-word;
   display: block;
@@ -610,7 +610,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('enfeksiyon')" style="cursor:pointer;">
       <div class="subject-icon">🦠</div>
       <div class="subject-title">Enfeksiyon ve Diğer Dersler</div>
-      <div class="subject-meta" id="enfeksiyon-meta">4 ders · Menenjit, Radyoloji, Ortopedi</div>
+      <div class="subject-meta" id="enfeksiyon-meta">5 ders · Menenjit, Radyoloji, Ortopedi, Cerrahi</div>
       <div class="subject-progress">
         <div class="subject-bar" id="enfeksiyon-bar" style="width:0%"></div>
       </div>
@@ -8919,6 +8919,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       <button class="tab" onclick="switchEnfeksiyonTab(1); window.scrollTo(0,0);">R1 · Nöroradyoloji<span class="tab-tick" id="etick-1">✓</span></button>
       <button class="tab" onclick="switchEnfeksiyonTab(2); window.scrollTo(0,0);">R2 · İskelet Radyolojisi<span class="tab-tick" id="etick-2">✓</span></button>
       <button class="tab" onclick="switchEnfeksiyonTab(3); window.scrollTo(0,0);">O1 · Ortopedik Yaklaşım<span class="tab-tick" id="etick-3">✓</span></button>
+      <button class="tab" onclick="switchEnfeksiyonTab(4); window.scrollTo(0,0);">C1 · Asepsi-Antisepsi<span class="tab-tick" id="etick-4">✓</span></button>
     </div>
   </div>
 
@@ -9810,10 +9811,215 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
       <button class="nav-prev" onclick="switchEnfeksiyonTab(2); window.scrollTo(0,0);">← R2 · İskelet Radyolojisi</button>
       <button class="nav-studied" id="ns-enfeksiyon_3" onclick="navMarkStudied('enfeksiyon_3','enfeksiyon',3)">✓ Çalıştım</button>
-      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+      <button class="nav-next" onclick="switchEnfeksiyonTab(4); window.scrollTo(0,0);">C1 · Asepsi-Antisepsi →</button>
     </div>
 
   </div><!-- /etab3 -->
+
+  <!-- ── C1 ASEPSİ-ANTİSEPSİ ──────────────────────────────────────── -->
+  <div id="etab4" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">🧫</span><h2>C1 · ASEPSİ-ANTİSEPSİ VE STERİLİZASYON</h2></div>
+    <div style="color:#7f8c8d;font-size:0.85em;margin-bottom:18px;margin-top:4px;">Dr. Can Koca · Genel Cerrahi Stajı Giriş Dersi</div>
+
+    <!-- KART 1: Temel Kavramlar -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🔬 Tarihsel Süreç ve Temel Kavramlar
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <p>Pasteur (mikropları tanımladı) + Lister (antisepsiyi buldu) → Tıpta yeni çağ. Tüm invaziv işlemler steril aletlerle ve asepsi-antisepsi kurallarına uyularak yapılmalıdır.</p>
+        <p><strong>Ameliyathane hazırlık sırası:</strong></p>
+        <ol style="line-height:1.9;">
+          <li>Ameliyat odası ve masası dezenfekte edilir</li>
+          <li>Hastanın bölgesi sabunlu suyla fırçalanır (mekanik temizlik)</li>
+          <li>Cerrah 3-10 dk cerrahi el yıkama yapar</li>
+          <li>Cerrah steril gömlek + eldiven giyer</li>
+          <li>Hastanın cildi antiseptikle (povidon iyodin) boyanır</li>
+          <li>Hasta steril çarşaflarla örtülür → işlem başlar</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- KART 2: 4 Temel Kavram Tablosu -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        📊 Tablo 1 · 4 Temel Kavram Karşılaştırması
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Kavram</th>
+            <th style="padding:7px;text-align:left;">Hedef</th>
+            <th style="padding:7px;text-align:left;">Sporları Öldürür mü?</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Sterilizasyon</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Cansız</strong> (ameliyat aletleri)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;color:#27ae60;"><strong>EVET</strong> — tüm mikroorganizmalar yok edilir</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Dezenfeksiyon</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Cansız</strong> (masa, endoskop)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;color:#e74c3c;"><strong>HAYIR</strong> — sporlar kalır</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Antisepsi</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Canlı</strong> (deri, yara)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;color:#e74c3c;"><strong>HAYIR</strong> — sporlar kalır</td></tr>
+            <tr><td style="padding:6px;"><strong>Asepsi</strong></td><td style="padding:6px;">İnvaziv işlem <strong>ortamı</strong></td><td style="padding:6px;color:#27ae60;"><strong>EVET</strong> — sporlar dahil arındırılmış ortam</td></tr>
+          </tbody>
+        </table>
+        <div style="background:#fff9f9;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>💡 Şifre:</strong> Cansız + Sporlar ölür → <strong>Sterilizasyon</strong> | Canlı + Sporlar kalır → <strong>Antisepsi</strong> | Cansız + Sporlar kalır → <strong>Dezenfeksiyon</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 3: Isı Yöntemleri -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🌡️ Tablo 2 · Isı ile Sterilizasyon Yöntemleri
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Yöntem</th>
+            <th style="padding:7px;text-align:left;">Prensip</th>
+            <th style="padding:7px;text-align:left;">Kullanım</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Otoklav</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Basınçlı buhar (düdüklü tencere mantığı)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>En sık, en ucuz.</strong> 120°C'de renk değiştiren bantla kontrol edilir.</td></tr>
+            <tr><td style="padding:6px;"><strong>UHT</strong></td><td style="padding:6px;">Sıvı 135-150°C'ye ısıtılıp aniden 22°C'ye soğutulur (şok)</td><td style="padding:6px;"><strong>Süt sterilizasyonu</strong> (uzun ömürlü)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 4: Gaz ve Işın -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        💨 Tablo 3 · Gaz ve Işın ile Sterilizasyon
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#c0392b;color:#fff;">
+            <th style="padding:7px;text-align:left;">Yöntem</th>
+            <th style="padding:7px;text-align:left;">Penetrasyon</th>
+            <th style="padding:7px;text-align:left;">Özellik / Kullanım</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Etilen Oksit</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;color:#27ae60;"><strong>Çok yüksek</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Isıya dayanıksız malzemelerde (kağıt/polietilen ambalajı deler). En sık kullanılan sterilizasyon gazı. İşlem sonrası bol havalandırma şart.</td></tr>
+            <tr><td style="padding:6px;"><strong>Ultraviyole (UV)</strong></td><td style="padding:6px;color:#e74c3c;"><strong>SIFIR</strong></td><td style="padding:6px;">Sadece yüzey ve ortam havasını temizler. Ameliyathane odaları. Cıva buharlı lambadan elde edilir.</td></tr>
+          </tbody>
+        </table>
+        <div style="background:#fff9f9;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>⚠️ UV Tuzağı:</strong> UV "güçlü" görünse de penetrasyonu SIFIRDIR. Sadece yüzey ve hava için — ameliyat aleti sterilizasyonunda kullanılmaz.
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 5: Kimyasal Ajanlar -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        ⚗️ Tablo 4 · Dezenfektan ve Antiseptik Kimyasallar
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Madde</th>
+            <th style="padding:7px;text-align:left;">Sınav Şifresi</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>H₂O₂ (Oksijenli Su)</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Dokudaki katalaz parçalar → serbest O₂ çıkar → <strong>derin yaralardaki anaerob bakterileri öldürür</strong></td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Formaldehit (Formalin)</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Sporlar dahil her şeyi öldürür. %37-40'lık çözelti → <strong>kadavra ve doku muhafazası</strong></td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;"><strong>Klor / İyot</strong></td><td style="padding:6px;">Klor → su + havuz. İyot → <strong>ameliyat öncesi deri antisepsisi</strong> (povidon iyodin)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 6: El Antisepsisi -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🤲 Tablo 5 · El ve Deri Antisepsisi Kuralları
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Tür</th>
+            <th style="padding:7px;text-align:left;">Süre</th>
+            <th style="padding:7px;text-align:left;">Kritik Kural</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Hijyenik El Yıkama</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">20-30 saniye, sabun</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Günlük yaşam için yeterli</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Cerrahi El Yıkama</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>3-10 dakika</strong>, antiseptik</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Kalıcı florayı sıfırlamaz → operasyonda mutlaka <strong>steril eldiven</strong></td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;"><strong>Deri Antisepsisi</strong></td><td style="padding:6px;">Povidon iyodin ile boyama</td><td style="padding:6px;">Cilt kirliyse <strong>önce sabunla yıka</strong>! Organik madde (kan/kir) antisepsiyi büyük ölçüde bozar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🗂️ Zihin Haritası · Asepsi-Antisepsi Algoritması
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <div style="font-family:monospace;font-size:0.88em;line-height:1.8;background:#fff9f9;padding:14px;border-radius:6px;">
+          <strong>MİKROORGANİZMALARLA MÜCADELE</strong><br>
+          ├─ <strong>Temel Farklar</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Sterilizasyon → Cansız + Sporlar ölür<br>
+          │&nbsp;&nbsp;&nbsp;├─ Dezenfeksiyon → Cansız + Sporlar kalır<br>
+          │&nbsp;&nbsp;&nbsp;└─ Antisepsi → Canlı doku + Sporlar kalır<br>
+          ├─ <strong>Isı Yöntemleri</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Otoklav → Basınçlı buhar · En ucuz/sık<br>
+          │&nbsp;&nbsp;&nbsp;└─ UHT → Şok soğutma (süt)<br>
+          ├─ <strong>Gaz ve Işın</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Etilen oksit → Yüksek penetrasyon · Isıya dayanıksız malzeme<br>
+          │&nbsp;&nbsp;&nbsp;└─ UV → Sıfır penetrasyon · Sadece yüzey/hava<br>
+          └─ <strong>Kimyasal Ajanlar</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ H₂O₂ → O₂ çıkarır → anaerob öldürür (derin yara)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Formalin → Sporu da öldürür · Kadavra<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ İyot → Cerrahi cilt hazırlığı
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 8: Must-Know -->
+    <div class="card" style="border-color:#c0392b;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c0392b,#922b21);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        ⭐ Ezberlenmesi Gereken Must-Know Bilgiler
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <ol style="line-height:2.1;">
+          <li><strong>Sporlu/sporsuz şifre:</strong> Cansız + sporlar ölür = Sterilizasyon | Canlı doku + sporlar kalır = Antisepsi | Cansız + sporlar kalır = Dezenfeksiyon.</li>
+          <li><strong>UV tuzağı:</strong> Penetrasyon SIFIRDIR — sadece yüzey ve hava. Ameliyat aleti sterilizasyonunda kullanılmaz.</li>
+          <li><strong>H₂O₂ (oksijenli su):</strong> Dokudaki katalaz parçalar → serbest O₂ → derin yarada anaerob bakterileri öldürür. Neden derin/kirli yaralarda kullanılır sorusunun cevabı.</li>
+          <li><strong>Formalin (Formaldehit):</strong> İstisna — dezenfektan olmasına rağmen sporları da öldürür. Kadavra ve doku muhafazasında kullanılır.</li>
+          <li><strong>Organik madde kısıtı:</strong> Ciltte kir/kan varsa antiseptik önce bunu nötralize eder ve işe yaramaz. Mutlaka önce sabunla mekanik temizlik.</li>
+          <li><strong>Etilen oksit:</strong> En sık kullanılan sterilizasyon GAZIDIR. Isıya dayanıksız materyaller (plastik, kâğıt) için ideal. İşlem sonrası havalandırma şart (toksik gaz).</li>
+          <li><strong>Cerrahi el yıkama (3-10 dk):</strong> Kalıcı florayı sıfırlamaz → mutlaka steril eldiven zorunlu.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c8a96e,#a07840);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');var body=this.nextElementSibling;body.style.display=this.classList.contains('open')?'block':'none';if(this.classList.contains('open'))buildQuiz('c1-quiz');" style="color:#8a6120;">
+        📝 ÇIKMIŞ SORULAR — C1 · Asepsi-Antisepsi
+      </button>
+      <div class="accordion-body" style="display:none;padding:0;">
+        <div id="c1-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchEnfeksiyonTab(3); window.scrollTo(0,0);">← O1 · Ortopedik Yaklaşım</button>
+      <button class="nav-studied" id="ns-enfeksiyon_4" onclick="navMarkStudied('enfeksiyon_4','enfeksiyon',4)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /etab4 -->
 
 </div><!-- /enfeksiyonPage -->
 
@@ -16634,6 +16840,29 @@ registerQuiz('o1-quiz', [
       'Doğru. T1 kökü stellat gangliyon sempatik liflerini taşır. T1 etkilenince Horner sendromu (miyozis + pitozis + anhidrozis) görülür.',
       'Doğru. Erb paralizisi C5-C6 (üst trunkus) tutulumudur.',
       'YANLIŞ — Doğru cevap bu! Dorsal skapular sinir C5 kökünden trunkus oluşmadan önce ayrılır. Erb paralizisinde C5 kökü etkilendiğinde dorsal skapular sinir de etkilenebilir; "etkilenmez" demek yanlıştır.'
+    ]
+  }
+]);
+
+registerQuiz('c1-quiz', [
+  {
+    code: '2027-100',
+    repeat: 2,
+    q: 'Sterilizasyon amaçlı en sık kullanılan gaz hangisidir?',
+    opts: [
+      'Formaldehit',
+      'Hidrojen peroksit',
+      'Klorin dioksit',
+      'Ozon',
+      'Etilen oksit'
+    ],
+    correct: 4,
+    analysis: [
+      'Yanlış. Formaldehit (%37-40 formalin) kimyasal sterilizasyonda kullanılabilir ancak toksik, kanserojen ve penetrasyon kabiliyeti düşüktür; tercih edilen gaz değildir.',
+      'Yanlış. Hidrojen peroksit plazma sterilizasyonu (Sterrad® sistemi) olarak kullanılır, ancak pahalıdır ve geniş çaplı kullanımda etilen oksite göre ikinci sıradadır.',
+      'Yanlış. Klorin dioksit özellikle su dezenfeksiyonu ve biyoterörizm dekontiminasyonunda kullanılır; rutin cerrahi sterilizasyonda standart değildir.',
+      'Yanlış. Ozon güçlü oksidan olmakla birlikte tıbbi araç sterilizasyonunda rutin kullanımı sınırlıdır.',
+      'DOĞRU. Etilen oksit (EO/EtO) ısıya ve neme duyarlı malzemelerin (endoskop, plastik, kauçuk) sterilizasyonunda en sık kullanılan gazdır. Düşük ısıda (<60 °C) mükemmel penetrasyon sağlar; ancak toksik ve mutajenik olduğundan uzun havalandırma gerektirir.'
     ]
   }
 ]);
