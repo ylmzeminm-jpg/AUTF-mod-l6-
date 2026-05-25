@@ -610,7 +610,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('enfeksiyon')" style="cursor:pointer;">
       <div class="subject-icon">🦠</div>
       <div class="subject-title">Enfeksiyon ve Diğer Dersler</div>
-      <div class="subject-meta" id="enfeksiyon-meta">3 ders · Menenjit, Nöroradyoloji, İskelet Rad.</div>
+      <div class="subject-meta" id="enfeksiyon-meta">4 ders · Menenjit, Radyoloji, Ortopedi</div>
       <div class="subject-progress">
         <div class="subject-bar" id="enfeksiyon-bar" style="width:0%"></div>
       </div>
@@ -8918,6 +8918,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       <button class="tab active" onclick="switchEnfeksiyonTab(0); window.scrollTo(0,0);">E1 · Menenjit Yaklaşımı<span class="tab-tick" id="etick-0">✓</span></button>
       <button class="tab" onclick="switchEnfeksiyonTab(1); window.scrollTo(0,0);">R1 · Nöroradyoloji<span class="tab-tick" id="etick-1">✓</span></button>
       <button class="tab" onclick="switchEnfeksiyonTab(2); window.scrollTo(0,0);">R2 · İskelet Radyolojisi<span class="tab-tick" id="etick-2">✓</span></button>
+      <button class="tab" onclick="switchEnfeksiyonTab(3); window.scrollTo(0,0);">O1 · Ortopedik Yaklaşım<span class="tab-tick" id="etick-3">✓</span></button>
     </div>
   </div>
 
@@ -9594,10 +9595,225 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
       <button class="nav-prev" onclick="switchEnfeksiyonTab(1); window.scrollTo(0,0);">← R1 · Nöroradyoloji</button>
       <button class="nav-studied" id="ns-enfeksiyon_2" onclick="navMarkStudied('enfeksiyon_2','enfeksiyon',2)">✓ Çalıştım</button>
-      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+      <button class="nav-next" onclick="switchEnfeksiyonTab(3); window.scrollTo(0,0);">O1 · Ortopedik Yaklaşım →</button>
     </div>
 
   </div><!-- /etab2 -->
+
+  <!-- ── O1 ORTOPEDİK YAKLAŞIM ──────────────────────────────────── -->
+  <div id="etab3" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">🦴</span><h2>O1 · ORTOPEDİK HASTALARA KLİNİK YAKLAŞIM</h2></div>
+    <div style="color:#7f8c8d;font-size:0.85em;margin-bottom:18px;margin-top:4px;">Dr. Mahmut Kalem · Ortopedi Stajı Giriş Dersi</div>
+
+    <!-- KART 1: Anamnez -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        📋 Ortopedinin Kapsamı, Anamnez ve Ağrı Karakteri
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <p><strong>Ortopedi</strong> (orthos=düzgün, paedia=çocuk): konjenital hastalıklar, dejeneratif artroz, spor yaralanmaları, tümör ve travmaları kapsar. Şikayetler ekstremite ve vertebral kolona özgüdür; kafa/kafatası kırıkları nöroşirürjiyi ilgilendirir.</p>
+        <p><strong>Anamnezde yaş, cinsiyet ve meslek kritiktir:</strong></p>
+        <ul>
+          <li>Kifoz → Çocukta: Scheuermann, Erişkinde: travma/tümör, Yaşlıda: osteoporoz</li>
+          <li>Diz üstü çalışanlar → Prepatellar bursit</li>
+          <li>Tenis oynayanlar → Lateral epikondilit (Tenisçi dirseği)</li>
+          <li>Askerler → Stres kırıkları</li>
+        </ul>
+        <div style="background:#fff9f9;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>Ağrı Karakteri:</strong><br>
+          • <strong>Kemik ağrısı:</strong> Derin, lokalize; hareket/yüklenme ile artar. Gece ağrısı → Osteoid Osteoma (aspirinle geçer!) veya Tbc<br>
+          • <strong>Eklem ağrısı:</strong> Akut=travma/septik artrit; Kronik=artroz (dejeneratif)<br>
+          • <strong>Vasküler ağrı:</strong> Yürümekle artar, dinlenince geçer (intermittan klaudikasyon). Venöz=ağırlık/ödem
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 2: Demografik Tablo -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        👥 Tablo 1 · Demografik Özelliklere Göre Sık Hastalıklar
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.92em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Hastalık</th>
+            <th style="padding:7px;text-align:left;">En Sık Grup</th>
+            <th style="padding:7px;text-align:left;">Not</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Pes Ekinovarus (Club Foot)</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Erkekler</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Doğuştan ayakların içe dönük olması</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>GKD</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Kadınlar</strong> (Bebek)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Kundak kullanımı risk faktörü; tarama yöntemi USG</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Gonartroz</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Kadınlar</strong> (İleri yaş)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Diz kireçlenmesi</td></tr>
+            <tr><td style="padding:6px;"><strong>O-bacak deformitesi</strong></td><td style="padding:6px;">Çocukta: Rickets · Erişkinde: Osteomalazi</td><td style="padding:6px;">D vitamini eksikliği zemininde</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 3: Üst Ekstremite Sinir Hasarları -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        💪 Tablo 2 · Üst Ekstremite Sinir Hasarları (Brakiyal Pleksus)
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Hasar</th>
+            <th style="padding:7px;text-align:left;">Seviye</th>
+            <th style="padding:7px;text-align:left;">Klinik</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Erb Paralizisi</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Üst Trunkus <strong>C5-C6</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Bahşiş eli:</strong> Omuz iç rot., dirsek eks., el bileği+parmak fleks. Etkilenen: supraskapular, muskulokutanöz, aksiller sinir</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Klumpke Paralizisi</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Alt Trunkus <strong>C8-T1</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Pençe el</strong> + hipotenar/tenar atrofi. T1 tutulduğu için <strong>Horner Sendromu</strong> (pitozis, miyozis, anhidrozis) eşlik eder.</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Aksiller Sinir</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Omuz çıkığı</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Deltoid atrofisi, abdüksiyon kaybı</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Radyal Sinir</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Humerus distal 1/3</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Düşük El (Balayı felci)</strong> — el bileği ekstansiyon yapamaz</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;"><strong>Ulnar Sinir</strong></td><td style="padding:6px;">Dirsek</td><td style="padding:6px;">Başparmak hariç parmaklar abd/add yapamaz. 5. parmak istemsiz abdüksiyonda</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 4: Alt Ekstremite Sinir Hasarları -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🦵 Tablo 3 · Alt Ekstremite Sinir Hasarları
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#c0392b;color:#fff;">
+            <th style="padding:7px;text-align:left;">Sinir</th>
+            <th style="padding:7px;text-align:left;">En Sık Neden</th>
+            <th style="padding:7px;text-align:left;">Klinik Bulgu</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Femoral Sinir</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Nadir</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Quadriceps zayıflığı, patella refleksi kaybolur</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Common Peroneal Sinir</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Fibula boynu kırığı</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Alt ekstremitenin EN SIK yaralanan siniri.</strong> → <strong>Düşük Ayak</strong> (Foot drop) + inversiyon</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Tibial Sinir</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Diz eklemi çıkığı</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Ayak bileği fleksiyonu kaybolur → <strong>Pençe Ayak</strong></td></tr>
+            <tr><td style="padding:6px;"><strong>Siyatik Sinir</strong></td><td style="padding:6px;">Kalça çıkığı/kırığı</td><td style="padding:6px;">Hamstringler, bacak ve ayak kasları felç</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 5: Omuz/Kalça Testleri -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🔍 Tablo 4 · Omuz ve Kalça Özel Testleri
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Test</th>
+            <th style="padding:7px;text-align:left;">Manevra</th>
+            <th style="padding:7px;text-align:left;">Tanı</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Drop Arm</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">90° abdüksiyondan kol yavaş indirilemez, düşer</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Rotator Manşet Masif Yırtığı</td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Apprehension</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">90° omuz arkaya zorlanır, hasta "çıkacak" hisseder</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Tekrarlayan Omuz Çıkığı (Bankart lezyonu)</td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Speed Testi</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Dirsek eks., omuz 90° fleksiyon; yukarı direnç</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Biseps Tendiniti</td></tr>
+            <tr><td style="padding:6px;"><strong>Patrick (FABER)</strong></td><td style="padding:6px;">Kalça 90° fleks., bacak yana açılır; ağrı?</td><td style="padding:6px;">Koksartroz (Kalça kireçlenmesi)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KART 6: Diz Testleri -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🦵 Tablo 5 · Diz Menisküs ve Bağ Testleri
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+          <thead><tr style="background:#e74c3c;color:#fff;">
+            <th style="padding:7px;text-align:left;">Test</th>
+            <th style="padding:7px;text-align:left;">Manevra</th>
+            <th style="padding:7px;text-align:left;">Tanı</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Lachman Testi</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Diz 15° fleks., tibia öne çekilir (öne kayma)</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>ACL (Ön Çapraz Bağ) Yırtığı</strong></td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Pivot Shift</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Diz eks., ayak iç rot., valgus stresi → tibia sublukse</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>ACL Hasarı</strong></td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>McMurray (Medial)</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Ayak <strong>DIŞ rotasyon</strong>, abd., diz eks. → ağrı?</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Medial Menisküs Yırtığı</strong></td></tr>
+            <tr><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>McMurray (Lateral)</strong></td><td style="padding:6px;border-bottom:1px solid #f5c6cb;">Ayak <strong>İÇ rotasyon</strong>, add., diz eks. → ağrı?</td><td style="padding:6px;border-bottom:1px solid #f5c6cb;"><strong>Lateral Menisküs Yırtığı</strong></td></tr>
+            <tr style="background:#fdf2f8;"><td style="padding:6px;"><strong>Wilson Testi</strong></td><td style="padding:6px;">Diz fleks., ayak iç rot., ekstansiyona alınır</td><td style="padding:6px;">Anterior kıkırdak yaralanması</td></tr>
+          </tbody>
+        </table>
+        <div style="background:#fff9f9;border-left:3px solid #e74c3c;padding:10px 14px;border-radius:4px;margin-top:10px;">
+          <strong>💡 McMurray Şifresi:</strong> Ayağı <em>dış</em> rotasyona çevirince <em>medial</em> menisküs (zıt taraf); ayağı <em>iç</em> rotasyona çevirince <em>lateral</em> menisküs.
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        🗂️ Zihin Haritası · Ortopedik Muayene Algoritması
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <div style="font-family:monospace;font-size:0.88em;line-height:1.8;background:#fff9f9;padding:14px;border-radius:6px;">
+          <strong>ORTOPEDİK MUAYENE ALGORİTMASI</strong><br>
+          ├─ <strong>Anamnez</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Yaş: Kifoz → Çocuk=Scheuermann / Yaşlı=Osteoporoz<br>
+          │&nbsp;&nbsp;&nbsp;├─ Meslek: Diz üstü=Bursit / Tenis=Lateral epikondilit<br>
+          │&nbsp;&nbsp;&nbsp;└─ Gece ağrısı + Aspirin geçirir → Osteoid Osteoma<br>
+          ├─ <strong>Üst Eks. Pleksus</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Erb (C5-C6) → Bahşiş eli<br>
+          │&nbsp;&nbsp;&nbsp;├─ Klumpke (C8-T1) → Pençe el + Horner<br>
+          │&nbsp;&nbsp;&nbsp;└─ Radyal sinir → Düşük el (Humerus kırığı)<br>
+          ├─ <strong>Alt Eks. Sinir</strong><br>
+          │&nbsp;&nbsp;&nbsp;├─ Common Peroneal → En sık (Fibula boynu) → Düşük ayak<br>
+          │&nbsp;&nbsp;&nbsp;└─ Tibial → Diz çıkığı → Pençe ayak<br>
+          └─ <strong>Özel Testler</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Omuz: Drop Arm (Rotator kılıf) · Speed (Biseps)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ Diz: Lachman/Pivot shift (ACL) · McMurray (Menisküs)
+        </div>
+      </div>
+    </div>
+
+    <!-- KART 8: Must-Know -->
+    <div class="card" style="border-color:#c0392b;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c0392b,#922b21);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'block':'none';">
+        ⭐ Ezberlenmesi Gereken Must-Know Bilgiler
+      </button>
+      <div class="accordion-body" style="display:none;">
+        <ol style="line-height:2.1;">
+          <li><strong>Gece ağrısı + Aspirin ile tamamen geçiyor</strong> → Osteoid Osteoma (patognomonik).</li>
+          <li><strong>Klumpke (C8-T1) + Horner Sendromu:</strong> T1 tutulunca stellat gangliyon etkilenir → miyozis + pitozis + anhidrozis. Proksimal lezyon = kötü prognoz.</li>
+          <li><strong>Balayı felci (Düşük El):</strong> Radyal sinir humerusu sarar. Uzun süre bası (sandalye, kol, humerus 1/3 distal kırığı) → el bileği ekstansiyon yapamaz.</li>
+          <li><strong>Düşük Ayak (Foot drop):</strong> Common peroneal sinir fibula boynu kırığında zedelenir. Alt ekstremitenin en sık yaralanan siniri.</li>
+          <li><strong>McMurray Şifresi:</strong> Dış rotasyon = Medial menisküs. İç rotasyon = Lateral menisküs. (Ters çalışır!)</li>
+          <li><strong>GKD taraması:</strong> Yenidoğanda X-ışını değil USG. Kundak risk faktörü.</li>
+          <li><strong>Intermittan klaudikasyon:</strong> Yürümekle artar, dinlenince geçer → Vasküler ağrı (periferik arter hastalığı).</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+      <div style="height:4px;background:linear-gradient(90deg,#c8a96e,#a07840);border-radius:4px 4px 0 0;margin:-1px -1px 0 -1px;"></div>
+      <button class="accordion-btn" onclick="this.classList.toggle('open');var body=this.nextElementSibling;body.style.display=this.classList.contains('open')?'block':'none';if(this.classList.contains('open'))buildQuiz('o1-quiz');" style="color:#8a6120;">
+        📝 ÇIKMIŞ SORULAR — O1 · Ortopedik Yaklaşım
+      </button>
+      <div class="accordion-body" style="display:none;padding:0;">
+        <div id="o1-quiz" style="padding:0;"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchEnfeksiyonTab(2); window.scrollTo(0,0);">← R2 · İskelet Radyolojisi</button>
+      <button class="nav-studied" id="ns-enfeksiyon_3" onclick="navMarkStudied('enfeksiyon_3','enfeksiyon',3)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /etab3 -->
 
 </div><!-- /enfeksiyonPage -->
 
@@ -16355,6 +16571,69 @@ registerQuiz('rad2-quiz', [
       'Yanlış. III. Direkt Grafi ve V. BT ikisi de X-ışını kullanır; her ikisi de iyonizan radyasyon içerir.',
       'Yanlış. I. Floroskopi ve V. BT her ikisi de X-ışını (iyonizan) kullanır.',
       'Yanlış. V. BT X-ışını kullanır → iyonizan radyasyon içerir.'
+    ]
+  }
+]);
+
+registerQuiz('o1-quiz', [
+  {
+    code: '2027-93',
+    repeat: 2,
+    q: 'Erb felcinde en sık tutulan sinirler nelerdir?',
+    opts: [
+      'Supraskapular sinir, muskulokutanöz sinir, aksiller sinir',
+      'Dorsal skapular sinir, long torasik sinir',
+      'Median sinir, ulnar sinir',
+      'Aksiller sinir, radyal sinir',
+      'Torakodorsal sinir, radyal sinir'
+    ],
+    correct: 0,
+    analysis: [
+      'DOĞRU. Erb paralizisi C5-C6 (üst trunkus) tutulumudur. Bu köklerden çıkan sinirler: Supraskapular (C5-C6 → supraspinatus+infraspinatus), Muskulokutanöz (C5-C6 → biseps+brakialis), Aksiller (C5-C6 → deltoid). "Bahşiş eli" tablosu oluşur.',
+      'Yanlış. Dorsal skapular sinir ve long torasik sinir C5\'ten köklenir ama Erb\'de birincil etkilenen sinirler değildir.',
+      'Yanlış. Median ve ulnar sinirler alt trunkus (C8-T1) kökenlidir; tutulumları Klumpke paralizisini düşündürür.',
+      'Yanlış. Radyal sinir ağırlıklı olarak C7-C8\'den köken alır; Erb\'in karakteristik sinirleri değildir.',
+      'Yanlış. Torakodorsal sinir C6-C8 kaynaklıdır; Erb tablosunun tipik sinirleri değildir.'
+    ]
+  },
+  {
+    code: '2027-95',
+    repeat: 2,
+    q: 'Hangisi obstetrik brakiyal pleksus felci için perinatal risk faktörü değildir?',
+    opts: [
+      'Sefalik prezentasyon',
+      'Makrozomi',
+      'Uzamış doğum eylemi',
+      'Omuz distosisi',
+      'Doğumda vakum kullanılması'
+    ],
+    correct: 0,
+    analysis: [
+      'DOĞRU — Risk faktörü DEĞİL. Sefalik (baş) prezentasyon normal doğum pozisyonudur; tek başına risk faktörü sayılmaz. Obstetrik brakiyal pleksus felci omuz distosisi zemininde gelişir; sefalik prezentasyonun kendisi bu mekanizmanın tetikleyicisi değildir.',
+      'Yanlış (risk faktörüdür). Makrozomi omuz distosisi ve traksiyon yaralanması riskini artırır.',
+      'Yanlış (risk faktörüdür). Uzamış doğum eylemi aşırı traksiyon uygulanmasına zemin hazırlar.',
+      'Yanlış (risk faktörüdür). Omuz distosisi obstetrik brakiyal pleksus yaralanmasının en doğrudan mekanizmasıdır.',
+      'Yanlış (risk faktörüdür). Vakum/forseps uygulaması baş-boyun üzerine aşırı traksiyon kuvveti uygular.'
+    ]
+  },
+  {
+    code: '2025-59',
+    repeat: 3,
+    q: 'Aşağıdakilerden hangisi yanlıştır?',
+    opts: [
+      'Klumpke palsyde C8-T1 kökleri etkilenir',
+      'C8-T1 kökleri etkilenmesiyle elde duyu ve motor defisit çoğunlukla kalıcıdır',
+      'Klumpke palsyde gözün sempatik sinirleri etkilenebilir',
+      'Erb palsyde C5-C6 kökleri etkilenir',
+      'Erb palsyde dorsal skapular sinir etkilenmez'
+    ],
+    correct: 4,
+    analysis: [
+      'Doğru. Klumpke paralizisi alt trunkus (C8-T1) tutulumudur; pençe el + hipotenar/tenar atrofi görülür.',
+      'Doğru. C8-T1 kök avulsiyon yaralanmalarında el intrinsik kaslarının reinnervasyonu güçtür; Horner eşlik ediyorsa kötü prognoz işareti.',
+      'Doğru. T1 kökü stellat gangliyon sempatik liflerini taşır. T1 etkilenince Horner sendromu (miyozis + pitozis + anhidrozis) görülür.',
+      'Doğru. Erb paralizisi C5-C6 (üst trunkus) tutulumudur.',
+      'YANLIŞ — Doğru cevap bu! Dorsal skapular sinir C5 kökünden trunkus oluşmadan önce ayrılır. Erb paralizisinde C5 kökü etkilendiğinde dorsal skapular sinir de etkilenebilir; "etkilenmez" demek yanlıştır.'
     ]
   }
 ]);
