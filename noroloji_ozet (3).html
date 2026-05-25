@@ -592,6 +592,20 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       </div>
     </div>
 
+    <div class="subject-card" onclick="openSubject('enfeksiyon')" style="cursor:pointer;">
+      <div class="subject-icon">🦠</div>
+      <div class="subject-title">Enfeksiyon ve Diğer Dersler</div>
+      <div class="subject-meta" id="enfeksiyon-meta">0 ders · Yakında eklenecek</div>
+      <div class="subject-progress">
+        <div class="subject-bar" id="enfeksiyon-bar" style="width:0%"></div>
+      </div>
+      <div class="subject-tags">
+        <span class="stag">Özet</span>
+        <span class="stag">Çıkmışlar</span>
+        <span class="stag">Quiz</span>
+      </div>
+    </div>
+
 
   </div>
 </div>
@@ -8877,6 +8891,34 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
 
 
 
+<!-- ═══ ENFEKSİYON VE DİĞER DERSLER SAYFASI ══════════════════════════ -->
+<div id="enfeksiyonPage" style="display:none;">
+  <div style="margin-bottom:24px;">
+    <button onclick="goHome()" style="background:none;border:none;cursor:pointer;font-size:13px;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;padding:0;">← Ana Sayfa</button>
+    <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:6px 0 0;">🦠 Enfeksiyon ve Diğer Dersler</h2>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs" id="enfeksiyonTabs" style="display:flex;gap:6px;min-width:max-content;">
+      <!-- Dersler buraya eklenecek -->
+    </div>
+  </div>
+
+  <div id="etab0" class="tab-content active" style="display:block;">
+    <div class="card" style="border-color:#e74c3c;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e74c3c,transparent);border-radius:16px 16px 0 0;"></div>
+      <div style="padding:32px;text-align:center;color:#888;">
+        <div style="font-size:48px;margin-bottom:12px;">🦠</div>
+        <p style="font-size:15px;font-weight:600;color:#e74c3c;">Dersler yakında eklenecek</p>
+        <p style="font-size:13px;margin-top:6px;">Bu bölüme enfeksiyon ve diğer ders içerikleri eklenecek.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /enfeksiyonPage -->
+
+
+
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- YANLIŞLARIM SAYFASI -->
 <div id="wrongPage" style="display:none;">
@@ -8948,6 +8990,17 @@ function switchGenetikTab(n) {
   var btn = document.querySelectorAll('#genetikTabs .tab')[n];
   if (btn) btn.classList.add('active');
   window.currentGenetikTab = n;
+  window.scrollTo(0,0);
+}
+
+function switchEnfeksiyonTab(n) {
+  document.querySelectorAll('#enfeksiyonPage .tab-content').forEach(function(d) { d.style.display='none'; d.classList.remove('active'); });
+  document.querySelectorAll('#enfeksiyonTabs .tab').forEach(function(b) { b.classList.remove('active'); });
+  var tab = document.getElementById('etab' + n);
+  if (tab) { tab.style.display='block'; tab.classList.add('active'); }
+  var btn = document.querySelectorAll('#enfeksiyonTabs .tab')[n];
+  if (btn) btn.classList.add('active');
+  window.currentEnfeksiyonTab = n;
   window.scrollTo(0,0);
 }
 
