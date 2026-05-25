@@ -433,16 +433,16 @@ body.pen-draw { cursor: crosshair; }
 
 /* ── Radyoloji/Ortopedi/Patoloji sekmeleri accordion içerik boyutu ve taşma ── */
 #etab1 .accordion-body, #etab2 .accordion-body, #etab3 .accordion-body, #etab4 .accordion-body,
-#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body, #patolojiTab2 .accordion-body, #patolojiTab3 .accordion-body, #patolojiTab4 .accordion-body, #patolojiTab5 .accordion-body {
+#patolojiTab0 .accordion-body, #patolojiTab1 .accordion-body, #patolojiTab2 .accordion-body, #patolojiTab3 .accordion-body, #patolojiTab4 .accordion-body, #patolojiTab5 .accordion-body, #patolojiTab6 .accordion-body {
   font-size: 0.88em;
   padding: 14px 20px;
 }
 #etab1 .accordion-body[style*="padding:0"], #etab2 .accordion-body[style*="padding:0"], #etab3 .accordion-body[style*="padding:0"], #etab4 .accordion-body[style*="padding:0"],
-#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"], #patolojiTab2 .accordion-body[style*="padding:0"], #patolojiTab3 .accordion-body[style*="padding:0"], #patolojiTab4 .accordion-body[style*="padding:0"], #patolojiTab5 .accordion-body[style*="padding:0"] {
+#patolojiTab0 .accordion-body[style*="padding:0"], #patolojiTab1 .accordion-body[style*="padding:0"], #patolojiTab2 .accordion-body[style*="padding:0"], #patolojiTab3 .accordion-body[style*="padding:0"], #patolojiTab4 .accordion-body[style*="padding:0"], #patolojiTab5 .accordion-body[style*="padding:0"], #patolojiTab6 .accordion-body[style*="padding:0"] {
   padding: 0;
 }
 #etab1 .accordion-body table, #etab2 .accordion-body table, #etab3 .accordion-body table, #etab4 .accordion-body table,
-#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table, #patolojiTab2 .accordion-body table, #patolojiTab3 .accordion-body table, #patolojiTab4 .accordion-body table, #patolojiTab5 .accordion-body table {
+#patolojiTab0 .accordion-body table, #patolojiTab1 .accordion-body table, #patolojiTab2 .accordion-body table, #patolojiTab3 .accordion-body table, #patolojiTab4 .accordion-body table, #patolojiTab5 .accordion-body table, #patolojiTab6 .accordion-body table {
   font-size: 1em;
   word-break: break-word;
   display: block;
@@ -627,7 +627,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div class="subject-card" onclick="openSubject('patoloji')" style="cursor:pointer;">
       <div class="subject-icon">🔬</div>
       <div class="subject-title">Patoloji</div>
-      <div class="subject-meta" id="patoloji-meta">6 ders · SSS Nöropatolojisi</div>
+      <div class="subject-meta" id="patoloji-meta">7 ders · SSS Nöropatolojisi</div>
       <div class="subject-progress">
         <div class="subject-bar" id="patoloji-bar" style="width:0%"></div>
       </div>
@@ -10055,6 +10055,7 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
       <button class="tab" onclick="switchPatolojiTab(3); window.scrollTo(0,0);">P4 · Motor Ünite Hastalıkları<span class="tab-tick" id="patok-3">✓</span></button>
       <button class="tab" onclick="switchPatolojiTab(4); window.scrollTo(0,0);">P5 · Kemik Metabolik Hastalıkları<span class="tab-tick" id="patok-4">✓</span></button>
       <button class="tab" onclick="switchPatolojiTab(5); window.scrollTo(0,0);">P6 · Kemik Tümörleri<span class="tab-tick" id="patok-5">✓</span></button>
+      <button class="tab" onclick="switchPatolojiTab(6); window.scrollTo(0,0);">P7 · Yumuşak Doku Tümörleri<span class="tab-tick" id="patok-6">✓</span></button>
     </div>
   </div>
 
@@ -11928,10 +11929,344 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
       <button class="nav-prev" onclick="switchPatolojiTab(4); window.scrollTo(0,0);">← P5 · Kemik Metabolik</button>
       <button class="nav-studied" id="ns-patoloji_5" onclick="navMarkStudied('patoloji_5','patoloji',5)">✓ Çalıştım</button>
-      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+      <button class="nav-next" onclick="switchPatolojiTab(6); window.scrollTo(0,0);">P7 · Yumuşak Doku →</button>
     </div>
 
   </div><!-- /patolojiTab5 -->
+
+  <!-- ── P7 YUMUŞAK DOKU TÜMÖRLERİ ── -->
+  <div id="patolojiTab6" class="tab-content" style="display:none;">
+
+    <div class="card-header" style="margin-bottom:0;"><span class="card-icon">📖</span><h2>P7 · YUMUŞAK DOKU TÜMÖRLERİ</h2></div>
+
+    <!-- CARD 1: Genel Özet -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">📋</span>
+        <span>Genel Özet &amp; Klinik Yaklaşım</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;">
+        <p><strong style="color:#e67e22;">Yumuşak doku tümörleri</strong> mezenkimal kökenlidir; yağ, kas, sinir kılıfı, fibroz doku ve vasküler yapılardan kaynaklanır.</p>
+        <ul>
+          <li><strong>Benign:Malign oranı ≈ 100:1</strong> — lipom en sık benign, liposarkom en sık malign yumuşak doku tümörüdür.</li>
+          <li><strong>Tanı altın standardı:</strong> Derin, büyük (&gt;5 cm), büyüyen kitlede biyopsi + IHK + sitogenetik.</li>
+          <li><strong>Retroperiton &amp; proksimal yerleşim</strong> kötü prognoz işareti; operasyon güçlüğü nedeniyle nüks riski yüksek.</li>
+          <li><strong>Histolojik grade</strong> (FNCLCC sistemi) prognozun en önemli belirleyicisi: nekroz, mitoz, diferansiyasyon skoru.</li>
+          <li><strong>Genetik translokasyonlar</strong> alt tip tanısında kritik — TUS'ta sık çıkan bilgilerdir.</li>
+          <li><strong>Round cell tümör eşiği:</strong> Mikzoid liposarkomda %&gt;5 round cell bileşen → yüksek dereceli kabul edilir.</li>
+        </ul>
+        <p><strong>Sık görülen alt tipler:</strong> Liposarkom (en sık malign), Rabdomiyosarkom (çocuklarda en sık), Sinovyal Sarkom (genç erişkin), Leiomiyosarkom, GIST.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2: Tablo 1 – Schwannoma vs Nörofibroma -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧬</span>
+        <span>Tablo 1 · Schwannoma vs Nörofibroma</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;padding:0;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e67e22;color:#fff;">
+              <th style="padding:8px 10px;text-align:left;">Özellik</th>
+              <th style="padding:8px 10px;text-align:left;">Schwannoma</th>
+              <th style="padding:8px 10px;text-align:left;">Nörofibroma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Köken</strong></td>
+              <td style="padding:7px 10px;">Schwann hücresi (kapsüllü)</td>
+              <td style="padding:7px 10px;">Schwann + fibroblast + aksonal karışım (kapsülsüz)</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Histoloji</strong></td>
+              <td style="padding:7px 10px;"><em>Antoni A</em> (hücreden zengin, palizad) + <em>Antoni B</em> (gevşek miksoid) alanlar; <strong>Verocay cisimciği</strong></td>
+              <td style="padding:7px 10px;">Gevşek, dalgalı nükleer patern; wavy nuclei; stromal mukoid madde</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>IHK</strong></td>
+              <td style="padding:7px 10px;">S100 <strong>diffüz</strong> pozitif; SOX10 diffüz</td>
+              <td style="padding:7px 10px;">S100 <strong>fokal</strong> pozitif; SOX10 fokal</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Genetik sendrom</strong></td>
+              <td style="padding:7px 10px;"><strong>NF2</strong> (bilateral akustik schwannoma)</td>
+              <td style="padding:7px 10px;"><strong>NF1</strong> (pleksiform nörofibroma karakteristik); malign dönüşüm riski</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Malignite</strong></td>
+              <td style="padding:7px 10px;">Son derece nadir</td>
+              <td style="padding:7px 10px;">Pleksiform tipte MPNST'ye dönüşüm (%10)</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>TUS İpucu</strong></td>
+              <td style="padding:7px 10px;">Verocay cisimciği = Schwannoma</td>
+              <td style="padding:7px 10px;">Pleksiform = NF1 patognomonik</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CARD 3: Tablo 2 – Liposarkom Alt Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🔬</span>
+        <span>Tablo 2 · Liposarkom Alt Tipleri</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;padding:0;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e67e22;color:#fff;">
+              <th style="padding:8px 10px;text-align:left;">Alt Tip</th>
+              <th style="padding:8px 10px;text-align:left;">Genetik / Moleküler</th>
+              <th style="padding:8px 10px;text-align:left;">Histoloji &amp; Klinik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>İyi Diferansiye (ALT)</strong></td>
+              <td style="padding:7px 10px;"><strong>MDM2 amplifikasyonu</strong>; <strong>CDK4 amplifikasyonu</strong>; Ring/dev marker kromozom (12q13-15)</td>
+              <td style="padding:7px 10px;">Retroperiton en sık yer; lipoma benzeri; düşük malignite; FISH ile MDM2 doğrulama</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Dediferansiye</strong></td>
+              <td style="padding:7px 10px;"><strong>MDM2 + CDK4</strong> amplifikasyon (ALT komponenti içerir)</td>
+              <td style="padding:7px 10px;">ALT içinde yüksek dereceli sarkom alanı; retroperiton; agresif seyir</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Mikzoid Liposarkom</strong></td>
+              <td style="padding:7px 10px;"><strong>t(12;16)(q13;p11)</strong> → <strong>DDIT3-FUS</strong> füzyon</td>
+              <td style="padding:7px 10px;">Ekstremite; <em>chicken-wire (tavuk teli) kapiller</em> paterni; lipoblastlar; %&gt;5 round cell → yüksek derece</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Pleomorfik</strong></td>
+              <td style="padding:7px 10px;">Kompleks karyotip; MDM2 yok</td>
+              <td style="padding:7px 10px;">En az diferansiye; pleomorfik lipoblastlar; yaşlı hasta; kötü prognoz</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="padding:8px 12px;margin:0;font-size:0.85em;color:#7f8c8d;"><em>MDM2/CDK4 amplifikasyonu TUS'ta çıkmış soru: ALT/dediferansiye liposarkom ayırt edici markırı.</em></p>
+      </div>
+    </div>
+
+    <!-- CARD 4: Tablo 3 – Rabdomiyosarkom Alt Tipleri -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">💪</span>
+        <span>Tablo 3 · Rabdomiyosarkom (RMS) Alt Tipleri</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;padding:0;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e67e22;color:#fff;">
+              <th style="padding:8px 10px;text-align:left;">Alt Tip</th>
+              <th style="padding:8px 10px;text-align:left;">Yaş / Yer</th>
+              <th style="padding:8px 10px;text-align:left;">Özellik &amp; Genetik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Embriyonel RMS</strong></td>
+              <td style="padding:7px 10px;">&lt;10 yaş; baş-boyun, genitoüriner</td>
+              <td style="padding:7px 10px;">En sık tip; <strong>Botroid varyant</strong>: üzüm salkımı görünüm, <em>kambiyum tabakası</em> (yoğun hücre bandı epitel altı); LOH 11p15</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Alveoler RMS</strong></td>
+              <td style="padding:7px 10px;">Adolesanlar; ekstremite, gövde</td>
+              <td style="padding:7px 10px;"><strong>t(2;13)(q35;q14)</strong> → <strong>PAX3-FOXO1</strong> füzyon (sık); t(1;13) PAX7-FOXO1 (az); en kötü prognoz</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Pleomorfik RMS</strong></td>
+              <td style="padding:7px 10px;">Erişkin; ekstremite</td>
+              <td style="padding:7px 10px;">En nadir; yüksek dereceli; şiddetli pleomorfizm; yaşlı hasta; belirgin rabdomiyoblastlar</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="padding:10px 12px;background:#fdf3e7;border-top:1px solid #f0d9c0;">
+          <strong style="color:#e67e22;">IHK:</strong> Desmin, Miyogenin (nükleer — en spesifik), MyoD1, MSA pozitif.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Tablo 4 – Genetik Translokasyonlar -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🧩</span>
+        <span>Tablo 4 · Kritik Genetik Translokasyonlar (TUS Özeti)</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;padding:0;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e67e22;color:#fff;">
+              <th style="padding:8px 10px;text-align:left;">Tümör</th>
+              <th style="padding:8px 10px;text-align:left;">Translokasyon</th>
+              <th style="padding:8px 10px;text-align:left;">Füzyon Geni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Sinovyal Sarkom</strong></td>
+              <td style="padding:7px 10px;"><strong>t(X;18)(p11;q11)</strong></td>
+              <td style="padding:7px 10px;"><strong>SS18-SSX1/SSX2</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Mikzoid Liposarkom</strong></td>
+              <td style="padding:7px 10px;"><strong>t(12;16)(q13;p11)</strong></td>
+              <td style="padding:7px 10px;"><strong>DDIT3-FUS</strong> (CHOP-TLS)</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Alveoler RMS</strong></td>
+              <td style="padding:7px 10px;"><strong>t(2;13)(q35;q14)</strong></td>
+              <td style="padding:7px 10px;"><strong>PAX3-FOXO1</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>İyi Dif./Dedif. Liposarkom</strong></td>
+              <td style="padding:7px 10px;">12q13-15 amplifikasyon</td>
+              <td style="padding:7px 10px;"><strong>MDM2 + CDK4</strong> (ring kromozom)</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Ewing / PNET</strong></td>
+              <td style="padding:7px 10px;"><strong>t(11;22)(q24;q12)</strong></td>
+              <td style="padding:7px 10px;"><strong>EWSR1-FLI1</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Dermatofibrosarkom Protuberans</strong></td>
+              <td style="padding:7px 10px;"><strong>t(17;22)</strong></td>
+              <td style="padding:7px 10px;"><strong>COL1A1-PDGFB</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CARD 6: Tablo 5 – Sinovyal Sarkom -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🦵</span>
+        <span>Tablo 5 · Sinovyal Sarkom</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;padding:0;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e67e22;color:#fff;">
+              <th style="padding:8px 10px;text-align:left;">Özellik</th>
+              <th style="padding:8px 10px;text-align:left;">Detay</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>İsim Yanılgısı</strong></td>
+              <td style="padding:7px 10px;">Sinovyal dokuttan <em>gelmiyor</em>; adını histolojik benzerlikten alır (sinovyal diferansiasyon gösterebilir)</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Yaş &amp; Yer</strong></td>
+              <td style="padding:7px 10px;">Genç erişkin (15–40 yaş); dizin etrafı / büyük eklem yakını; derin yerleşim</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Alt Tipler</strong></td>
+              <td style="padding:7px 10px;"><strong>Bifazik</strong> (epitelyal + iğsi hücre); <strong>Monofazik</strong> (yalnız iğsi); Kötü Diferansiye varyant</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>IHK</strong></td>
+              <td style="padding:7px 10px;"><strong>Keratin + EMA pozitif</strong> (mezenkimal tümörde epitelyal marker — ayırt edici!); TLE1 pozitif; S100 negatif</td>
+            </tr>
+            <tr style="background:#fdf3e7;">
+              <td style="padding:7px 10px;"><strong>Genetik</strong></td>
+              <td style="padding:7px 10px;"><strong>t(X;18)(p11;q11)</strong> → <strong>SS18-SSX</strong> füzyon; FISH veya RT-PCR ile doğrulanır</td>
+            </tr>
+            <tr>
+              <td style="padding:7px 10px;"><strong>Prognoz</strong></td>
+              <td style="padding:7px 10px;">Orta-kötü; 5 yıllık sağkalım ~%50–70; geç metastaz olabilir (akciğer)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CARD 7: Zihin Haritası -->
+    <div class="card" style="border-color:#e67e22;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e67e22,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">🗺️</span>
+        <span>Zihin Haritası · Ayırıcı Tanı Algoritması</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;">
+        <div style="background:#fdf3e7;border-radius:12px;padding:16px;">
+          <p style="margin:0 0 10px;"><strong style="color:#e67e22;">📍 Yumuşak Doku Kitlesine Yaklaşım</strong></p>
+          <div style="border-left:3px solid #e67e22;padding-left:12px;margin-bottom:10px;">
+            <strong>Sinir kılıfı tümörü mü?</strong><br>
+            → S100 diffüz (+) + Verocay cisimciği → <strong>Schwannoma</strong> (NF2)<br>
+            → S100 fokal (+) + wavy nuclei → <strong>Nörofibroma</strong> (NF1 ise pleksiform)<br>
+            → Pleksiform + NF1 → MPNST dönüşüm riski!
+          </div>
+          <div style="border-left:3px solid #e67e22;padding-left:12px;margin-bottom:10px;">
+            <strong>Lipojenik tümör mü?</strong><br>
+            → MDM2/CDK4 amplifikasyon → <strong>ALT / Dediferansiye LPS</strong><br>
+            → t(12;16) DDIT3-FUS + chicken-wire kapiller → <strong>Mikzoid LPS</strong><br>
+            → &gt;%5 round cell bileşen → yüksek derece!
+          </div>
+          <div style="border-left:3px solid #e67e22;padding-left:12px;margin-bottom:10px;">
+            <strong>Çocuk/genç + round cell tümörü mü?</strong><br>
+            → Desmin + Miyogenin(+) → <strong>RMS</strong><br>
+            → &lt;10 yaş + kambiyum tabakası → <strong>Embriyonel (Botroid)</strong><br>
+            → t(2;13) PAX3-FOXO1 → <strong>Alveoler RMS</strong> (en kötü prognoz)
+          </div>
+          <div style="border-left:3px solid #e67e22;padding-left:12px;">
+            <strong>Genç erişkin + diz çevresi + Keratin/EMA(+)?</strong><br>
+            → t(X;18) SS18-SSX → <strong>Sinovyal Sarkom</strong> (sinovyadan gelmiyor!)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Must-Know -->
+    <div class="card" style="border-color:#d35400;position:relative;overflow:visible;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d35400,transparent);border-radius:16px 16px 0 0;"></div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+        <span class="card-icon">⭐</span>
+        <span>Must-Know · TUS'a Giren Altın Bilgiler</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-body" style="display:block;">
+        <ol style="padding-left:18px;line-height:2;">
+          <li><strong>Retroperiton liposarkomu</strong> → ALT/Dediferansiye → MDM2+CDK4 amplifikasyon (TUS'ta çıkmış soru)</li>
+          <li><strong>Round cell eşiği:</strong> Mikzoid LPS'de &gt;%5 round cell bileşen = yüksek dereceli tümör</li>
+          <li><strong>Kambiyum tabakası</strong> = Embriyonel RMS'nin botroid varyantı; epitel altı yoğun hücre bandı</li>
+          <li><strong>Sinovyal sarkom sinovyadan gelmiyor</strong> — genç erişkin, diz çevresi, keratin+EMA pozitif</li>
+          <li><strong>MDM2 amplifikasyonu TUS'a girmiş:</strong> İyi diferansiye/dediferansiye liposarkomun moleküler markırı</li>
+          <li><strong>Pleksiform nörofibroma = NF1 patognomonik</strong>; MPNST riskini taşır</li>
+          <li><strong>Verocay cisimciği = Schwannoma</strong>; Antoni A + Antoni B alan kombinasyonu</li>
+          <li><strong>t(2;13) PAX3-FOXO1 = Alveoler RMS</strong>; en kötü prognozlu RMS alt tipi</li>
+          <li><strong>Chicken-wire kapiller = Mikzoid LPS</strong>; t(12;16) DDIT3-FUS</li>
+          <li><strong>SS18-SSX füzyon = Sinovyal Sarkom</strong>; t(X;18)</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
+      <button class="nav-prev" onclick="switchPatolojiTab(5); window.scrollTo(0,0);">← P6 · Kemik Tümörleri</button>
+      <button class="nav-studied" id="ns-patoloji_6" onclick="navMarkStudied('patoloji_6','patoloji',6)">✓ Çalıştım</button>
+      <button class="nav-next" style="opacity:0.3;pointer-events:none;">Son ders →</button>
+    </div>
+
+  </div><!-- /patolojiTab6 -->
 
 </div><!-- /patolojiPage -->
 
