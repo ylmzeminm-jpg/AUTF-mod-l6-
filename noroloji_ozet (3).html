@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -6496,6 +6496,19 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
     </div>
   </div>
 
+<div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+  <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+    <span class="card-icon">📝</span>
+    <h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR H3 — P1 Giriş &amp; Epidemiyoloji</h2>
+    <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(200,169,110,0.2);color:#8a6a2e;" id="p1-h3-quiz-score-badge">4 soru · M6/M7</span>
+    <span class="accordion-arrow">▼</span>
+  </button>
+  <div class="accordion-body">
+    <div id="p1-h3-quiz" style="padding:0;"></div>
+  </div>
+</div>
+
   <div style="display:flex;align-items:center;gap:10px;margin-top:28px;padding-bottom:20px;">
     <button class="nav-prev" style="opacity:0.3;pointer-events:none;">← Başlangıç</button>
     <button class="nav-studied" id="ns-psiko_0" onclick="navMarkStudied('psiko_0','psiko',0)">✓ Çalıştım</button>
@@ -6663,6 +6676,19 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+  <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+    <span class="card-icon">📝</span>
+    <h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR H3 — P3 Duygudurum</h2>
+    <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(200,169,110,0.2);color:#8a6a2e;" id="p3-h3-quiz-score-badge">10 soru · M6/M7</span>
+    <span class="accordion-arrow">▼</span>
+  </button>
+  <div class="accordion-body">
+    <div id="p3-h3-quiz" style="padding:0;"></div>
   </div>
 </div>
 
@@ -6835,6 +6861,19 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+  <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+    <span class="card-icon">📝</span>
+    <h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR H3 — P4 Psikotik</h2>
+    <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(200,169,110,0.2);color:#8a6a2e;" id="p4-h3-quiz-score-badge">9 soru · M6/M7</span>
+    <span class="accordion-arrow">▼</span>
+  </button>
+  <div class="accordion-body">
+    <div id="p4-h3-quiz" style="padding:0;"></div>
   </div>
 </div>
 
@@ -7016,6 +7055,19 @@ body.dark tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="card" style="border-color:#c8a96e;position:relative;overflow:visible;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c8a96e,transparent);border-radius:16px 16px 0 0;"></div>
+  <button class="accordion-btn" onclick="toggleAccordion(this)" style="border-radius:16px;">
+    <span class="card-icon">📝</span>
+    <h2 style="color:#8a6a2e;">ÇIKMIŞ SORULAR H3 — P5 Anksiyete</h2>
+    <span style="font-family:'Syne',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(200,169,110,0.2);color:#8a6a2e;" id="p5-h3-quiz-score-badge">8 soru · M6/M7</span>
+    <span class="accordion-arrow">▼</span>
+  </button>
+  <div class="accordion-body">
+    <div id="p5-h3-quiz" style="padding:0;"></div>
   </div>
 </div>
 
@@ -20405,6 +20457,594 @@ window.goHome = function() {
   _origGoHomeProgress();
   setTimeout(updateProgress, 100);
 };
+registerQuiz('p1-h3-quiz', [
+  {
+    code: 'M6-2027-79 / M6-2026-40',
+    repeat: 2,
+    q: 'Psikiyatrik hastalıklarda etkili sosyal etmenlerden biri değildir?',
+    opts: ['Göç','Ekonomik düzey','Savaş-çatışma','Madde kullanımı','Aylık gelir düzeyinde değişimler'],
+    correct: 3,
+    analysis: [
+      'Yanlış. Göç sosyal bir stresördür; hem zorunlu hem gönüllü göç psikiyatrik hastalık riskini artırır.',
+      'Yanlış. Düşük ekonomik düzey stres, yetersiz beslenme ve sağlık hizmetlerine erişim güçlüğü üzerinden psikiyatrik riski artırır.',
+      'Yanlış. Savaş ve çatışma ortamı TSSB, depresyon ve anksiyete bozukluklarının en güçlü sosyal belirleyicilerinden biridir.',
+      '✓ Doğru! Madde kullanımı bireysel/biyolojik bir risk faktörüdür; sosyal etmen değildir. Sosyal etmenler toplumsal yapı, çevre ve dış koşullarla ilgilidir; madde kullanımı kişinin kendi davranışına bağlıdır.',
+      'Yanlış. Aylık gelir değişimleri ekonomik istikrarsızlık yaratarak sosyal bir stresör işlevi görür.'
+    ]
+  },
+  {
+    code: 'M6-2026-9',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi yanlıştır?',
+    opts: [
+      'Hiçbir psikiyatrik bozuklukta monozigot konkordans oranı %100 değildir.',
+      'İklim, beslenme, aktivite gibi etmenler gen ekspresyonunu etkiler.',
+      'Psikiyatrik hastalıklar tek gen ile açıklanır.',
+      'Kişilik, mizaç, huy ve bilişsel işlevlerde genetik faktörler etkindir.',
+      'İkiz çalışmalarında psikiyatrik hastalıkların konkordansı monozigotlarda dizigotlara göre yüksektir.'
+    ],
+    correct: 2,
+    analysis: [
+      'Doğru ifade — yanlış değil. Hiçbir psikiyatrik bozuklukta konkordans %100\'e ulaşmaz; bu, çevresel faktörlerin önemini gösterir.',
+      'Doğru ifade — yanlış değil. Epigenetik mekanizmalar üzerinden iklim, beslenme ve aktivite gen ekspresyonunu etkiler.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! Psikiyatrik hastalıkların büyük çoğunluğu (şizofreni, bipolar, depresyon) POLİGENİKtir; tek bir gen tarafından açıklanamaz. Tek gen hastalıkları (Huntington gibi) istisnadır.',
+      'Doğru ifade — yanlış değil. Kişiliğin ve bilişsel özelliklerin kalıtılabilirliği iyi belgelenmiştir.',
+      'Doğru ifade — yanlış değil. Monozigot ikizlerde daha yüksek konkordans, genetik katkıyı kanıtlar.'
+    ]
+  },
+  {
+    code: 'M7-2022-61',
+    repeat: 1,
+    q: 'Erikson\'un psikososyal gelişim kuramına göre hangisi yanlıştır?',
+    opts: [
+      '1-3 yaş arası çatışma: özerklik × bağımlılık.',
+      '3. evre (3-6 yaş) kazanımı: geleceğe yönelik amaçlar edinmektir.',
+      '1. evrede kazanım: temel güven duygusunun oluşumudur.',
+      '1. evrede kazanım: inisiyatif alabilmektir.',
+      'Ergenlik döneminde kazanım: toplum karşısında kendini konumlamadır.'
+    ],
+    correct: 3,
+    analysis: [
+      'Doğru — yanlış değil. 2. evre (1-3 yaş): Özerklik vs Utanç/Şüphe çatışması; kazanım irade.',
+      'Doğru — yanlış değil. 3. evre (3-6 yaş): Girişimcilik vs Suçluluk; amaç edinme kazanımı.',
+      'Doğru — yanlış değil. 1. evre (0-1 yaş): Temel Güven vs Güvensizlik; temel güven kazanımı.',
+      '✓ YANLIŞ — doğru cevap bu! 1. evrenin kazanımı İNİSİYATİF DEĞİL; inisiyatif 3. evreye (3-6 yaş) aittir. 1. evre (0-1 yaş) kazanımı TEMELGÜVENdir.',
+      'Doğru — yanlış değil. Ergenlik (5. evre): Kimlik kazanımı vs Kimlik kargaşası; toplumda yer edinme.'
+    ]
+  },
+  {
+    code: 'M7-2022-62',
+    repeat: 1,
+    q: 'Erikson\'un psikososyal gelişim kuramına göre hangisi yanlıştır?',
+    opts: [
+      '< 1 yaş çatışma: temel güven × güvensizlik.',
+      'Genç yetişkin çatışması: kimlik kazanımı × kimlik kargaşası.',
+      '7-12 yaş çatışması: üretkenlik × aşağılık duygusu.',
+      '3-6 yaş çatışması: girişimcilik × inhibisyon.',
+      'Yetişkinlik çatışması: üretkenlik × durağanlık.'
+    ],
+    correct: 1,
+    analysis: [
+      'Doğru — yanlış değil. 1. evre (0-1 yaş): Temel Güven vs Güvensizlik.',
+      '✓ YANLIŞ — doğru cevap bu! Genç yetişkin çatışması "Yakınlık vs İzolasyon"dur (Intimacy vs Isolation). Kimlik kazanımı vs Kimlik kargaşası ERGENLİK (5. evre, 12-18 yaş) dönemine aittir; genç yetişkinliğe değil.',
+      'Doğru — yanlış değil. 4. evre (7-12 yaş): Üretkenlik (Industry) vs Aşağılık duygusu (Inferiority).',
+      'Doğru — yanlış değil. 3. evre (3-6 yaş): Girişimcilik (Initiative) vs Suçluluk (Guilt).',
+      'Doğru — yanlış değil. 7. evre (Yetişkinlik): Üretkenlik (Generativity) vs Durağanlık (Stagnation).'
+    ]
+  }
+]);
+
+
+registerQuiz('p3-h3-quiz', [
+  {
+    code: 'M6-2027-82',
+    repeat: 1,
+    q: 'Majör depresif atak tanısı için gerekli minimum süre hangisidir?',
+    opts: ['1 ay','1 hafta','3 hafta','2 hafta','6 hafta'],
+    correct: 3,
+    analysis: [
+      'Yanlış. 1 ay gerekmez; daha kısa sürede de tanı konabilir.',
+      'Yanlış. 1 hafta manik epizodun minimum süresidir.',
+      'Yanlış. 3 haftalık süre DSM tanı kriterlerinde yer almaz.',
+      '✓ Doğru! Majör depresif atak tanısı için belirti kümesinin EN AZ 2 HAFTA sürmesi gerekir. 9 semptomdan en az 5\'i (çökkün duygudurum veya anhedoni dahil) 2 hafta boyunca çoğu gün mevcut olmalıdır.',
+      'Yanlış. 6 hafta DSM kriterlerinde yer almaz.'
+    ]
+  },
+  {
+    code: 'M6-2027-85',
+    repeat: 1,
+    q: 'Bipolar bozukluk tip 1 için hangisi doğru değildir?',
+    opts: [
+      'Poligenik kalıtım söz konusudur.',
+      'Şizofreni ile ortak genetik riskler söz konusudur.',
+      'Kadın ve erkeklerde görülme sıklığı benzerdir.',
+      'İntiharla ölüm riski genel nüfusa kıyasla düşüktür.',
+      'Ortalama başlangıç yaşı 20\'li yaşlardır.'
+    ],
+    correct: 3,
+    analysis: [
+      'Doğru ifade. Bipolar bozukluk poligenik geçişlidir; kalıtılabilirlik ~%60-80.',
+      'Doğru ifade. Şizofreni ve bipolar bozukluk bazı genetik varyantları paylaşır (örn. CACNA1C, ANK3).',
+      'Doğru ifade. Bipolar bozukluk cinsiyetler arasında eşit dağılım gösterir; bu, unipolar depresyondan farklıdır.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! Bipolar bozuklukta intiharla ölüm riski genel nüfustan 20-30 kat YÜKSEK\'tir. Tüm psikiyatrik bozukluklar arasında en yüksek intihar riskine sahip gruplardan biridir.',
+      'Doğru ifade. Bipolar 1\'in ortalama başlangıç yaşı 18-22 arasındadır.'
+    ]
+  },
+  {
+    code: 'M6-2026-27',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi manik epizod belirtisi değildir?',
+    opts: [
+      'Psikomotor ajitasyon',
+      'Suçluluk düşünceleri',
+      'Öforik/irritabl duygudurum',
+      'Çağrışımlarda hızlanma',
+      'Baskılı konuşma'
+    ],
+    correct: 1,
+    analysis: [
+      'Yanlış — mani belirtisidir. Aşırı enerji ve ajitasyon manik epizodun tipik belirtisidir.',
+      '✓ Doğru! Suçluluk düşünceleri DEPRESİF epizodun belirtisidir, mani değil. Manide aksine grandiyözite, "mükemmelim, her şeyi yapabilirim" hissi ön plandadır.',
+      'Yanlış — mani belirtisidir. Öfori veya irritabilite manik duygudurum değişikliğinin iki kutbunu oluşturur.',
+      'Yanlış — mani belirtisidir. Düşünce uçuşması ve çağrışım hızlanması maninin kognitif belirtisindendir.',
+      'Yanlış — mani belirtisidir. Logore/baskılı konuşma (pressured speech) maninin klasik belirtisidir.'
+    ]
+  },
+  {
+    code: 'M6-2026-99',
+    repeat: 1,
+    q: 'Bipolar bozukluk tip 1 için yaşam boyu prevalans kaçtır?',
+    opts: ['1/500 (yaklaşık %0,2)','2,5/100 (%2,5)','1/1000 (%0,1)','1/100 (%1)','2,5/1000 (%0,25)'],
+    correct: 3,
+    analysis: [
+      'Yanlış. 1/500 çok düşük bir tahmin.',
+      'Yanlış. 2,5/100 (%2,5) bipolar spektrum veya toplam bipolar bozukluk prevalansına yakın ama Tip 1 özeline ait değil.',
+      'Yanlış. 1/1000 çok düşük.',
+      '✓ Doğru! Bipolar bozukluk Tip 1 yaşam boyu prevalansı yaklaşık %1\'dir (1/100). Cinsiyetler arasında eşit dağılım gösterir.',
+      'Yanlış. 2,5/1000 çok düşük.'
+    ]
+  },
+  {
+    code: 'M7-2025-64',
+    repeat: 1,
+    q: 'Aşağıdaki semptomlardan hangisi mani için karakteristik değildir?',
+    opts: ['Logore','Öfori','Distraktibilite','Avolisyon','Hiperirritabilite'],
+    correct: 3,
+    analysis: [
+      'Yanlış — maninin belirtisidir. Logore = aşırı konuşma, baskılı konuşma; maninin tipik belirtisidir.',
+      'Yanlış — maninin belirtisidir. Öfori = abartılı iyilik hissi; manik duygudurum değişikliğinin klasik kutbu.',
+      'Yanlış — maninin belirtisidir. Dikkat dağınıklığı (distraktibilite) DSM manik epizod kriterlerinden biridir.',
+      '✓ Doğru! Avolisyon = istek/güdü kaybı; NEGATİF BELİRTİ\'dir. Şizofreni ve depresyonda görülür. Manide tam tersi söz konusudur — aşırı enerji, amaca yönelik aktivite artışı, dürtüsellik.',
+      'Yanlış — maninin belirtisidir. Hiperirritabilite (irritabl duygudurum) manik duygudurum değişikliğinin ikinci kutbu.'
+    ]
+  },
+  {
+    code: 'M7-2025-81',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi duygudurum bozukluğu değildir?',
+    opts: [
+      'Unipolar rekürren depresyon',
+      'Bipolar bozukluk',
+      'Distimi',
+      'Şizofreniform bozukluk',
+      'Siklotimi'
+    ],
+    correct: 3,
+    analysis: [
+      'Yanlış — duygudurum bozukluğudur. Tekrarlayan majör depresif epizodlar unipolar duygudurum bozukluğu kategorisindedir.',
+      'Yanlış — duygudurum bozukluğudur. Bipolar bozukluk DSM\'de "Bipolar ve İlişkili Bozukluklar" başlığı altında yer alır.',
+      'Yanlış — duygudurum bozukluğudur. Distimi = Kalıcı depresif bozukluk; 2 yıl boyunca hafif-orta depresif duygudurum.',
+      '✓ Doğru! Şizofreniform bozukluk PSİKOZ TANIMLAMALI hastalıklar grubundadır. Şizofreni kriterlerini karşılar ancak süre <6 aydır; duygudurum bozukluğu kategorisine girmez.',
+      'Yanlış — duygudurum bozukluğudur. Siklotimi = 2 yıl boyunca tam olmayan hipomani ve depresif belirtilerin dalgalanması.'
+    ]
+  },
+  {
+    code: 'M7-2024-44',
+    repeat: 1,
+    q: 'Diurnal varyasyon ile ilgili hangisi doğrudur?',
+    opts: [
+      'Depresyondaki hastanın sabah kendini kötü hissetmesi, akşama doğru düzelmesidir.',
+      'Duygudurum bozukluklarında görülen mevsimsellik ile ilgilidir.',
+      'Depresyonun seyir belirleyicilerinden biridir.',
+      'Karma dönem belirtisidir.',
+      'Manik hastada görülen atipik seyir özelliğidir.'
+    ],
+    correct: 0,
+    analysis: [
+      '✓ Doğru! Diurnal varyasyon = GÜNLÜK (circadian) ruh hali dalgalanmasıdır. Klasik depresyonda sabah en kötü, akşam nispeten daha iyi hissetme şeklinde görülür. HPA aksı ve kortizol ritmi ile ilişkilendirilir.',
+      'Yanlış. Mevsimsel desen (SAD = Seasonal Affective Disorder) diurnal değil yıllık/mevsimsel bir değişimdir.',
+      'Doğru olmakla birlikte en spesifik tanım değil. A şıkkı diurnal varyasyonu daha doğrudan tanımlıyor.',
+      'Yanlış. Diurnal varyasyon karma (mikst) epizodun tanımlayıcı özelliği değildir.',
+      'Yanlış. Diurnal varyasyon manik atağa özgü değil; depresyonun klasik özelliğidir.'
+    ]
+  },
+  {
+    code: 'M7-2024-64',
+    repeat: 1,
+    q: 'Hipomani ile ilgili hangisi yanlıştır?',
+    opts: [
+      'Hipomanide psikotik belirtiler hafiftir.',
+      'Hipomani maniye göre işlevsellikte daha az bozulmaya yol açar.',
+      'Hipomani tanısı için belirtilerin en az 4 gün sürmesi gerekir.',
+      'Hipomanide hastaneye yatış gerekmez.',
+      'Hipomanideki belirtiler manik ataktakilerle aynıdır, ancak daha hafiftir.'
+    ],
+    correct: 0,
+    analysis: [
+      '✓ YANLIŞ İFADE — doğru cevap bu! Hipomanide psikotik belirtiler "hafif" değil, KESİNLİKLE OLMAZ. Psikoz hipomaninin tanım dışı bırakıcı bir kriteridir; psikoz varsa tablo otomatik olarak maniye dönüşür.',
+      'Doğru ifade. Hipomani işlevselliği bozmaz veya minimal bozar; mani ise işlev kaybına yol açar.',
+      'Doğru ifade. DSM-5: Hipomani için minimum 4 art arda gün; mani için ≥1 hafta.',
+      'Doğru ifade. Hospitalizasyon maninin tanı kriterlerinden biridir; hipomanide yatış gerekmez.',
+      'Doğru ifade. Aynı belirti kümesi, farklı şiddet ve süre.'
+    ]
+  },
+  {
+    code: 'M7-2022-23',
+    repeat: 1,
+    q: 'Hangisi duygulanım (affect) kavramının özelliklerinden değildir?',
+    opts: [
+      'Mood (duygu durumu) anlamına gelir.',
+      'Uyaranlara duygusal tepkiler katabilme yetisidir.',
+      'Hava durumu gibidir.',
+      'Dışarıdan gözlemle değerlendirilir.',
+      'Kısa süreli bir tepki olarak tanımlanır.'
+    ],
+    correct: 0,
+    analysis: [
+      '✓ Doğru! Duygulanım (affect) ≠ Mood (duygu durumu). Bunlar farklı kavramlardır. Mood = uzun süreli, içsel duygusal durum ("hava gibi"). Affect = kısa süreli, dışarıdan gözlemlenebilen duygusal ifade. Duygulanım "mood anlamına gelir" demek YANLIŞ.',
+      'Yanlış. Uyaranlara duygusal tepki katmak duygulanımın (affect) doğru tanımıdır.',
+      'Yanlış. "Hava durumu gibidir" aslında duygu durumu (mood) için kullanılan benzetmedir; duygulanım için değil. Ancak bu madde için A daha temel bir terminoloji hatasıdır.',
+      'Yanlış. Dışarıdan gözlemlenebilmek duygulanımın (affect) temel özelliğidir; muayenede klinisyen bunu değerlendirir.',
+      'Yanlış. Kısa süreli tepki = affect; uzun süreli durum = mood. Bu doğru bir özelliğidir.'
+    ]
+  },
+  {
+    code: 'M7-2022-71',
+    repeat: 1,
+    q: 'Hangisi disforide görülmez?',
+    opts: [
+      'Tedirginlikle seyreder.',
+      'Mutsuzlukla seyreder.',
+      'İç sıkıntıyla seyreder.',
+      'Öfkeyle seyreder.',
+      'Bir affekt türüdür.'
+    ],
+    correct: 4,
+    analysis: [
+      'Yanlış — disforide görülür. Tedirginlik (unease) disforinin önemli bir bileşenidir.',
+      'Yanlış — disforide görülür. Mutsuzluk disforinin temel duygulanımlarından biridir.',
+      'Yanlış — disforide görülür. İç sıkıntısı (dysthymia ile karışmamalı) disforinin yaygın özelliğidir.',
+      'Yanlış — disforide görülür. İrritabilite ve öfke disforik duygudurumlarda sık görülür.',
+      '✓ Doğru! Disfori bir DUYGU DURUMU (mood) kategorisidir; "affekt türüdür" demek yanlıştır. Affekt kısa süreli tepki, duygu durumu ise uzun süreli durumdur. Disfori = hoş olmayan, huzursuzluk veren süregelen duygu durumu.'
+    ]
+  }
+]);
+
+
+registerQuiz('p4-h3-quiz', [
+  {
+    code: 'M6-2027-81 / M6-2026-9',
+    repeat: 2,
+    q: 'Aşağıdakilerden hangisi bizar sanrı değildir?',
+    opts: ['Zihin okunması','Düşünce yayınlanması','Kontrol edilme','Suçluluk','Düşünce çekilmesi'],
+    correct: 3,
+    analysis: [
+      'Yanlış — bizar sanrıdır. Zihin okunması (thought broadcasting) birinci sıra şizofreni semptomu; tümüyle olası dışı.',
+      'Yanlış — bizar sanrıdır. Düşünce yayınlanması (thought broadcasting) Schneider\'ın birinci sıra belirtisi; bizar kategori.',
+      'Yanlış — bizar sanrıdır. Kontrol edilme (made experiences) dışarıdan yönlendirilme inancı; bizar.',
+      '✓ Doğru! Suçluluk sanrısı NON-BİZAR sanrıdır. "Büyük günah işledim, cezalandırılacağım" inancı gerçekçi olabilecek bir içerik taşır; bizar değildir. Psikotik depresyonda da görülür.',
+      'Yanlış — bizar sanrıdır. Düşünce çekilmesi (thought withdrawal) başkasının düşüncelerini çektiği inancı; bizar.'
+    ]
+  },
+  {
+    code: 'M6-2027-83',
+    repeat: 1,
+    q: 'Şizofreni için aşağıdakilerden hangisi doğrudur?',
+    opts: [
+      'Şizofrenide kalıtsallık %5-10\'dur.',
+      'Şizofreni bir mezensefalon hastalığıdır.',
+      'Şizofreninin etiyolojisinde epigenetik süreçler yer alır.',
+      'Şizofreninin bir özelliği zeka geriliğidir.',
+      'Şizofreni tanısı için varsanıların olması kesin koşuldur.'
+    ],
+    correct: 2,
+    analysis: [
+      'Yanlış. Şizofreninin kalıtılabilirliği ~%80\'dir; %5-10 tamamen yanlış ve çok düşük bir tahmin.',
+      'Yanlış. Şizofreni mezensefalon değil; prefrontal korteks, limbik sistem, dopaminerjik ve glutamaterjik yolak bozukluğuyla ilişkilidir.',
+      '✓ Doğru! Epigenetik mekanizmalar (DNA metilasyonu, histon modifikasyonu) şizofreni patogenezinde rol oynar. Monozigot ikizlerde %100 olmayan konkordans, kalıtımın ötesinde epigenetik ve çevresel faktörlerin önemini gösterir.',
+      'Yanlış. Şizofrenide zeka geriliği beklenen bir özellik değildir; kognitif değişiklikler (çalışma belleği, yürütücü işlev) görülebilir ama bunlar zeka geriliği değildir.',
+      'Yanlış. Şizofreni tanısı varsanısız da konabilir; sanrı, dezorganizasyon veya negatif belirtiler de tanı için yeterlidir.'
+    ]
+  },
+  {
+    code: 'M6-2026-83',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi doğrudur?',
+    opts: [
+      'Kızılay amblemini orak-çekiç olarak görme — yanılsama (illüzyon)',
+      'İç organların çürüdüğüne inanma — varsanı',
+      'Arabaların farlarıyla kendisini taciz ettiğini düşünme — yanılsama',
+      'Çevresinde kırmızı külahlı küçük insanlar görme — sanrı',
+      'Evde kimse yokken kendine küfür eden ses duyma — sanrı'
+    ],
+    correct: 0,
+    analysis: [
+      '✓ Doğru! Amblem yanlış algılanıyor: GERÇEK BİR UYARAN var (Kızılay amblemi), ama YANLIŞ ALGILANIYOR (orak-çekiç). Bu tam illüzyon (yanılsama) tanımıdır.',
+      'Yanlış. İç organların çürüdüğüne inanmak = SANRI (delüzyon). Cotard sendromu; gerçekliğe aykırı inanç. Varsanı değil.',
+      'Yanlış. Arabaların taciz ettiği inancı = SANRI (referans/persekütör). Gerçek uyaran (arabanın farları) yanlış yorumlanıyor; bu yanılsama değil sanrı.',
+      'Yanlış. Gerçekte olmayan küçük insanları görmek = GÖRSEL VARSANI (hallüsinasyon). Sanrı değil.',
+      'Yanlış. Kimse yokken ses duymak = İŞİTSEL VARSANI (hallüsinasyon). Sanrı değil; varsanı.'
+    ]
+  },
+  {
+    code: 'M7-2025-46 / M7-2024-54',
+    repeat: 2,
+    q: 'Aşağıdakilerden hangisi yanlıştır?',
+    opts: [
+      'İlk olarak zamana yönelim bozulur.',
+      'İlk olarak yere yönelim bozulur.',
+      'Allooryantasyon: kişinin başkalarını tanıması-bilmesidir.',
+      'Otooryantasyon: kişinin kendisini tanıması-bilmesidir.',
+      'Çevre ile iletişim azaldığında zaman oryantasyonu bozulabilir.'
+    ],
+    correct: 1,
+    analysis: [
+      'Doğru ifade. Oryantasyon kaybı sırası: önce ZAMAN, sonra YER, en son KİŞİ. Zaman en soyut ve çevre ipucuna bağımlı olduğu için ilk bozulur.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! "İlk olarak yere yönelim bozulur" YANLIŞ. Bozulma sırası: Zaman → Yer → Kişi. Yer oryantasyonu zamandan sonra bozulur.',
+      'Doğru ifade. Allooryantasyon: Dışsal oryantasyon; çevredeki kişileri, zamanı ve yeri tanımak.',
+      'Doğru ifade. Otooryantasyon: Kişinin kendi kimliğini bilmesi; en geç bozulan oryantasyon türü.',
+      'Doğru ifade. Çevre ile iletişim ve çevresel ipuçları azaldığında (izolasyon, yoğun bakım) zaman oryantasyonu bozulabilir.'
+    ]
+  },
+  {
+    code: 'M7-2025-47',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi yanlıştır?',
+    opts: [
+      'Serap görmek bir illüzyondur.',
+      'Hipnogojik ve hipnopompik varsanılar her zaman hastalığa işaret etmez.',
+      'Kinestetik varsanı birleşik duyu anlamına gelir; bir duyunun başka duyu halinde algılanmasıdır.',
+      'Sinestezi birleşik duyu anlamına gelir; bir duyunun başka duyu halinde algılanmasıdır.',
+      'Deja vu: bir olayın daha önce yaşanmış gibi algılanmasıdır.'
+    ],
+    correct: 2,
+    analysis: [
+      'Doğru ifade. Serap: sıcak yüzeyden yansıyan ışınların yüzey üzerinde su gibi görünmesi = gerçek uyaran + yanlış algı = illüzyon.',
+      'Doğru ifade. Uykuya dalarken (hipnogojik) veya uyanırken (hipnopompik) yaşanan varsanılar sağlıklı bireylerde de görülür.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! KİNESTETİK VARSANI hareket duyusuna ait varsanıdır; "kinestetik" = hareket/kas duyusu. Birleşik duyu anlamına GELMEZ. Birleşik duyu = SİNESTEZİ (d şıkkı doğru tanımlar).',
+      'Doğru ifade. Sinestezi gerçekten birleşik duyudur; bir duyunun başka modalitede algılanması (sesleri renk olarak görmek gibi).',
+      'Doğru ifade. Deja vu = jamais vu\'nun zıttı; yeni deneyimin tanıdık geldiği algı yanılsaması.'
+    ]
+  },
+  {
+    code: 'M7-2025-48',
+    repeat: 1,
+    q: 'Psikotik hastada görülen semptomatoloji için pozitif belirti örneği değildir?',
+    opts: ['Referans sanrısı','İşitsel varsanı','Neolojizm','Avolisyon','Stereotipi'],
+    correct: 3,
+    analysis: [
+      'Yanlış — pozitif belirtidir. Referans sanrısı (her şeyin kendisiyle ilgili olduğu inancı) tipik bir pozitif psikotik belirtidir.',
+      'Yanlış — pozitif belirtidir. İşitsel varsanı (ses duyma) psikozun en sık ve karakteristik pozitif belirtisidir.',
+      'Yanlış — pozitif belirtidir. Neolojizm (uydurma kelimeler) dezorganize konuşmanın bir türü; pozitif belirti.',
+      '✓ Doğru! Avolisyon = istek/güdü yokluğu. NEGATİF BELİRTİ\'dir. Pozitif belirtiler normal işlevlerin artması/eklenmesidir (sanrı, varsanı, dezorganizasyon); negatif belirtiler normal işlevlerin azalmasıdır (avolisyon, anhedoni, alogia).',
+      'Yanlış — pozitif belirtidir. Stereotipi (amaçsız tekrarlayan hareketler) dezorganize davranış kapsamında pozitif belirtidir.'
+    ]
+  },
+  {
+    code: 'M7-2024-1',
+    repeat: 1,
+    q: 'Hastanın işitilen kelime veya cümleleri sürekli tekrarlaması hangi konuşma bozukluğudur?',
+    opts: ['Disfoni','Logore','Palilali','Ekolali','Mutizm'],
+    correct: 3,
+    analysis: [
+      'Yanlış. Disfoni = ses kalite bozukluğu (kısıklık, çatlaklık).',
+      'Yanlış. Logore = aşırı ve durdurulamaz konuşma; manide ve bazı organik bozukluklarda görülür.',
+      'Yanlış. Palilali = KENDİ söylediklerini tekrarlama; Tourette ve Parkinson gibi hastalıklarda.',
+      '✓ Doğru! Ekolali = BAŞKASININ söylediği kelimeleri/cümleleri otomatik olarak tekrar etme. Çocuklarda normal gelişimsel dönemde görülür; büyüklerde şizofreni, otizm veya organik patoloji göstergesi olabilir.',
+      'Yanlış. Mutizm = konuşmama, sessizlik.'
+    ]
+  },
+  {
+    code: 'M7-2024-29',
+    repeat: 1,
+    q: 'Aşağıdaki hastalıklardan hangisinde psikoz tanımlayıcı değildir?',
+    opts: [
+      'Şizofreniform bozukluk',
+      'Paylaşılmış delüzyonel bozukluk',
+      'Bipolar bozukluk',
+      'Şizofreni',
+      'Sanrılı bozukluk'
+    ],
+    correct: 2,
+    analysis: [
+      'Yanlış — psikoz tanımlayıcıdır. Şizofreniform bozukluk, şizofreni kriterlerini karşılayan ancak süresi <6 ay olan psikotik bozukluktur.',
+      'Yanlış — psikoz tanımlayıcıdır. Paylaşılmış delüzyonel bozukluk (Folie à deux) psikoz grubundadır.',
+      '✓ Doğru! Bipolar bozukluk DUYGUDURUM BOZUKLUĞU kategorisindedir; psikoz tanımlayıcı değildir. Manik epizodda psikotik özellikler EKLENEBİLİR ama psikoz temel tanımlayıcı değildir.',
+      'Yanlış — psikoz tanımlayıcıdır. Şizofreni birincil psikotik bozukluktur.',
+      'Yanlış — psikoz tanımlayıcıdır. Sanrılı bozukluk sistematize sanrıların ön planda olduğu psikotik bozukluktur.'
+    ]
+  },
+  {
+    code: 'M7-2024-77',
+    repeat: 1,
+    q: 'Kişide psikotik bozukluk olduğunun kesin işareti hangisidir?',
+    opts: ['Öz bakım eksikliği','Varsanı','Avolisyon','Anhedoni','Affektte küntleşme'],
+    correct: 1,
+    analysis: [
+      'Yanlış. Öz bakım eksikliği psikozda görülür ama özgül değildir; ağır depresyon, demans, madde kullanımı gibi pek çok durumda da olur.',
+      '✓ Doğru! Varsanı (hallüsinasyon) = gerçek dış uyaran olmadan algı oluşması. Psikotik bozukluğun en güvenilir GÖSTERGESİdir; psikozun dışında gerçek bir klinik nedene bağlanamamışsa psikoz tanısını destekler.',
+      'Yanlış. Avolisyon negatif belirti; şizofreni, depresyon ve diğer bozukluklarda görülür.',
+      'Yanlış. Anhedoni depresyon, şizofreni ve madde bozukluklarında görülür; psikoza özgü değil.',
+      'Yanlış. Affekt küntleşmesi şizofreni negatif belirtisi ama psikoza özgü değil; ağır depresyonda da görülebilir.'
+    ]
+  }
+]);
+
+
+registerQuiz('p5-h3-quiz', [
+  {
+    code: 'M6-2027-80 / M7-2024-49 / M7-2022-56',
+    repeat: 3,
+    q: 'Aşağıdakilerden hangisi doğrudur?',
+    opts: [
+      'Hasta obsesyonların saçma olduğuna inanmaz.',
+      'Topluma uymayan ve mantıklı açıklamayla değiştirilemeyen yanlış inanışlara manyerizm denir.',
+      'Bir uyarandan aşırı korkmaya kompülsiyon denir.',
+      'Israrlı, tekrarlayıcı, zihin işgal eden düşünce ve dürtülere obsesyon denir.',
+      'Kişinin gerçekte var olmayan şeyleri görmesine delüzyon denir.'
+    ],
+    correct: 3,
+    analysis: [
+      'Yanlış. Obsesyonlarda hasta çoğunlukla bunların saçma veya anlamsız olduğunun FARKINADADIR (içgörü mevcut); ancak durduramaz. Bu özellik OKB\'yi psikozdan ayırır.',
+      'Yanlış. Topluma/kültüre uymayan, mantıkla değiştirilemeyen yanlış inanışa SANRI (delüzyon) denir; manyerizm değil. Manyerizm amaçsız, tuhaf harekettir.',
+      'Yanlış. Bir uyarandan aşırı korkmak FOBİ\'dir; kompülsiyon = obsesyona yanıt olarak yapılan tekrarlayıcı davranış veya zihinsel eylem.',
+      '✓ Doğru! Obsesyon = ego-distonik, istenmeyen, intrüzif, tekrarlayıcı düşünce, dürtü veya imgelerdir. Kişi bunların kendi zihninden kaynaklandığını bilir ama durduramaz.',
+      'Yanlış. Gerçekte var olmayan şeyi görmek = VARSANI (görsel hallüsinasyon). Delüzyon gerçekliğe aykırı INANÇ\'tır; algı değil.'
+    ]
+  },
+  {
+    code: 'M6-2027-84',
+    repeat: 1,
+    q: 'Aşağıdakilerden hangisi obsesyon değildir?',
+    opts: [
+      '"Örgü şişini bebeğime batırır mıyım" diye korkmak',
+      'Karısıyla tartışmasını tüm gün tekrar tekrar düşünmekten kendini alamamak',
+      'Kocasının trafik kazası yaptığı görüntüsünün aklına düşüp durması',
+      'Temiz olmasına rağmen evinin pis olduğu hissinden kurtulamama',
+      'Şoförün sürekli "birilerine çarptım mı" kaygısı yaşaması'
+    ],
+    correct: 1,
+    analysis: [
+      'Yanlış — obsesyondur. Zararlı dürtü obsesyonu (harm obsession); ego-distonik, istenmeyen, korkutucu bir düşüncedir.',
+      '✓ Doğru! Bu RUMİNASYON\'dur, obsesyon değil. Ruminasyon geçmiş bir olayı tekrar tekrar düşünmektir; ego-sintonik, gerçekçi içeriklidir. Obsesyon ise ego-distonik, anlamsız/saçma bulunan, mantıksız gelecek kaygısıdır.',
+      'Yanlış — obsesyona yakın. İntrüzif görüntü; ego-distonik, kontrolsüz, istenmeyen zihinsel içerik.',
+      'Yanlış — obsesyondur. Kontaminasyon obsesyonu; gerçek olmadığı bilinse de kurtulamama → OKB\'nin en sık obsesyon türü.',
+      'Yanlış — obsesyondur. Şüphe obsesyonu; "zarar verdim mi" tekrarlayan düşüncesi → kontrol kompülsiyonunu tetikler.'
+    ]
+  },
+  {
+    code: 'M7-2025-44',
+    repeat: 1,
+    q: '35 yaşında kadın; ani başlayan nefes darlığı, çarpıntı, ölüm korkusu ile acil servise geliyor. Psikiyatri dışı patoloji saptanmıyor. Bu klinik tablo ile ilgili hangisi yanlıştır?',
+    opts: [
+      'Kafein başta olmak üzere birçok maddenin kullanımı ile ilişkili olabilir.',
+      'Depresyon, psikoz gibi birçok psikiyatrik rahatsızlıkta görülebilir.',
+      'Destek, güvence ve hipervantilasyonun engellenmesi tabloyu yatıştırır.',
+      'Plasebo enjeksiyonuna olumlu cevap tanıya güçlü bir destektir.',
+      'Belirtileri şiddetli olsa da benzodiazepin ile müdahale en son seçenek olmalıdır.'
+    ],
+    correct: 4,
+    analysis: [
+      'Doğru. Kafein, kokain, amfetamin gibi uyarıcılar panik benzeri tabloyu tetikleyebilir.',
+      'Doğru. Panik atak birçok psikiyatrik bozukluğa eşlik edebilir; bağımsız bir tanı olmayabilir.',
+      'Doğru. Destek, yeniden güvence verme ve solunumu yavaşlatma akut panik atağı yatıştırır.',
+      'Yanlış. Plasebo yanıtı panik bozukluğa özgü değildir; pek çok durumda plasebo etkili olabilir. Bu nedenle tanıya güçlü destek sağlamaz.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! Benzodiazepin akut panik atakta KULLANILIR; "en son seçenek" demek yanlıştır. Uzun vadeli koruyucu tedavide SSRİ/SNRİ tercih edilir ama akut dönemde BDZ uygun bir seçenektir.'
+    ]
+  },
+  {
+    code: 'M7-2025-45',
+    repeat: 1,
+    q: '40 yaşında erkek; 2 yıldır başına kötü bir şey geleceği korkusuyla dışarı çıkmıyor, çalışamıyor. Ancak ev içinde oldukça normal yaşıyor. En olası tanı?',
+    opts: [
+      'Negatif belirtili şizofreni',
+      'Özgül fobi',
+      'Sosyal anksiyete bozukluğu',
+      'Agorafobi',
+      'Ayrılık anksiyetesi'
+    ],
+    correct: 3,
+    analysis: [
+      'Yanlış. Negatif belirtili şizofrenide dışarı çıkmama yanı sıra volisyon kaybı, dezorganizasyon ve psikotik belirtiler beklenir. Bu hastada sosyal ve ev içi işlevsellik korunmuş.',
+      'Yanlış. Özgül fobi belirli bir nesne veya duruma (örn. köpek, yükseklik) karşıdır; buradaki korku genel ve geniş kapsamlıdır.',
+      'Yanlış. Sosyal anksiyete bozukluğunda utanç/rezil olma korkusu sosyal ortamlarda ön plandadır; bu hastada hastalık/zarar korkusu öne çıkıyor.',
+      '✓ Doğru! Agorafobi: Kaçışın zor olacağı veya yardım alınamayacağı durum ve yerlerden kaçınma (toplu taşıma, açık alan, dışarıda tek başına). Ev içinde işlevsellik korunur, dışarıda bozulur — agorafobinin klasik tablosu.',
+      'Yanlış. Ayrılık anksiyetesi bağlanma figüründen ayrılma korkusudur; çocuklarda sık, yetişkinlerde de olabilir ama bu tabloya uymaz.'
+    ]
+  },
+  {
+    code: 'M7-2024-10',
+    repeat: 1,
+    q: 'Anksiyete bozuklukları ile ilgili hangisi yanlıştır?',
+    opts: [
+      'Sosyal fobide mahcup düşmekten korkma bilişi öndedir.',
+      'Kaygı ve otonomik uyarılma anksiyete bozukluklarının ortak özelliğidir.',
+      'Yaygın anksiyete bozukluğunda kaçınma yeti yitiminin ana nedenidir.',
+      'Ölüm, aklını yitirme korkusu panik bozuklukta görülür.',
+      'Özgül fobide uyaran yokluğunda belirti yoktur.'
+    ],
+    correct: 2,
+    analysis: [
+      'Doğru ifade. Sosyal fobi (sosyal anksiyete): utanma, rezil olma, performans kaygısı bileşenleri baskındır.',
+      'Doğru ifade. Tüm anksiyete bozukluklarında otonomik aktivasyon (çarpıntı, terleme, tremor) ortak bulgudur.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! YAB\'da ana belirleyici AŞIRI VE KONTROLSÜZ ENDİŞE\'dir; kaçınma ön planda değildir. Kaçınma özgül fobi, agorafobi ve sosyal anksiyetenin daha belirgin özelliğidir.',
+      'Doğru ifade. Panik bozuklukta ölüm korkusu ve aklını yitirme korkusu tanı kriterlerinde yer alır.',
+      'Doğru ifade. Özgül fobide tetikleyici uyaran yoksa semptom da yoktur — duruma bağlı (situational) anksiyete.'
+    ]
+  },
+  {
+    code: 'M7-2024-14',
+    repeat: 1,
+    q: 'Anksiyete bozuklukları etiyolojisi ile ilgili hangisi yanlıştır?',
+    opts: [
+      'Kalıtılabilirlik %80\'lere kadar çıkar.',
+      'Öğrenme ve koşullanma bilişsel-davranışçı yaklaşımın temelidir.',
+      'Psikodinamik kuram bilinçdışı dürtülerin yarattığı çatışma üzerinde durur.',
+      'Monoaminlerin önemi tedavi etkileri ile de ortaya konmaktadır.',
+      'Otonom sinir sistemi ve HPA aksı önemli bileşenlerdir.'
+    ],
+    correct: 0,
+    analysis: [
+      '✓ YANLIŞ İFADE — doğru cevap bu! Anksiyete bozukluklarının kalıtılabilirliği genellikle %30-50 arasındadır; %80 çok yüksek bir tahmindir. %80 şizofreni veya bipolar bozukluk için geçerli bir kalıtılabilirlik oranına yakındır.',
+      'Doğru ifade. Klasik ve operant koşullanma ile bilişsel şemalar BDT\'nin temelini oluşturur.',
+      'Doğru ifade. Psikodinamik yaklaşım: bastırılmış dürtülerin sinyal anksiyetesi yarattığı varsayımına dayanır.',
+      'Doğru ifade. SSRİ/SNRİ etkinliği serotonin ve norepinefrin sisteminin anksiyetedeki rolünü destekler.',
+      'Doğru ifade. ANS aktivasyonu (sempatik uyarılma) ve HPA aksi (kortizol) anksiyetenin nörobiyolojik temelinde yer alır.'
+    ]
+  },
+  {
+    code: 'M7-2022-63',
+    repeat: 1,
+    q: '35 yaşında ev kadını; aylardır günün çoğunda gergin, tetikleyici olmaksızın bunaltı, uyku güçlüğü, dikkat dağınıklığı, halsizlik. Ayırıcı tanı hangisidir?',
+    opts: [
+      'Majör depresif bozukluk',
+      'Distimik bozukluk',
+      'Yaygın anksiyete bozukluğu',
+      'Akut stres bozukluğu',
+      'Agorafobi'
+    ],
+    correct: 2,
+    analysis: [
+      'Yanlış. Majör depresif bozuklukta çökkün duygudurum ve anhedoni ön planda olmalı; burada anksiyete ve gerginlik baskın, depresif nöbet kriteri tam karşılanmıyor.',
+      'Yanlış. Distimik bozukluk = kalıcı depresif bozukluk; hafif-orta depresyon 2 yıl boyunca sürer. Buradaki tablo anksiyete ağırlıklı.',
+      '✓ Doğru! YAB (Yaygın Anksiyete Bozukluğu): En az 6 aydır, birden fazla konu hakkında kontrol edilemeyen aşırı endişe + ≥3 somatik belirti (yorgunluk, uyku bozukluğu, konsantrasyon güçlüğü, kas gerginliği). Bu tablo YAB ile uyumludur.',
+      'Yanlış. Akut stres bozukluğu için TRAVMATIK OLAY gereklidir; burada stresör tanımlanmamış.',
+      'Yanlış. Agorafobi dışarı çıkma korkusuyla kaçınma davranışıyla gider; burada kaçınma değil sürekli gerginlik ön planda.'
+    ]
+  },
+  {
+    code: 'M7-2022-84',
+    repeat: 1,
+    q: 'Anksiyete bozukluğuyla ilgili hangisi yanlıştır?',
+    opts: [
+      'Uzun dönemde hipertansiyon ve metabolik sendroma yol açabilir.',
+      'Psikiyatrik komorbid tanılar sık görülür.',
+      'Tıbbi eş hastalık araştırması anksiyete tedavisinden sonra olmalıdır.',
+      'Anksiyolitikler pek çok anksiyetik bozuklukta ilk tercih değildir.',
+      'Tedavi hedefi anksiyetenin tamamen ortadan kaldırılması değildir.'
+    ],
+    correct: 2,
+    analysis: [
+      'Doğru ifade. Kronik anksiyete HPA aksı aşırı aktivasyonu üzerinden metabolik sendrom ve kardiyovasküler risk artışıyla ilişkilidir.',
+      'Doğru ifade. Anksiyete bozuklukları depresyon, madde kullanımı ve diğer anksiyete bozukluklarıyla sık komorbidite gösterir.',
+      '✓ YANLIŞ İFADE — doğru cevap bu! Tıbbi nedenler (hipertiroidizm, feokromasitoma, kardiyak aritmiler) anksiyete tedavisinden ÖNCE dışlanmalıdır. Tedaviyi başlamak ve sonra organik nedeni araştırmak klinisyen hatası olur.',
+      'Doğru ifade. SSRİ/SNRİ\'ler pek çok anksiyete bozukluğunun birinci basamak tedavisidir; anksiyolitikler (BDZ) genellikle kısa süreli veya ikinci seçenektir.',
+      'Doğru ifade. Anksiyeteyi sıfırlamak hedeflenmez; kontrol edilebilir düzeye indirmek ve işlevselliği korumak hedeflenir.'
+    ]
+  }
+]);
+
+
 </script>
 </body>
 </html>
