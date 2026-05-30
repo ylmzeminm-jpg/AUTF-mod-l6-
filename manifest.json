@@ -1,0 +1,16 @@
+{
+  "name": "Dönem 3 Tıp Portalı",
+  "short_name": "M6",
+  "start_url": "noroloji_ozet.html",
+  "display": "standalone",
+  "background_color": "#f5f0e8",
+  "theme_color": "#f5f0e8",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
