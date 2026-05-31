@@ -21046,5 +21046,14 @@ registerQuiz('p5-h3-quiz', [
 
 
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'RELOAD') {
+      window.location.reload();
+    }
+  });
+}
+</script>
 </body>
 </html>

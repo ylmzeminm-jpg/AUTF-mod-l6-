@@ -1,4 +1,4 @@
-const CACHE = 'donem3-v6';
+const CACHE = 'donem3-v7';
 const FILES = ['noroloji_ozet.html', 'manifest.json', 'ikon-192.png', 'ikon-512.png'];
 
 self.addEventListener('install', function(e) {
@@ -17,9 +17,16 @@ self.addEventListener('activate', function(e) {
         keys.filter(function(k) { return k !== CACHE; })
             .map(function(k) { return caches.delete(k); })
       );
+    }).then(function() {
+      return self.clients.claim();
+    }).then(function() {
+      return self.clients.matchAll({ includeUncontrolled: true });
+    }).then(function(clients) {
+      clients.forEach(function(client) {
+        client.postMessage({ type: 'RELOAD' });
+      });
     })
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', function(e) {
