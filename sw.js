@@ -1,4 +1,4 @@
-const CACHE = 'donem3-v7';
+const CACHE = 'donem3-v8';
 const FILES = ['noroloji_ozet.html', 'manifest.json', 'ikon-192.png', 'ikon-512.png'];
 
 self.addEventListener('install', function(e) {
