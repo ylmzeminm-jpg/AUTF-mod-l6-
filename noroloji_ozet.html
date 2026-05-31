@@ -20188,7 +20188,7 @@ function _updateStudiedBtn() {
 }
 
 function _renderTicks() {
-  var ticks = document.querySelectorAll('.tab-tick');
+  var ticks = document.querySelectorAll('#norolojiPage .tab-tick');
   ticks.forEach(function(t) {
     var id = t.id.replace('tick-','');
     t.classList.toggle('done', !!_studied[id]);
@@ -20416,11 +20416,37 @@ window.switchEnfeksiyonTab = function(n) {
   setTimeout(_updateNavBar, 100);
 };
 
-// _studied, _studiedFarma, _studiedGenetik, _studiedEnfeksiyon'ı global expose et
+// localStorage'dan tüm studied verilerini yükle
+try { window._studiedRomato = JSON.parse(localStorage.getItem('romato_studied') || '{}'); } catch(e) { window._studiedRomato = {}; }
+try { window._studiedPsiko = JSON.parse(localStorage.getItem('psiko_studied') || '{}'); } catch(e) { window._studiedPsiko = {}; }
+try { window._studiedGenetik = JSON.parse(localStorage.getItem('genetik_studied') || '{}'); } catch(e) { window._studiedGenetik = {}; }
+try { window._studiedEnfeksiyon = JSON.parse(localStorage.getItem('enfeksiyon_studied') || '{}'); } catch(e) { window._studiedEnfeksiyon = {}; }
+try { window._studiedPatoloji = JSON.parse(localStorage.getItem('patoloji_studied') || '{}'); } catch(e) { window._studiedPatoloji = {}; }
 window._studied = window._studied || {};
 window._studiedFarma = window._studiedFarma || {};
-window._studiedGenetik = window._studiedGenetik || {};
-window._studiedEnfeksiyon = window._studiedEnfeksiyon || {};
+
+function _renderAllStudiedTicks() {
+  var map = [
+    { data: window._studied,          tickPfx: 'tick-',  btnPfx: 'ns-noro_' },
+    { data: window._studiedFarma,     tickPfx: 'ftick-', btnPfx: 'ns-farma_' },
+    { data: window._studiedRomato,    tickPfx: 'rtick-', btnPfx: 'ns-romato_' },
+    { data: window._studiedPsiko,     tickPfx: 'ptick-', btnPfx: 'ns-psiko_' },
+    { data: window._studiedGenetik,   tickPfx: 'gtick-', btnPfx: 'ns-genetik_' },
+    { data: window._studiedEnfeksiyon,tickPfx: 'etick-', btnPfx: 'ns-enfeksiyon_' },
+    { data: window._studiedPatoloji,  tickPfx: 'patok-', btnPfx: 'ns-patoloji_' }
+  ];
+  map.forEach(function(m) {
+    if (!m.data) return;
+    Object.keys(m.data).forEach(function(n) {
+      if (!m.data[n]) return;
+      var tick = document.getElementById(m.tickPfx + n);
+      if (tick) tick.classList.add('done');
+      var btn = document.getElementById(m.btnPfx + n);
+      if (btn) { btn.textContent = '✓ Çalışıldı'; btn.className = 'nav-studied done'; }
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', _renderAllStudiedTicks);
 </script>
 
 <script>
